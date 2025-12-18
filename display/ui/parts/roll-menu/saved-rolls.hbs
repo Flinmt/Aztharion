@@ -3,7 +3,7 @@
   <div class="flexcol saved-rolls-list">
     {{#each savedRolls as |roll key|}}
       <div class="flexrow saved-roll {{#ifeq key ../activeRollID}}active{{/ifeq}}" data-id="{{key}}">
-        <div data-action="removeSavedRoll" class="remove-saved-roll" title="{{localize 'WOD5E.RollList.RemoveRoll'}}">
+        <div data-action="removeSavedRoll" class="remove-saved-roll" title="{{localize 'AZTHARION.RollList.RemoveRoll'}}">
           x
         </div>
         <div data-action="selectSavedRoll">
@@ -17,6 +17,6 @@
     {{/each}}
   </div>
   <div class="saved-rolls-footer clickable-button" data-action="addNewRoll">
-    {{localize 'WOD5E.RollList.AddNewRoll'}}
+    {{localize 'AZTHARION.RollList.AddNewRoll'}}
   </div>
 </div>

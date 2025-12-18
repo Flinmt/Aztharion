@@ -10,23 +10,23 @@ export const _onFrenzyRoll = async function (event) {
 
   // Define the content of the Dialog
   const content = `<p>
-    ${game.i18n.localize('WOD5E.VTM.FrenzyChoiceResistOrGiveIn')}
+    ${game.i18n.localize('AZTHARION.VTM.FrenzyChoiceResistOrGiveIn')}
   </p>`
 
   // Check whether the player wants to skip the check and go straight into Frenzy
   const doFrenzyRoll = await foundry.applications.api.DialogV2.wait({
     window: {
-      title: game.i18n.localize('WOD5E.VTM.ResistingFrenzy')
+      title: game.i18n.localize('AZTHARION.VTM.ResistingFrenzy')
     },
     content,
     modal: true,
     buttons: [
       {
-        label: game.i18n.localize('WOD5E.ItemsList.Resist'),
+        label: game.i18n.localize('AZTHARION.ItemsList.Resist'),
         action: 'resist'
       },
       {
-        label: game.i18n.localize('WOD5E.VTM.GiveIn'),
+        label: game.i18n.localize('AZTHARION.VTM.GiveIn'),
         action: 'give-in'
       }
     ]
@@ -44,14 +44,14 @@ export const _onFrenzyRoll = async function (event) {
       selectors: ['frenzy']
     })
 
-    basicDice = await WOD5E.api.getBasicDice({
+    basicDice = await AZTHARION.api.getBasicDice({
       flatMod: dicePool + activeModifiers.totalValue,
       actor
     })
 
     WOD5eDice.Roll({
       basicDice,
-      title: game.i18n.localize('WOD5E.VTM.ResistingFrenzy'),
+      title: game.i18n.localize('AZTHARION.VTM.ResistingFrenzy'),
       actor,
       selectors: ['frenzy'],
       data: actor.system,
@@ -65,10 +65,10 @@ export const _onFrenzyRoll = async function (event) {
 
           foundry.documents.ChatMessage.implementation.create({
             flags: {
-              wod5e: {
-                name: game.i18n.localize('WOD5E.VTM.ResistingFrenzyFailed'),
-                img: 'systems/wod5e/assets/icons/dice/vampire/bestial-failure.png',
-                description: game.i18n.format('WOD5E.VTM.ResistingFrenzyFailedDescription', {
+              aztharion: {
+                name: game.i18n.localize('AZTHARION.VTM.ResistingFrenzyFailed'),
+                img: 'systems/aztharion/assets/icons/dice/vampire/bestial-failure.png',
+                description: game.i18n.format('AZTHARION.VTM.ResistingFrenzyFailedDescription', {
                   actor: actor.name
                 })
               }
@@ -77,10 +77,10 @@ export const _onFrenzyRoll = async function (event) {
         } else {
           foundry.documents.ChatMessage.implementation.create({
             flags: {
-              wod5e: {
-                name: game.i18n.localize('WOD5E.VTM.ResistingFrenzySuccess'),
-                img: 'systems/wod5e/assets/icons/dice/vampire/bestial-failure.png',
-                description: game.i18n.format('WOD5E.VTM.ResistingFrenzySuccessDescription', {
+              aztharion: {
+                name: game.i18n.localize('AZTHARION.VTM.ResistingFrenzySuccess'),
+                img: 'systems/aztharion/assets/icons/dice/vampire/bestial-failure.png',
+                description: game.i18n.format('AZTHARION.VTM.ResistingFrenzySuccessDescription', {
                   actor: actor.name
                 })
               }
@@ -95,10 +95,10 @@ export const _onFrenzyRoll = async function (event) {
 
     foundry.documents.ChatMessage.implementation.create({
       flags: {
-        wod5e: {
-          name: game.i18n.localize('WOD5E.VTM.RidingTheWave'),
-          img: 'systems/wod5e/assets/icons/dice/vampire/bestial-failure.png',
-          description: game.i18n.format('WOD5E.VTM.RidingTheWaveDescription', {
+        aztharion: {
+          name: game.i18n.localize('AZTHARION.VTM.RidingTheWave'),
+          img: 'systems/aztharion/assets/icons/dice/vampire/bestial-failure.png',
+          description: game.i18n.format('AZTHARION.VTM.RidingTheWaveDescription', {
             actor: actor.name
           })
         }

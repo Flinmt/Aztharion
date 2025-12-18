@@ -48,7 +48,7 @@ export default defineConfig([
         FormData: 'readonly',
 
         // System globals
-        WOD5E: 'readonly',
+        AZTHARION: 'readonly',
         jscolor: 'readonly',
         JSColor: 'readonly',
         SortingHelpers: 'readonly'

@@ -4,8 +4,8 @@
   --hunter-color-3: #ff8f00;
   --cell-group-header: rgba(204, 109, 40, 0.8);
 }
-/* Define splat-specific colours for the WOD5E Symbols */
-.wod5e .wod5e-symbol.hunter {
+/* Define splat-specific colours for the AZTHARION Symbols */
+.aztharion .aztharion-symbol.hunter {
   color: var(--hunter-color-1);
 }
 /* Hunter Actor Sheet */
@@ -30,14 +30,14 @@
 .actor.sheet.hunter .tabs-container {
   background-color: var(--hunter-color-2);
 }
-.actor.sheet.hunter .tabs-container .navicon .wod5e-symbol {
+.actor.sheet.hunter .tabs-container .navicon .aztharion-symbol {
   color: var(--hunter-color-1);
 }
 .actor.sheet.hunter .tabs-container .active .navicon {
   background-color: var(--hunter-color-1);
   color: var(--system-color-6);
 }
-.actor.sheet.hunter .tabs-container .active .navicon .wod5e-symbol {
+.actor.sheet.hunter .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-color-6);
 }
 .actor.sheet.hunter .despair-box,
@@ -139,8 +139,8 @@
   --mortal-color-3: #fff;
   --mortal-color-4: #2b2b2b;
 }
-/* Define splat-specific colours for the WOD5E Symbols */
-.wod5e-symbol.mortal {
+/* Define splat-specific colours for the AZTHARION Symbols */
+.aztharion-symbol.mortal {
   color: var(--mortal-color-1);
 }
 /* All Mortal-styled Sheets, Including Itemsheets */
@@ -216,7 +216,7 @@
   background-color: var(--mortal-color-1);
   color: var(--system-color-6);
 }
-.actor.sheet.mortal .tabs-container .active .navicon .wod5e-symbol {
+.actor.sheet.mortal .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-color-6);
 }
 .actor.sheet.mortal .sheet-banner .sheet-label {
@@ -339,16 +339,16 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "wod5eSymbols";
-  src: url("../assets/fonts/wod5e-symbols.ttf") format("truetype");
+  font-family: "aztharionSymbols";
+  src: url("../assets/fonts/aztharion-symbols.ttf") format("truetype");
 }
 @font-face {
   font-family: "vampireRevised";
   src: url("../assets/fonts/vampire-revised.ttf") format("truetype");
 }
-/* Define the class that will be used for WOD5E symbols */
-.wod5e-symbol {
-  font-family: "wod5eSymbols", "sans-serif";
+/* Define the class that will be used for AZTHARION symbols */
+.aztharion-symbol {
+  font-family: "aztharionSymbols", "sans-serif";
   font-size: 16pt;
 }
 /* Application window Header */
@@ -631,20 +631,20 @@ h3.item-name {
   height: fit-content;
 }
 
-.wod5e-config-form .config-category .subcategory {
+.aztharion-config-form .config-category .subcategory {
   margin-bottom: 15px;
 }
-.wod5e-config-form.storyteller-menu .mod-header {
+.aztharion-config-form.storyteller-menu .mod-header {
   font-weight: bold;
   text-decoration: underline;
   text-align: center;
 }
-.wod5e-config-form.storyteller-menu .modification-row,
-.wod5e-config-form.storyteller-menu .custom-row {
+.aztharion-config-form.storyteller-menu .modification-row,
+.aztharion-config-form.storyteller-menu .custom-row {
   margin-top: 3px;
   margin-bottom: 3px;
 }
-.wod5e-config-form.storyteller-menu .mod-label {
+.aztharion-config-form.storyteller-menu .mod-label {
   font-weight: bold;
   text-align: center;
   display: flex;
@@ -652,31 +652,31 @@ h3.item-name {
   margin-left: auto;
   margin-right: auto;
 }
-.wod5e-config-form.storyteller-menu .mod-label input {
+.aztharion-config-form.storyteller-menu .mod-label input {
   margin-left: 5px;
 }
-.wod5e-config-form.storyteller-menu .modification-row .mod-hidden {
+.aztharion-config-form.storyteller-menu .modification-row .mod-hidden {
   margin-left: auto;
   margin-right: auto;
 }
-.wod5e-config-form.storyteller-menu .mod-footer {
+.aztharion-config-form.storyteller-menu .mod-footer {
   margin-top: 10px;
   text-align: center;
 }
-.wod5e-config-form.storyteller-menu .addition-button {
+.aztharion-config-form.storyteller-menu .addition-button {
   border-radius: 0;
   font-weight: bold;
   letter-spacing: 0.05em;
 }
-.wod5e-config-form.storyteller-menu .addition-button:hover {
+.aztharion-config-form.storyteller-menu .addition-button:hover {
   cursor: pointer;
   outline: none;
   transition-duration: 0.3s;
 }
-.wod5e-config-form.storyteller-menu .remove-mod-button {
+.aztharion-config-form.storyteller-menu .remove-mod-button {
   cursor: pointer;
 }
-.wod5e-config-form.storyteller-menu .remove-custom-button {
+.aztharion-config-form.storyteller-menu .remove-custom-button {
   cursor: pointer;
   margin-top: 5px;
 }
@@ -936,8 +936,8 @@ h3.item-name {
   --vampire-color-3: #f51f1f;
   --coterie-group-header: rgba(121, 8, 19, 0.8);
 }
-/* Define splat-specific colours for the WOD5E Symbols */
-.wod5e .wod5e-symbol.vampire {
+/* Define splat-specific colours for the AZTHARION Symbols */
+.aztharion .aztharion-symbol.vampire {
   color: var(--vampire-color-3);
 }
 /* Vampire Actor Sheet */
@@ -983,7 +983,7 @@ h3.item-name {
 .actor.sheet.vampire .tabs-container {
   background-color: var(--vampire-color-2);
 }
-.actor.sheet.vampire .tabs-container .navicon .wod5e-symbol,
+.actor.sheet.vampire .tabs-container .navicon .aztharion-symbol,
 .actor.sheet.vampire .tabs-container [data-tab="blood"] .navicon {
   color: var(--vampire-color-2);
 }
@@ -991,7 +991,7 @@ h3.item-name {
   background-color: var(--vampire-color-1);
   color: var(--system-color-6);
 }
-.actor.sheet.vampire .tabs-container .active .navicon .wod5e-symbol {
+.actor.sheet.vampire .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-color-6);
 }
 .actor.sheet.vampire .item-image {
@@ -1058,7 +1058,7 @@ h3.item-name {
   height: 35px;
   margin-top: -5px;
 }
-.sheet.vampire .rouse-button .wod5e-symbol {
+.sheet.vampire .rouse-button .aztharion-symbol {
   vertical-align: middle;
 }
 .sheet.vampire button.vampire-button {
@@ -1145,8 +1145,8 @@ h3.item-name {
   --werewolf-color-3: var(--werewolf-color-3);
   --pack-group-header: rgba(78, 33, 0, 0.8);
 }
-/* Define splat-specific colours for the WOD5E Symbols */
-.wod5e .wod5e-symbol.werewolf {
+/* Define splat-specific colours for the AZTHARION Symbols */
+.aztharion .aztharion-symbol.werewolf {
   color: var(--werewolf-color-1);
 }
 /* Actor Sheet */
@@ -1171,7 +1171,7 @@ h3.item-name {
 .actor.sheet.werewolf .tabs-container {
   background-color: var(--werewolf-color-2);
 }
-.actor.sheet.werewolf .tabs-container .navicon .wod5e-symbol,
+.actor.sheet.werewolf .tabs-container .navicon .aztharion-symbol,
 .actor.sheet.werewolf .tabs-container .item[data-tab="wolf"] {
   color: var(--werewolf-color-2);
 }
@@ -1179,7 +1179,7 @@ h3.item-name {
   background-color: var(--werewolf-color-1);
   color: var(--system-color-6);
 }
-.actor.sheet.werewolf .tabs-container .active .navicon .wod5e-symbol {
+.actor.sheet.werewolf .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-color-6);
 }
 .actor.sheet.werewolf .item-image {
@@ -1278,7 +1278,7 @@ h3.item-name {
   height: 35px;
   margin-top: -5px;
 }
-.sheet.werewolf .rage-button .wod5e-symbol {
+.sheet.werewolf .rage-button .aztharion-symbol {
   vertical-align: middle;
   color: var(--system-color-6);
 }
@@ -1445,9 +1445,9 @@ body.uk .actor.sheet {
 }
 
 :root {
-  --xp-gain-icon: url("/systems/wod5e/assets/icons/sheet/exp-gain.webp");
-  --xp-spend-icon: url("/systems/wod5e/assets/icons/sheet/exp-spend.webp");
-  --xp-neutral-icon: url("/systems/wod5e/assets/icons/sheet/exp-neutral.webp");
+  --xp-gain-icon: url("/systems/aztharion/assets/icons/sheet/exp-gain.webp");
+  --xp-spend-icon: url("/systems/aztharion/assets/icons/sheet/exp-spend.webp");
+  --xp-neutral-icon: url("/systems/aztharion/assets/icons/sheet/exp-neutral.webp");
 }
 /* The actor sheet itself */
 .actor.sheet:not(.minimized):not(.group) {
@@ -1883,7 +1883,7 @@ body.uk .actor.sheet {
   height: 100%;
 }
 .actor.sheet .sheet-tabs > [data-tab] .navicon i,
-.actor.sheet .sheet-tabs > [data-tab] .navicon .wod5e-symbol {
+.actor.sheet .sheet-tabs > [data-tab] .navicon .aztharion-symbol {
   width: 100%;
 }
 .actor.sheet .item-list {
@@ -2187,8 +2187,8 @@ body.uk .actor.sheet {
 }
 
 /* Grids */
-.wod5e .grid,
-.wod5e .grid-2col {
+.aztharion .grid,
+.aztharion .grid-2col {
   display: grid;
   grid-column: span 2 / span 2;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2196,56 +2196,56 @@ body.uk .actor.sheet {
   margin: 0;
   padding: 0;
 }
-.wod5e .grid-3col {
+.aztharion .grid-3col {
   grid-column: span 3 / span 3;
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.wod5e .grid-4col {
+.aztharion .grid-4col {
   grid-column: span 4 / span 4;
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.wod5e .grid-5col {
+.aztharion .grid-5col {
   grid-column: span 5 / span 5;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 /* Flexbox shorthand */
-.wod5e .flex-group-center,
-.wod5e .flex-group-left,
-.wod5e .flex-group-right {
+.aztharion .flex-group-center,
+.aztharion .flex-group-left,
+.aztharion .flex-group-right {
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 5px;
 }
-.wod5e .flex-group-left {
+.aztharion .flex-group-left {
   justify-content: flex-start;
   text-align: left;
 }
-.wod5e .flex-group-right {
+.aztharion .flex-group-right {
   justify-content: flex-end;
   text-align: right;
 }
-.wod5e .flex-center {
+.aztharion .flex-center {
   align-items: center;
   justify-content: center;
   text-align: center;
 }
-.wod5e .flex-left {
+.aztharion .flex-left {
   align-items: left;
   justify-content: left;
   text-align: left;
 }
-.wod5e .flex-between {
+.aztharion .flex-between {
   justify-content: space-between;
 }
-.wod5e .nowrap {
+.aztharion .nowrap {
   flex-wrap: nowrap;
   text-wrap: nowrap;
 }
-.wod5e .nogrow {
+.aztharion .nogrow {
   flex-grow: 0;
 }
-.wod5e .flexend {
+.aztharion .flexend {
   align-self: flex-end;
 }
 
@@ -2314,7 +2314,7 @@ body.uk .actor.sheet {
   padding: 0;
 }
 
-/* wod5e.css */
+/* aztharion.css */
 .locked .item-edit,
 .locked .item-create,
 .locked .item-delete,
@@ -2993,7 +2993,7 @@ prose-mirror .editor-menu button {
   --system-dark-color-7: #505050;
   --system-dark-color-8: #e6e6e6;
   --dark-theme-filter: rgba(43, 43, 43, 0.5);
-  --actor-background-dark: url(/systems/wod5e/assets/actor/actor_background_dark.webp);
+  --actor-background-dark: url(/systems/aztharion/assets/actor/actor_background_dark.webp);
 }
 .theme-dark {
   /* All places that use a filter to apply the theme colour */
@@ -3205,7 +3205,7 @@ prose-mirror .editor-menu button {
   border-color: var(--system-dark-color-4);
 }
 .theme-dark .actor.sheet.vampire .tabs-container .active.item[data-tab="blood"],
-.theme-dark .actor.sheet.vampire .tabs-container .active .navicon .wod5e-symbol {
+.theme-dark .actor.sheet.vampire .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-dark-color-4);
 }
 .theme-dark .sheet.werewolf .resource-value .resource-value-step.active,
@@ -3220,10 +3220,10 @@ prose-mirror .editor-menu button {
   background-color: #752e11ea;
 }
 .theme-dark .actor.sheet.werewolf .tabs-container .active.item[data-tab="wolf"],
-.theme-dark .actor.sheet.werewolf .tabs-container .active .navicon .wod5e-symbol {
+.theme-dark .actor.sheet.werewolf .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-dark-color-4);
 }
-.theme-dark .actor.sheet.werewolf .tabs-container .navicon .wod5e-symbol,
+.theme-dark .actor.sheet.werewolf .tabs-container .navicon .aztharion-symbol,
 .theme-dark .actor.sheet.werewolf .tabs-container [data-tab="wolf"] .navicon {
   color: var(--werewolf-color-3);
 }
@@ -3235,10 +3235,10 @@ prose-mirror .editor-menu button {
 .theme-dark .actor.sheet.werewolf .tab[data-tab="wolf"] .resource.form.form-active {
   background-color: #833501e0;
 }
-.theme-dark .actor.sheet.hunter .tabs-container .active .navicon .wod5e-symbol {
+.theme-dark .actor.sheet.hunter .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-dark-color-4);
 }
-.theme-dark .actor.sheet.hunter .tabs-container .navicon .wod5e-symbol {
+.theme-dark .actor.sheet.hunter .tabs-container .navicon .aztharion-symbol {
   color: var(--hunter-color-3);
 }
 .theme-dark prose-mirror button.icon.toggle {
@@ -3499,7 +3499,7 @@ prose-mirror .editor-menu button {
   border-color: var(--system-dark-color-4);
 }
 .wod-vampire-theme .actor.sheet.vampire .tabs-container .active.item[data-tab="blood"],
-.wod-vampire-theme .actor.sheet.vampire .tabs-container .active .navicon .wod5e-symbol {
+.wod-vampire-theme .actor.sheet.vampire .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-dark-color-4);
 }
 .wod-vampire-theme .sheet.werewolf .resource-value .resource-value-step.active,
@@ -3514,10 +3514,10 @@ prose-mirror .editor-menu button {
   background-color: #752e11ea;
 }
 .wod-vampire-theme .actor.sheet.werewolf .tabs-container .active.item[data-tab="wolf"],
-.wod-vampire-theme .actor.sheet.werewolf .tabs-container .active .navicon .wod5e-symbol {
+.wod-vampire-theme .actor.sheet.werewolf .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-dark-color-4);
 }
-.wod-vampire-theme .actor.sheet.werewolf .tabs-container .navicon .wod5e-symbol,
+.wod-vampire-theme .actor.sheet.werewolf .tabs-container .navicon .aztharion-symbol,
 .wod-vampire-theme .actor.sheet.werewolf .tabs-container .item[data-tab="wolf"] {
   color: var(--werewolf-color-3);
 }
@@ -3529,10 +3529,10 @@ prose-mirror .editor-menu button {
 .wod-vampire-theme .actor.sheet.werewolf .tab[data-tab="wolf"] .resource.form.form-active {
   background-color: #833501e0;
 }
-.wod-vampire-theme .actor.sheet.hunter .tabs-container .active .navicon .wod5e-symbol {
+.wod-vampire-theme .actor.sheet.hunter .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-dark-color-4);
 }
-.wod-vampire-theme .actor.sheet.hunter .tabs-container .navicon .wod5e-symbol {
+.wod-vampire-theme .actor.sheet.hunter .tabs-container .navicon .aztharion-symbol {
   color: var(--hunter-color-3);
 }
 .wod-vampire-theme prose-mirror button.icon.toggle {
@@ -3755,7 +3755,7 @@ prose-mirror .editor-menu button {
   border-color: var(--system-dark-color-4);
 }
 .wod-werewolf-theme .actor.sheet.vampire .tabs-container .active.item[data-tab="blood"],
-.wod-werewolf-theme .actor.sheet.vampire .tabs-container .active .navicon .wod5e-symbol {
+.wod-werewolf-theme .actor.sheet.vampire .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-dark-color-4);
 }
 .wod-werewolf-theme .sheet.werewolf .resource-value .resource-value-step.active,
@@ -3770,10 +3770,10 @@ prose-mirror .editor-menu button {
   background-color: #752e11ea;
 }
 .wod-werewolf-theme .actor.sheet.werewolf .tabs-container .active.item[data-tab="wolf"],
-.wod-werewolf-theme .actor.sheet.werewolf .tabs-container .active .navicon .wod5e-symbol {
+.wod-werewolf-theme .actor.sheet.werewolf .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-dark-color-4);
 }
-.wod-werewolf-theme .actor.sheet.werewolf .tabs-container .navicon .wod5e-symbol,
+.wod-werewolf-theme .actor.sheet.werewolf .tabs-container .navicon .aztharion-symbol,
 .wod-werewolf-theme .actor.sheet.werewolf .tabs-container .item[data-tab="wolf"] {
   color: var(--werewolf-color-3);
 }
@@ -3785,10 +3785,10 @@ prose-mirror .editor-menu button {
 .wod-werewolf-theme .actor.sheet.werewolf .tab[data-tab="wolf"] .resource.form.form-active {
   background-color: #833501e0;
 }
-.wod-werewolf-theme .actor.sheet.hunter .tabs-container .active .navicon .wod5e-symbol {
+.wod-werewolf-theme .actor.sheet.hunter .tabs-container .active .navicon .aztharion-symbol {
   color: var(--system-dark-color-4);
 }
-.wod-werewolf-theme .actor.sheet.hunter .tabs-container .navicon .wod5e-symbol {
+.wod-werewolf-theme .actor.sheet.hunter .tabs-container .navicon .aztharion-symbol {
   color: var(--hunter-color-3);
 }
 .wod-werewolf-theme prose-mirror button.icon.toggle {

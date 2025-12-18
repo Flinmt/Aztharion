@@ -35,23 +35,23 @@ export const _onCreateItem = async function (event, target) {
   // Generate item options and the select label based on item type
   switch (type) {
     case 'power':
-      selectLabel = game.i18n.localize('WOD5E.VTM.SelectDiscipline')
+      selectLabel = game.i18n.localize('AZTHARION.VTM.SelectDiscipline')
       itemOptions = Disciplines.getList({})
       break
     case 'perk':
-      selectLabel = game.i18n.localize('WOD5E.HTR.SelectEdge')
+      selectLabel = game.i18n.localize('AZTHARION.HTR.SelectEdge')
       itemOptions = Edges.getList({})
       break
     case 'gift':
-      selectLabel = game.i18n.localize('WOD5E.WTA.SelectGift')
+      selectLabel = game.i18n.localize('AZTHARION.WTA.SelectGift')
       itemOptions = Gifts.getList({})
       break
     case 'feature':
-      selectLabel = game.i18n.localize('WOD5E.ItemsList.SelectFeature')
+      selectLabel = game.i18n.localize('AZTHARION.ItemsList.SelectFeature')
       itemOptions = Features.getList({})
       break
     case 'weapon':
-      selectLabel = game.i18n.localize('WOD5E.EquipmentList.SelectWeaponType')
+      selectLabel = game.i18n.localize('AZTHARION.EquipmentList.SelectWeaponType')
       itemOptions = Weapons.getList({})
       break
   }
@@ -64,29 +64,29 @@ export const _onCreateItem = async function (event, target) {
     // Generate item name based on type
     switch (type) {
       case 'power':
-        itemName = game.i18n.format('WOD5E.VTM.NewStringPower', { string: itemName })
+        itemName = game.i18n.format('AZTHARION.VTM.NewStringPower', { string: itemName })
         break
       case 'perk':
-        itemName = game.i18n.format('WOD5E.HTR.NewStringPerk', { string: itemName })
+        itemName = game.i18n.format('AZTHARION.HTR.NewStringPerk', { string: itemName })
         break
       case 'gift':
         if (subtype && subtype === 'rite') {
-          itemName = game.i18n.format('WOD5E.NewString', { string: itemName })
+          itemName = game.i18n.format('AZTHARION.NewString', { string: itemName })
         } else {
-          itemName = game.i18n.format('WOD5E.WTA.NewStringGift', { string: itemName })
+          itemName = game.i18n.format('AZTHARION.WTA.NewStringGift', { string: itemName })
         }
         break
       case 'edgepool':
-        itemName = game.i18n.format('WOD5E.HTR.NewStringEdgePool', { string: itemName })
+        itemName = game.i18n.format('AZTHARION.HTR.NewStringEdgePool', { string: itemName })
         break
       case 'feature':
-        itemName = game.i18n.format('WOD5E.NewString', { string: itemName })
+        itemName = game.i18n.format('AZTHARION.NewString', { string: itemName })
         break
       case 'weapon':
-        itemName = game.i18n.format('WOD5E.EquipmentList.NewStringWeapon', { string: itemName })
+        itemName = game.i18n.format('AZTHARION.EquipmentList.NewStringWeapon', { string: itemName })
         break
       default:
-        itemName = game.i18n.format('WOD5E.NewString', { string: itemName })
+        itemName = game.i18n.format('AZTHARION.NewString', { string: itemName })
         break
     }
 
@@ -113,9 +113,9 @@ export const _onCreateItem = async function (event, target) {
     // Prompt the dialog to determine which item subtype we're adding
     const subtypeSelection = await foundry.applications.api.DialogV2.prompt({
       window: {
-        title: game.i18n.localize('WOD5E.Add')
+        title: game.i18n.localize('AZTHARION.Add')
       },
-      classes: ['wod5e', system, 'dialog'],
+      classes: ['aztharion', system, 'dialog'],
       content,
       ok: {
         callback: (event, button) =>
@@ -135,29 +135,29 @@ export const _onCreateItem = async function (event, target) {
       // Generate item name based on type
       switch (type) {
         case 'power':
-          itemName = game.i18n.format('WOD5E.VTM.NewStringPower', { string: itemName })
+          itemName = game.i18n.format('AZTHARION.VTM.NewStringPower', { string: itemName })
           break
         case 'perk':
-          itemName = game.i18n.format('WOD5E.HTR.NewStringPerk', { string: itemName })
+          itemName = game.i18n.format('AZTHARION.HTR.NewStringPerk', { string: itemName })
           break
         case 'gift':
           if (subtypeSelection === 'rite') {
-            itemName = game.i18n.format('WOD5E.NewString', { string: itemName })
+            itemName = game.i18n.format('AZTHARION.NewString', { string: itemName })
           } else {
-            itemName = game.i18n.format('WOD5E.WTA.NewStringGift', { string: itemName })
+            itemName = game.i18n.format('AZTHARION.WTA.NewStringGift', { string: itemName })
           }
           break
         case 'edgepool':
-          itemName = game.i18n.format('WOD5E.HTR.NewStringEdgePool', { string: itemName })
+          itemName = game.i18n.format('AZTHARION.HTR.NewStringEdgePool', { string: itemName })
           break
         case 'feature':
-          itemName = game.i18n.format('WOD5E.NewString', { string: itemName })
+          itemName = game.i18n.format('AZTHARION.NewString', { string: itemName })
           break
         case 'weapon':
-          itemName = game.i18n.format('WOD5E.EquipmentList.NewStringWeapon', { string: itemName })
+          itemName = game.i18n.format('AZTHARION.EquipmentList.NewStringWeapon', { string: itemName })
           break
         default:
-          itemName = game.i18n.format('WOD5E.NewString', { string: itemName })
+          itemName = game.i18n.format('AZTHARION.NewString', { string: itemName })
           break
       }
 
@@ -178,7 +178,7 @@ export const _onItemChat = async function (event, target) {
 
   foundry.documents.ChatMessage.implementation.create({
     flags: {
-      wod5e: {
+      aztharion: {
         name: item.name,
         img: item.img,
         description: item.system?.description || ''
@@ -213,7 +213,7 @@ export const _onItemDelete = async function (event, target) {
 
   // Define the content of the Dialog
   const content = `<p>
-    ${game.i18n.format('WOD5E.ConfirmDeleteDescription', {
+    ${game.i18n.format('AZTHARION.ConfirmDeleteDescription', {
       string: item.name
     })}
   </p>`
@@ -221,18 +221,18 @@ export const _onItemDelete = async function (event, target) {
   // Prompt a dialog for the user to confirm they want to delete the item
   const confirmItemDelete = await foundry.applications.api.DialogV2.wait({
     window: {
-      title: game.i18n.localize('WOD5E.ConfirmDelete')
+      title: game.i18n.localize('AZTHARION.ConfirmDelete')
     },
-    classes: ['wod5e', system, 'dialog'],
+    classes: ['aztharion', system, 'dialog'],
     content,
     modal: true,
     buttons: [
       {
-        label: game.i18n.localize('WOD5E.Confirm'),
+        label: game.i18n.localize('AZTHARION.Confirm'),
         action: true
       },
       {
-        label: game.i18n.localize('WOD5E.Cancel'),
+        label: game.i18n.localize('AZTHARION.Cancel'),
         action: false
       }
     ]
@@ -254,7 +254,7 @@ async function createItem(actor, itemName, type, itemData) {
       type,
       system: itemData,
       flags: {
-        wod5e: {
+        aztharion: {
           dataItemId
         }
       }

@@ -17,7 +17,7 @@ export const _onResourceChange = async function (event) {
   // Don't let things be edited if the sheet is locked
   if (actorData.system.locked) {
     ui.notifications.warn(
-      game.i18n.format('WOD5E.Notifications.CannotModifyResourceString', {
+      game.i18n.format('AZTHARION.Notifications.CannotModifyResourceString', {
         string: actor.name
       })
     )
@@ -137,7 +137,7 @@ export const _onDotCounterChange = async function (event, target) {
   // Make sure that the dot counter can only be changed if the user has permission
   if (actor.permission < 3) {
     ui.notifications.warn(
-      game.i18n.format('WOD5E.Notifications.NoSufficientPermission', {
+      game.i18n.format('AZTHARION.Notifications.NoSufficientPermission', {
         string: actor.name
       })
     )
@@ -155,7 +155,7 @@ export const _onDotCounterChange = async function (event, target) {
     !parent.has('.member-rage').length
   ) {
     ui.notifications.warn(
-      game.i18n.format('WOD5E.Notifications.CannotModifyResourceString', {
+      game.i18n.format('AZTHARION.Notifications.CannotModifyResourceString', {
         string: actor.name
       })
     )
@@ -203,7 +203,7 @@ export const _onDotCounterEmpty = async function (event, target) {
     !parent.has('.member-rage').length
   ) {
     ui.notifications.warn(
-      game.i18n.format('WOD5E.Notifications.CannotModifyResourceString', {
+      game.i18n.format('AZTHARION.Notifications.CannotModifyResourceString', {
         string: actor.name
       })
     )
@@ -358,7 +358,7 @@ function getActor(actorId, fallbackActor) {
 function hasSufficientPermission(actor) {
   if (actor.permission < 3) {
     ui.notifications.warn(
-      game.i18n.format('WOD5E.Notifications.NoSufficientPermission', {
+      game.i18n.format('AZTHARION.Notifications.NoSufficientPermission', {
         string: actor.name
       })
     )

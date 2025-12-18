@@ -62,7 +62,7 @@ gulp.task('less', function () {
         paths: [path.join(__dirname, 'less', 'includes')]
       })
     )
-    .pipe(concat('wod5e-styling.css')) // Concatenate all CSS files into a single file
+    .pipe(concat('aztharion.css')) // Concatenate all CSS files into a single file
     .pipe(gulp.dest('./display/')) // Output for the wod-styling.css file
 })
 

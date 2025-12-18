@@ -27,8 +27,8 @@ export const MigrateOldDetailsToNewItems = async function () {
       ) {
         const name =
           actorData?.clan?.value ||
-          game.i18n.format('WOD5E.NewString', {
-            string: 'WOD5E.VTM.Clan'
+          game.i18n.format('AZTHARION.NewString', {
+            string: 'AZTHARION.VTM.Clan'
           })
         const dataItemId = `clan-${formatDataItemId(name)}`
 
@@ -36,7 +36,7 @@ export const MigrateOldDetailsToNewItems = async function () {
           name,
           type: 'clan',
           flags: {
-            wod5e: {
+            aztharion: {
               dataItemId
             }
           },
@@ -57,8 +57,8 @@ export const MigrateOldDetailsToNewItems = async function () {
       ) {
         const name =
           actorData?.headers?.predator ||
-          game.i18n.format('WOD5E.NewString', {
-            string: 'WOD5E.VTM.PredatorType'
+          game.i18n.format('AZTHARION.NewString', {
+            string: 'AZTHARION.VTM.PredatorType'
           })
         const dataItemId = `predatorType-${formatDataItemId(name)}`
 
@@ -66,7 +66,7 @@ export const MigrateOldDetailsToNewItems = async function () {
           name,
           type: 'predatorType',
           flags: {
-            wod5e: {
+            aztharion: {
               dataItemId
             }
           }
@@ -84,8 +84,8 @@ export const MigrateOldDetailsToNewItems = async function () {
       ) {
         const name =
           actorData?.blood?.resonance ||
-          game.i18n.format('WOD5E.NewString', {
-            string: 'WOD5E.VTM.Resonance'
+          game.i18n.format('AZTHARION.NewString', {
+            string: 'AZTHARION.VTM.Resonance'
           })
         const dataItemId = `resonance-${formatDataItemId(name)}`
 
@@ -93,7 +93,7 @@ export const MigrateOldDetailsToNewItems = async function () {
           name,
           type: 'resonance',
           flags: {
-            wod5e: {
+            aztharion: {
               dataItemId
             }
           }
@@ -111,8 +111,8 @@ export const MigrateOldDetailsToNewItems = async function () {
       ) {
         const name =
           actorData?.headers?.creed ||
-          game.i18n.format('WOD5E.NewString', {
-            string: 'WOD5E.HTR.Creed'
+          game.i18n.format('AZTHARION.NewString', {
+            string: 'AZTHARION.HTR.Creed'
           })
         const dataItemId = `creed-${formatDataItemId(name)}`
 
@@ -120,7 +120,7 @@ export const MigrateOldDetailsToNewItems = async function () {
           name,
           type: 'creed',
           flags: {
-            wod5e: {
+            aztharion: {
               dataItemId
             }
           },
@@ -141,8 +141,8 @@ export const MigrateOldDetailsToNewItems = async function () {
       ) {
         const name =
           actorData?.headers?.drive ||
-          game.i18n.format('WOD5E.NewString', {
-            string: 'WOD5E.HTR.Drive'
+          game.i18n.format('AZTHARION.NewString', {
+            string: 'AZTHARION.HTR.Drive'
           })
         const dataItemId = `drive-${formatDataItemId(name)}`
 
@@ -150,7 +150,7 @@ export const MigrateOldDetailsToNewItems = async function () {
           name,
           type: 'drive',
           flags: {
-            wod5e: {
+            aztharion: {
               dataItemId
             }
           },
@@ -174,8 +174,8 @@ export const MigrateOldDetailsToNewItems = async function () {
       ) {
         const name =
           actorData?.headers?.tribe ||
-          game.i18n.format('WOD5E.NewString', {
-            string: 'WOD5E.WTA.Tribe'
+          game.i18n.format('AZTHARION.NewString', {
+            string: 'AZTHARION.WTA.Tribe'
           })
         const dataItemId = `tribe-${formatDataItemId(name)}`
 
@@ -183,7 +183,7 @@ export const MigrateOldDetailsToNewItems = async function () {
           name,
           type: 'tribe',
           flags: {
-            wod5e: {
+            aztharion: {
               dataItemId
             }
           },
@@ -209,8 +209,8 @@ export const MigrateOldDetailsToNewItems = async function () {
       ) {
         const name =
           actorData?.headers?.auspice ||
-          game.i18n.format('WOD5E.NewString', {
-            string: 'WOD5E.WTA.Auspice'
+          game.i18n.format('AZTHARION.NewString', {
+            string: 'AZTHARION.WTA.Auspice'
           })
         const dataItemId = `auspice-${formatDataItemId(name)}`
 
@@ -218,7 +218,7 @@ export const MigrateOldDetailsToNewItems = async function () {
           name,
           type: 'auspice',
           flags: {
-            wod5e: {
+            aztharion: {
               dataItemId
             }
           }

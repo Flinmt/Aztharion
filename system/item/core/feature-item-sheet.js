@@ -17,28 +17,28 @@ const { HandlebarsApplicationMixin } = foundry.applications.api
  */
 export class FeatureItemSheet extends HandlebarsApplicationMixin(WoDItemBase) {
   static DEFAULT_OPTIONS = {
-    classes: ['wod5e', 'item', 'sheet'],
+    classes: ['aztharion', 'item', 'sheet'],
     actions: {}
   }
 
   static PARTS = {
     header: {
-      template: 'systems/wod5e/display/shared/items/feature-sheet.hbs'
+      template: 'systems/aztharion/display/shared/items/feature-sheet.hbs'
     },
     tabs: {
       template: 'templates/generic/tab-navigation.hbs'
     },
     description: {
-      template: 'systems/wod5e/display/shared/items/parts/description.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/description.hbs'
     },
     macro: {
-      template: 'systems/wod5e/display/shared/items/parts/macro.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/macro.hbs'
     },
     modifiers: {
-      template: 'systems/wod5e/display/shared/items/parts/modifiers.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/modifiers.hbs'
     },
     settings: {
-      template: 'systems/wod5e/display/shared/items/parts/feature-settings.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/feature-settings.hbs'
     }
   }
 
@@ -46,22 +46,22 @@ export class FeatureItemSheet extends HandlebarsApplicationMixin(WoDItemBase) {
     description: {
       id: 'description',
       group: 'primary',
-      label: 'WOD5E.Tabs.Description'
+      label: 'AZTHARION.Tabs.Description'
     },
     macro: {
       id: 'macro',
       group: 'primary',
-      label: 'WOD5E.ItemsList.Macro'
+      label: 'AZTHARION.ItemsList.Macro'
     },
     modifiers: {
       id: 'modifiers',
       group: 'primary',
-      label: 'WOD5E.ItemsList.Modifiers'
+      label: 'AZTHARION.ItemsList.Modifiers'
     },
     settings: {
       id: 'settings',
       group: 'primary',
-      label: 'WOD5E.ItemsList.ItemSettings'
+      label: 'AZTHARION.ItemsList.ItemSettings'
     }
   }
 

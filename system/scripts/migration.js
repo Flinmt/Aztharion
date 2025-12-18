@@ -18,7 +18,7 @@ export const migrateWorld = async () => {
   // Store current loaded version of the system
   const currentVersion = game.system.version
   // Store the world version pre-migration
-  const worldVersion = game.settings.get('wod5e', 'worldVersion') || '1.5'
+  const worldVersion = game.settings.get('aztharion', 'worldVersion') || '1.5'
 
   console.log('World of Darkness 5e | Current SchreckNet Layer v' + worldVersion)
 
@@ -87,7 +87,7 @@ export const migrateWorld = async () => {
       }
 
       // Update game version, no matter if we error or not
-      game.settings.set('wod5e', 'worldVersion', currentVersion)
+      game.settings.set('aztharion', 'worldVersion', currentVersion)
     }
 
     await MigrateSystemFlags()

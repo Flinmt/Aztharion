@@ -16,7 +16,7 @@ export const _onRoll = async function (event, target) {
   // Secondary variables
   const dataset = $(target).data()
 
-  WOD5E.api.RollFromDataset({
+  AZTHARION.api.RollFromDataset({
     dataset,
     actor,
     data: actor.system
@@ -43,7 +43,7 @@ export const _onConfirmRoll = async function (dataset, actor) {
   const title = dataset.label
   const data = dataset.itemId ? actor.items.get(dataset.itemId).system : actor.system
   const flavor = dataset.useFlavorPath
-    ? await WOD5E.api.getFlavorDescription({ valuePath: dataset.flavorPath, data })
+    ? await AZTHARION.api.getFlavorDescription({ valuePath: dataset.flavorPath, data })
     : dataset.flavor
   const flatMod = parseInt(dataset.flatMod) || 0
   const absoluteValue = parseInt(dataset.absoluteValue) || 0
@@ -84,7 +84,7 @@ export const _onConfirmRoll = async function (dataset, actor) {
     basicDice = 0
     advancedDice = disableAdvancedDice
       ? 0 + activeModifiers.totalValue
-      : (await WOD5E.api.getAdvancedDice(actor)) + activeModifiers.totalValue
+      : (await AZTHARION.api.getAdvancedDice(actor)) + activeModifiers.totalValue
   } else {
     // Calculate basicDice based on different conditions
     if (useAbsoluteValue) {
@@ -94,7 +94,7 @@ export const _onConfirmRoll = async function (dataset, actor) {
     } else {
       // All other, more normal, circumstances where basicDice
       // are calculated normally
-      basicDice = await WOD5E.api.getBasicDice({
+      basicDice = await AZTHARION.api.getBasicDice({
         valuePaths: dataset.valuePaths,
         flatMod: flatMod + activeModifiers.totalValue,
         actor
@@ -102,7 +102,7 @@ export const _onConfirmRoll = async function (dataset, actor) {
     }
 
     // Retrieve the appropriate amount of advanced dice
-    advancedDice = disableAdvancedDice ? 0 : await WOD5E.api.getAdvancedDice({ actor })
+    advancedDice = disableAdvancedDice ? 0 : await AZTHARION.api.getAdvancedDice({ actor })
   }
 
   // Define the actor's gamesystem, defaulting to "mortal" if it's not in the systems list

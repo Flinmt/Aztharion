@@ -17,16 +17,16 @@ export const _onCreatePower = async function (event, target) {
   // Gather and push the list of options to the 'options' variable
   if (powerType === 'discipline') {
     powersList = Disciplines.getList({})
-    label = game.i18n.localize('WOD5E.VTM.SelectDiscipline')
-    titleLabel = game.i18n.localize('WOD5E.VTM.AddDiscipline')
+    label = game.i18n.localize('AZTHARION.VTM.SelectDiscipline')
+    titleLabel = game.i18n.localize('AZTHARION.VTM.AddDiscipline')
   } else if (powerType === 'gift') {
     powersList = Gifts.getList({})
-    label = game.i18n.localize('WOD5E.WTA.SelectGift')
-    titleLabel = game.i18n.localize('WOD5E.WTA.AddGift')
+    label = game.i18n.localize('AZTHARION.WTA.SelectGift')
+    titleLabel = game.i18n.localize('AZTHARION.WTA.AddGift')
   } else if (powerType === 'edge') {
     powersList = Edges.getList({})
-    label = game.i18n.localize('WOD5E.HTR.SelectEdge')
-    titleLabel = game.i18n.localize('WOD5E.HTR.AddEdge')
+    label = game.i18n.localize('AZTHARION.HTR.SelectEdge')
+    titleLabel = game.i18n.localize('AZTHARION.HTR.AddEdge')
   }
 
   // Build the options for the select dropdown
@@ -46,7 +46,7 @@ export const _onCreatePower = async function (event, target) {
     window: {
       title: titleLabel
     },
-    classes: ['wod5e', actor.system.gamesystem, 'dialog'],
+    classes: ['aztharion', actor.system.gamesystem, 'dialog'],
     content,
     ok: {
       callback: (event, button) =>

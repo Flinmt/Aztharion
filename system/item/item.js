@@ -25,8 +25,8 @@ Hooks.on('preCreateItem', (document, data) => {
 
   // Get default item image based on the item type
   if (!data.img) {
-    const itemsList = WOD5E.ItemTypes.getList({})
-    const itemImg = itemsList[data.type]?.img || 'systems/wod5e/assets/icons/items/item-default.svg'
+    const itemsList = AZTHARION.ItemTypes.getList({})
+    const itemImg = itemsList[data.type]?.img || 'systems/aztharion/assets/icons/items/item-default.svg'
 
     // Set the img value to the icon we get back
     alterations.img = itemImg

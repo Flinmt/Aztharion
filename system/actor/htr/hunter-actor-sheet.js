@@ -30,7 +30,7 @@ const { HandlebarsApplicationMixin } = foundry.applications.api
  */
 export class HunterActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
   static DEFAULT_OPTIONS = {
-    classes: ['wod5e', 'actor', 'sheet', 'hunter'],
+    classes: ['aztharion', 'actor', 'sheet', 'hunter'],
     actions: {
       toggleDespair: _onToggleDespair,
       addEdge: _onAddEdge,
@@ -43,40 +43,40 @@ export class HunterActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
 
   static PARTS = {
     header: {
-      template: 'systems/wod5e/display/htr/actors/hunter-sheet.hbs'
+      template: 'systems/aztharion/display/htr/actors/hunter-sheet.hbs'
     },
     tabs: {
-      template: 'systems/wod5e/display/shared/actors/parts/tab-navigation.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/tab-navigation.hbs'
     },
     stats: {
-      template: 'systems/wod5e/display/shared/actors/parts/stats.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/stats.hbs'
     },
     experience: {
-      template: 'systems/wod5e/display/shared/actors/parts/experience.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/experience.hbs'
     },
     edges: {
-      template: 'systems/wod5e/display/htr/actors/parts/edges.hbs'
+      template: 'systems/aztharion/display/htr/actors/parts/edges.hbs'
     },
     features: {
-      template: 'systems/wod5e/display/htr/actors/parts/features.hbs'
+      template: 'systems/aztharion/display/htr/actors/parts/features.hbs'
     },
     equipment: {
-      template: 'systems/wod5e/display/shared/actors/parts/equipment.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/equipment.hbs'
     },
     biography: {
-      template: 'systems/wod5e/display/shared/actors/parts/biography.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/biography.hbs'
     },
     notepad: {
-      template: 'systems/wod5e/display/shared/actors/parts/notepad.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/notepad.hbs'
     },
     settings: {
-      template: 'systems/wod5e/display/shared/actors/parts/actor-settings.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/actor-settings.hbs'
     },
     banner: {
-      template: 'systems/wod5e/display/shared/actors/parts/type-banner.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/type-banner.hbs'
     },
     limited: {
-      template: 'systems/wod5e/display/shared/actors/limited-sheet.hbs'
+      template: 'systems/aztharion/display/shared/actors/limited-sheet.hbs'
     }
   }
 
@@ -84,49 +84,49 @@ export class HunterActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
     stats: {
       id: 'stats',
       group: 'primary',
-      title: 'WOD5E.Tabs.Stats',
+      title: 'AZTHARION.Tabs.Stats',
       icon: '<i class="fa-regular fa-chart-line"></i>'
     },
     experience: {
       id: 'experience',
       group: 'primary',
-      title: 'WOD5E.Tabs.Experience',
+      title: 'AZTHARION.Tabs.Experience',
       icon: '<i class="fa-solid fa-file-contract"></i>'
     },
     edges: {
       id: 'edges',
       group: 'primary',
-      title: 'WOD5E.HTR.Edges',
-      icon: '<span class="wod5e-symbol hunter">e</span>'
+      title: 'AZTHARION.HTR.Edges',
+      icon: '<span class="aztharion-symbol hunter">e</span>'
     },
     features: {
       id: 'features',
       group: 'primary',
-      title: 'WOD5E.Tabs.Features',
+      title: 'AZTHARION.Tabs.Features',
       icon: '<i class="fas fa-gem"></i>'
     },
     equipment: {
       id: 'equipment',
       group: 'primary',
-      title: 'WOD5E.Tabs.Equipment',
+      title: 'AZTHARION.Tabs.Equipment',
       icon: '<i class="fa-solid fa-toolbox"></i>'
     },
     biography: {
       id: 'biography',
       group: 'primary',
-      title: 'WOD5E.Tabs.Biography',
+      title: 'AZTHARION.Tabs.Biography',
       icon: '<i class="fas fa-id-card"></i>'
     },
     notepad: {
       id: 'notepad',
       group: 'primary',
-      title: 'WOD5E.Tabs.Notes',
+      title: 'AZTHARION.Tabs.Notes',
       icon: '<i class="fas fa-sticky-note"></i>'
     },
     settings: {
       id: 'settings',
       group: 'primary',
-      title: 'WOD5E.Tabs.Settings',
+      title: 'AZTHARION.Tabs.Settings',
       icon: '<i class="fa-solid fa-gears"></i>'
     }
   }

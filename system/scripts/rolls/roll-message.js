@@ -82,7 +82,7 @@ export async function generateRollMessageData({
       // Mark any die that were rerolled / not used
       if (die.discarded) {
         dieClasses.push(['rerolled'])
-        dieTitle = game.i18n.localize('WOD5E.Chat.Rerolled')
+        dieTitle = game.i18n.localize('AZTHARION.Chat.Rerolled')
       }
 
       // Basic die results
@@ -251,7 +251,7 @@ export async function generateRollMessageData({
     let totalAndDifficulty = `<div class="total-and-difficulty">
       <div class="roll-total">
         <span class="total-title">
-          ${game.i18n.localize('WOD5E.RollList.Total')}
+          ${game.i18n.localize('AZTHARION.RollList.Total')}
         </span>
         <span class="total-contents">
           ${totalResult}
@@ -260,7 +260,7 @@ export async function generateRollMessageData({
     if (difficulty > 0) {
       totalAndDifficulty += `<div class="roll-difficulty">
         <span class="difficulty-title">
-          ${game.i18n.localize('WOD5E.RollList.Difficulty')}
+          ${game.i18n.localize('AZTHARION.RollList.Difficulty')}
         </span>
         <span class="difficulty-contents">
           ${difficulty}

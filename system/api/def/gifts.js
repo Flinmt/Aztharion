@@ -8,19 +8,19 @@ export class Gifts extends BaseDefinitionClass {
   // Run any necessary compilation on ready
   static onReady() {
     // Handle adding custom disciplines from the game settings
-    let customGifts = game.settings.get('wod5e', 'customGifts') || {}
+    let customGifts = game.settings.get('aztharion', 'customGifts') || {}
 
     // Handle adding custom disciplines from any active modules
     const activeModules = game.modules.filter(
-      (module) => module.active === true && module.flags.wod5e
+      (module) => module.active === true && module.flags.aztharion
     )
     activeModules.forEach((module) => {
-      if (module.flags.wod5e.customGifts) {
-        customGifts = customGifts.concat(module.flags.wod5e.customGifts)
+      if (module.flags.aztharion.customGifts) {
+        customGifts = customGifts.concat(module.flags.aztharion.customGifts)
 
         // Log the custom data in the console
         console.log(
-          `World of Darkness 5e | Custom Gifts added by ${module.id}: ${JSON.stringify(module.flags.wod5e.customGifts)}`
+          `World of Darkness 5e | Custom Gifts added by ${module.id}: ${JSON.stringify(module.flags.aztharion.customGifts)}`
         )
       }
     })
@@ -34,75 +34,75 @@ export class Gifts extends BaseDefinitionClass {
   }
 
   static native = {
-    label: 'WOD5E.WTA.Native'
+    label: 'AZTHARION.WTA.Native'
   }
 
   static ragabash = {
-    label: 'WOD5E.WTA.Ragabash'
+    label: 'AZTHARION.WTA.Ragabash'
   }
 
   static theurge = {
-    label: 'WOD5E.WTA.Theurge'
+    label: 'AZTHARION.WTA.Theurge'
   }
 
   static philodox = {
-    label: 'WOD5E.WTA.Philodox'
+    label: 'AZTHARION.WTA.Philodox'
   }
 
   static galliard = {
-    label: 'WOD5E.WTA.Galliard'
+    label: 'AZTHARION.WTA.Galliard'
   }
 
   static ahroun = {
-    label: 'WOD5E.WTA.Ahroun'
+    label: 'AZTHARION.WTA.Ahroun'
   }
 
   static blackfury = {
-    label: 'WOD5E.WTA.BlackFury'
+    label: 'AZTHARION.WTA.BlackFury'
   }
 
   static bonegnawer = {
-    label: 'WOD5E.WTA.BoneGnawer'
+    label: 'AZTHARION.WTA.BoneGnawer'
   }
 
   static childrenofgaia = {
-    label: 'WOD5E.WTA.ChildrenOfGaia'
+    label: 'AZTHARION.WTA.ChildrenOfGaia'
   }
 
   static galestalker = {
-    label: 'WOD5E.WTA.Galestalker'
+    label: 'AZTHARION.WTA.Galestalker'
   }
 
   static ghostcouncil = {
-    label: 'WOD5E.WTA.GhostCouncil'
+    label: 'AZTHARION.WTA.GhostCouncil'
   }
 
   static glasswalker = {
-    label: 'WOD5E.WTA.GlassWalker'
+    label: 'AZTHARION.WTA.GlassWalker'
   }
 
   static hartwarden = {
-    label: 'WOD5E.WTA.HartWarden'
+    label: 'AZTHARION.WTA.HartWarden'
   }
 
   static redtalon = {
-    label: 'WOD5E.WTA.RedTalon'
+    label: 'AZTHARION.WTA.RedTalon'
   }
 
   static shadowlord = {
-    label: 'WOD5E.WTA.ShadowLord'
+    label: 'AZTHARION.WTA.ShadowLord'
   }
 
   static silentstrider = {
-    label: 'WOD5E.WTA.SilentStrider'
+    label: 'AZTHARION.WTA.SilentStrider'
   }
 
   static silverfang = {
-    label: 'WOD5E.WTA.SilverFang'
+    label: 'AZTHARION.WTA.SilverFang'
   }
 
   static rite = {
-    label: 'WOD5E.WTA.Rite'
+    label: 'AZTHARION.WTA.Rite'
   }
 }
 

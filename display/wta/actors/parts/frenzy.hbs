@@ -1,19 +1,19 @@
 <div class="flexcol frenzy">
     <div class="field-header flex-center">
-        {{localize "WOD5E.WTA.FrenzyStatus"}}:
+        {{localize "AZTHARION.WTA.FrenzyStatus"}}:
         <span class="frenzy-status{{#if frenzyActive}} active{{/if}}">
             {{#if frenzyActive}}
-                {{localize "WOD5E.Active"}}
+                {{localize "AZTHARION.Active"}}
             {{else}}
-                {{localize "WOD5E.Inactive"}}
+                {{localize "AZTHARION.Inactive"}}
             {{/if}}
         </span>
     </div>
     <div>
         {{#if frenzyActive}}
-            <button class="werewolf-button end-frenzy" data-action="endFrenzy" type="button" name="endfrenzy">{{localize "WOD5E.WTA.EndFrenzy"}}</button>
+            <button class="werewolf-button end-frenzy" data-action="endFrenzy" type="button" name="endfrenzy">{{localize "AZTHARION.WTA.EndFrenzy"}}</button>
         {{else}}
-            <button class="werewolf-button begin-frenzy" data-action="beginFrenzy" data-form="crinos" type="button" name="beginfrenzy">{{localize "WOD5E.WTA.EnterFrenzy"}}</button>
+            <button class="werewolf-button begin-frenzy" data-action="beginFrenzy" data-form="crinos" type="button" name="beginfrenzy">{{localize "AZTHARION.WTA.EnterFrenzy"}}</button>
         {{/if}}
     </div>
 </div>

@@ -37,11 +37,11 @@ function getMessyCriticalLabel(data, difficultySet) {
   if (difficultySet) {
     // Messy critical
     labelClass = 'messy-critical'
-    labelText = game.i18n.localize('WOD5E.VTM.MessyCritical')
+    labelText = game.i18n.localize('AZTHARION.VTM.MessyCritical')
   } else {
     // Possible messy critical
     labelClass = 'messy-critical'
-    labelText = game.i18n.localize('WOD5E.VTM.PossibleMessyCritical')
+    labelText = game.i18n.localize('AZTHARION.VTM.PossibleMessyCritical')
   }
 
   return {
@@ -57,11 +57,11 @@ function getBestialFailureLabel(data, difficultySet) {
   if (difficultySet) {
     // Bestial failure
     labelClass = 'bestial-failure'
-    labelText = game.i18n.localize('WOD5E.VTM.BestialFailure')
+    labelText = game.i18n.localize('AZTHARION.VTM.BestialFailure')
   } else {
     // Possible bestial failure
     labelClass = 'bestial-failure'
-    labelText = game.i18n.localize('WOD5E.VTM.PossibleBestialFailure')
+    labelText = game.i18n.localize('AZTHARION.VTM.PossibleBestialFailure')
   }
 
   return {

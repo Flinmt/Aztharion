@@ -1,10 +1,10 @@
 <div class="flex-group-center situational-modifiers">
   {{#if situationalModifiers}}
-    <h3 class="list-title">{{localize 'WOD5E.RollList.SelectableModifiers'}}</h3>
+    <h3 class="list-title">{{localize 'AZTHARION.RollList.SelectableModifiers'}}</h3>
     <div class="form-group mod-header">
-      <div>{{localize 'WOD5E.RollList.Source'}}</div>
-      <div>{{localize 'WOD5E.Value'}}</div>
-      <div>{{localize 'WOD5E.Modifier.Active'}}</div>
+      <div>{{localize 'AZTHARION.RollList.Source'}}</div>
+      <div>{{localize 'AZTHARION.Value'}}</div>
+      <div>{{localize 'AZTHARION.Modifier.Active'}}</div>
     </div>
     {{#each situationalModifiers as |mod key|}}
       <div class="form-group modifier">
@@ -17,13 +17,13 @@
       </div>
     {{/each}}
   {{/if}}
-  <h3 class="list-title">{{localize 'WOD5E.RollList.CustomModifiers'}}</h3>
+  <h3 class="list-title">{{localize 'AZTHARION.RollList.CustomModifiers'}}</h3>
   <div class="form-group mod-header">
-    <div>{{localize 'WOD5E.RollList.Source'}}</div>
-    <div>{{localize 'WOD5E.Value'}}</div>
+    <div>{{localize 'AZTHARION.RollList.Source'}}</div>
+    <div>{{localize 'AZTHARION.Value'}}</div>
   </div>
   <div class="form-group custom-modifiers">
     <div id="custom-modifiers-list"></div>
   </div>
-  <a class="add-custom-mod" data-action="addCustomMod">{{localize 'WOD5E.RollList.AddCustomModifier'}}</a>
+  <a class="add-custom-mod" data-action="addCustomMod">{{localize 'AZTHARION.RollList.AddCustomModifier'}}</a>
 </div>

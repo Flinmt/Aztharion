@@ -1,4 +1,4 @@
-<form autocomplete="off" class="wod5e-config-form splat-colors-menu">
+<form autocomplete="off" class="aztharion-config-form splat-colors-menu">
     {{!-- Menu Body --}}
     <section class="sheet-body">
         {{#each cssVariablesRecord as |record|}}
@@ -8,7 +8,7 @@
             {{#each record.settings as |setting|}}
                 <div class="flexrow">
                     <div>
-                        <a class="reset-color" data-input-id="{{setting.id}}" data-setting-id="{{setting.settingId}}" data-css-variable="{{setting.cssVariable}}" title="{{localize 'WOD5E.Reset'}}">
+                        <a class="reset-color" data-input-id="{{setting.id}}" data-setting-id="{{setting.settingId}}" data-css-variable="{{setting.cssVariable}}" title="{{localize 'AZTHARION.Reset'}}">
                             <i class="fa-solid fa-rotate-left"></i>
                         </a>
                         <b>{{localize setting.settingName}}</b>

@@ -5,7 +5,7 @@
                 <div class="description-field">
                     <div class="flex-center">
                         <label class="resource-label field-header">
-                            {{localize "WOD5E.EquipmentList.EquipmentNotes"}}
+                            {{localize "AZTHARION.EquipmentList.EquipmentNotes"}}
                         </label>
                     </div>
                     <div class="description-content resource">
@@ -28,7 +28,7 @@
                             <!-- Item controls for gift item sections -->
                             <div class="item-controls">
                                 <!-- Add new equipment item -->
-                                <a class="item-control item-create" data-action="createItem" title="{{localize 'WOD5E.Add'}}" data-type="{{key}}">
+                                <a class="item-control item-create" data-action="createItem" title="{{localize 'AZTHARION.Add'}}" data-type="{{key}}">
                                     <i class="fas fa-plus"></i>
                                 </a>
                             </div>
@@ -38,7 +38,7 @@
                         <div class="collapsible-container">
                             <div class="flexrow item" data-drag="true" data-item-id="{{item.id}}" data-document-uuid="{{item.uuid}}" data-type="Item">
                                 <div class="item-image">
-                                    <img src="{{item.img}}" class="clickable" data-action="itemChat" data-item-id="{{item._id}}" title="{{localize 'WOD5E.ItemsList.ShowToChat'}}">
+                                    <img src="{{item.img}}" class="clickable" data-action="itemChat" data-item-id="{{item._id}}" title="{{localize 'AZTHARION.ItemsList.ShowToChat'}}">
                                 </div>
                                 <div class="item-name{{#if item.system.enrichedDescription}} collapsible{{/if}}" {{#if item.system.enrichedDescription}}data-action="toggleCollapse"{{/if}}>
                                     {{item.name}}
@@ -57,20 +57,20 @@
                                     {{/if}}
                                     {{#if item.system.uses.enabled}}
                                         <!-- Icon to consume a use of the feature -->
-                                        <a class="item-control item-use" data-action="expendItemUse" data-item-id="{{item._id}}" title="{{localize 'WOD5E.ItemsList.ExpendUse'}}">
+                                        <a class="item-control item-use" data-action="expendItemUse" data-item-id="{{item._id}}" title="{{localize 'AZTHARION.ItemsList.ExpendUse'}}">
                                             <i class="fa-solid fa-angle-down"></i>
                                         </a>
                                         <!-- Icon to restore the uses of the feature back to max -->
-                                        <a class="item-control item-restore" data-action="restoreItemUses" data-item-id="{{item._id}}" title="{{localize 'WOD5E.ItemsList.ResetUses'}}">
+                                        <a class="item-control item-restore" data-action="restoreItemUses" data-item-id="{{item._id}}" title="{{localize 'AZTHARION.ItemsList.ResetUses'}}">
                                             <i class="fa-solid fa-rotate-left"></i>
                                         </a>
                                     {{/if}}
                                     <!-- Icon to edit the item -->
-                                    <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{item._id}}" title="{{localize 'WOD5E.Edit'}}">
+                                    <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{item._id}}" title="{{localize 'AZTHARION.Edit'}}">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Icon to delete the item -->
-                                    <a class="item-control item-delete" data-action="itemDelete" data-item-id="{{item._id}}" title="{{localize 'WOD5E.Delete'}}">
+                                    <a class="item-control item-delete" data-action="itemDelete" data-item-id="{{item._id}}" title="{{localize 'AZTHARION.Delete'}}">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </div>

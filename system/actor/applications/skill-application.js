@@ -20,7 +20,7 @@ export class SkillApplication extends HandlebarsApplicationMixin(ApplicationV2) 
   }
 
   static DEFAULT_OPTIONS = {
-    id: 'wod5e-skill-application',
+    id: 'aztharion-skill-application',
     tag: 'form',
     form: {
       submitOnChange: true,
@@ -31,7 +31,7 @@ export class SkillApplication extends HandlebarsApplicationMixin(ApplicationV2) 
       title: 'Skill Editor',
       resizable: true
     },
-    classes: ['wod5e', 'dialog-app', 'sheet', 'application'],
+    classes: ['aztharion', 'dialog-app', 'sheet', 'application'],
     position: {
       width: 480,
       height: 400
@@ -45,19 +45,19 @@ export class SkillApplication extends HandlebarsApplicationMixin(ApplicationV2) 
 
   static PARTS = {
     form: {
-      template: 'systems/wod5e/display/shared/applications/skill-application/skill-application.hbs'
+      template: 'systems/aztharion/display/shared/applications/skill-application/skill-application.hbs'
     },
     tabs: {
       template: 'templates/generic/tab-navigation.hbs'
     },
     description: {
-      template: 'systems/wod5e/display/shared/applications/skill-application/parts/description.hbs'
+      template: 'systems/aztharion/display/shared/applications/skill-application/parts/description.hbs'
     },
     macro: {
-      template: 'systems/wod5e/display/shared/applications/skill-application/parts/macro.hbs'
+      template: 'systems/aztharion/display/shared/applications/skill-application/parts/macro.hbs'
     },
     modifiers: {
-      template: 'systems/wod5e/display/shared/applications/skill-application/parts/modifiers.hbs'
+      template: 'systems/aztharion/display/shared/applications/skill-application/parts/modifiers.hbs'
     }
   }
 
@@ -70,19 +70,19 @@ export class SkillApplication extends HandlebarsApplicationMixin(ApplicationV2) 
       id: 'description',
       group: 'primary',
       icon: '',
-      label: 'WOD5E.Tabs.Description'
+      label: 'AZTHARION.Tabs.Description'
     },
     macro: {
       id: 'macro',
       group: 'primary',
       icon: '',
-      label: 'WOD5E.ItemsList.Macro'
+      label: 'AZTHARION.ItemsList.Macro'
     },
     modifiers: {
       id: 'modifiers',
       group: 'primary',
       icon: '',
-      label: 'WOD5E.SkillsList.Specialties'
+      label: 'AZTHARION.SkillsList.Specialties'
     }
   }
 

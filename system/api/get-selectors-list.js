@@ -6,35 +6,35 @@ export const getSelectorsList = () => {
   const selectorsList = []
 
   // Attributes
-  const attributes = WOD5E.Attributes.getList({
+  const attributes = AZTHARION.Attributes.getList({
     prependType: true
   })
   // "All Attributes" selector
   selectorsList.push({
     id: 'attributes',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.AttributesList.Attributes')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.AttributesList.Attributes')
     })
   })
   // Physical Attributes
   selectorsList.push({
     id: 'physical',
-    displayName: game.i18n.format('WOD5E.Modifier.AllStringPools', {
-      string: game.i18n.localize('WOD5E.SPC.Physical')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllStringPools', {
+      string: game.i18n.localize('AZTHARION.SPC.Physical')
     })
   })
   // Mental Attributes
   selectorsList.push({
     id: 'mental',
-    displayName: game.i18n.format('WOD5E.Modifier.AllStringPools', {
-      string: game.i18n.localize('WOD5E.SPC.Mental')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllStringPools', {
+      string: game.i18n.localize('AZTHARION.SPC.Mental')
     })
   })
   // Social Attributes
   selectorsList.push({
     id: 'social',
-    displayName: game.i18n.format('WOD5E.Modifier.AllStringPools', {
-      string: game.i18n.localize('WOD5E.SPC.Social')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllStringPools', {
+      string: game.i18n.localize('AZTHARION.SPC.Social')
     })
   })
   // Individual attributes
@@ -46,14 +46,14 @@ export const getSelectorsList = () => {
   }
 
   // Skills
-  const skills = WOD5E.Skills.getList({
+  const skills = AZTHARION.Skills.getList({
     prependType: true
   })
   // "All Skills" selector
   selectorsList.push({
     id: 'skills',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.SkillsList.Skills')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.SkillsList.Skills')
     })
   })
   // Individual skills
@@ -66,23 +66,23 @@ export const getSelectorsList = () => {
   // Willpower
   selectorsList.push({
     id: 'willpower',
-    displayName: game.i18n.localize('WOD5E.Willpower')
+    displayName: game.i18n.localize('AZTHARION.Willpower')
   })
   // Willpower Re-roll
   selectorsList.push({
     id: 'willpower-reroll',
-    displayName: game.i18n.localize('WOD5E.Chat.Willpower')
+    displayName: game.i18n.localize('AZTHARION.Chat.Willpower')
   })
 
   // Vampire
-  const disciplines = WOD5E.Disciplines.getList({
+  const disciplines = AZTHARION.Disciplines.getList({
     prependType: true
   })
   // "All Disciplines" selector
   selectorsList.push({
     id: 'disciplines',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.VTM.Disciplines')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.VTM.Disciplines')
     })
   })
   // Individual disciplines
@@ -95,28 +95,28 @@ export const getSelectorsList = () => {
   // Frenzy
   selectorsList.push({
     id: 'frenzy',
-    displayName: game.i18n.localize('WOD5E.VTM.Frenzy')
+    displayName: game.i18n.localize('AZTHARION.VTM.Frenzy')
   })
   // Remorse
   selectorsList.push({
     id: 'humanity',
-    displayName: game.i18n.localize('WOD5E.VTM.Remorse')
+    displayName: game.i18n.localize('AZTHARION.VTM.Remorse')
   })
   // Feeding
   selectorsList.push({
     id: 'feeding',
-    displayName: game.i18n.localize('WOD5E.VTM.Feeding')
+    displayName: game.i18n.localize('AZTHARION.VTM.Feeding')
   })
 
   // Hunter
-  const edges = WOD5E.Edges.getList({
+  const edges = AZTHARION.Edges.getList({
     prependType: true
   })
   // "All Edges" selector
   selectorsList.push({
     id: 'edges',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.HTR.Edges')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.HTR.Edges')
     })
   })
   // Individual edges
@@ -129,19 +129,19 @@ export const getSelectorsList = () => {
   // Despair
   selectorsList.push({
     id: 'despair',
-    displayName: game.i18n.localize('WOD5E.HTR.Despair')
+    displayName: game.i18n.localize('AZTHARION.HTR.Despair')
   })
 
   // Werewolf
   // Renown
-  const renown = WOD5E.Renown.getList({
+  const renown = AZTHARION.Renown.getList({
     prependType: true
   })
   // "All Renown" selector
   selectorsList.push({
     id: 'renown',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.WTA.Renown')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.WTA.Renown')
     })
   })
   // Individual renown
@@ -153,14 +153,14 @@ export const getSelectorsList = () => {
   }
 
   // Gifts
-  const gifts = WOD5E.Gifts.getList({
+  const gifts = AZTHARION.Gifts.getList({
     prependType: true
   })
   // "All Gifts" selector
   selectorsList.push({
     id: 'gifts',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.WTA.Gifts')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.WTA.Gifts')
     })
   })
   // Individual gifts

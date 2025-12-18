@@ -36,10 +36,10 @@ export async function _damageWillpower(event, target, actor, willpowerDamage, ro
       // then tell the chat and don't increase any values.
       foundry.documents.ChatMessage.implementation.create({
         flags: {
-          wod5e: {
-            name: `${prependTitle}${game.i18n.localize('WOD5E.Chat.WillpowerFullTitle')}`,
-            img: 'systems/wod5e/assets/icons/dice/vampire/bestial-failure.png',
-            description: game.i18n.localize('WOD5E.Chat.WillpowerFull')
+          aztharion: {
+            name: `${prependTitle}${game.i18n.localize('AZTHARION.Chat.WillpowerFullTitle')}`,
+            img: 'systems/aztharion/assets/icons/dice/vampire/bestial-failure.png',
+            description: game.i18n.localize('AZTHARION.Chat.WillpowerFull')
           }
         }
       })
@@ -59,10 +59,10 @@ export async function _damageWillpower(event, target, actor, willpowerDamage, ro
 
   foundry.documents.ChatMessage.implementation.create({
     flags: {
-      wod5e: {
-        name: `${prependTitle}${game.i18n.localize('WOD5E.Chat.WillpowerDamage')}`,
-        img: 'systems/wod5e/assets/icons/dice/vampire/bestial-failure.png',
-        description: `${game.i18n.format('WOD5E.Chat.HasReceivedWillpowerDamage', {
+      aztharion: {
+        name: `${prependTitle}${game.i18n.localize('AZTHARION.Chat.WillpowerDamage')}`,
+        img: 'systems/aztharion/assets/icons/dice/vampire/bestial-failure.png',
+        description: `${game.i18n.format('AZTHARION.Chat.HasReceivedWillpowerDamage', {
           actor: actor.name,
           willpowerDamage
         })}`

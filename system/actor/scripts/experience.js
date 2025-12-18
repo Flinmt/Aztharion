@@ -1,4 +1,4 @@
-const experienceTemplate = 'systems/wod5e/display/shared/actors/parts/experience-display.hbs'
+const experienceTemplate = 'systems/aztharion/display/shared/actors/parts/experience-display.hbs'
 
 export const _onAddExperience = async function (event, target) {
   event.preventDefault()
@@ -13,8 +13,8 @@ export const _onAddExperience = async function (event, target) {
   // Render the template
   const experienceData = {
     name: isSpendingXP
-      ? game.i18n.localize('WOD5E.Experience.XPSpent')
-      : game.i18n.localize('WOD5E.Experience.XPGained'),
+      ? game.i18n.localize('AZTHARION.Experience.XPSpent')
+      : game.i18n.localize('AZTHARION.Experience.XPGained'),
     value: 0
   }
   const experienceContent = await foundry.applications.handlebars.renderTemplate(
@@ -25,23 +25,23 @@ export const _onAddExperience = async function (event, target) {
   const result = await foundry.applications.api.DialogV2.input({
     window: {
       title: isSpendingXP
-        ? game.i18n.localize('WOD5E.Experience.SpendExperience')
-        : game.i18n.localize('WOD5E.Experience.AddExperience')
+        ? game.i18n.localize('AZTHARION.Experience.SpendExperience')
+        : game.i18n.localize('AZTHARION.Experience.AddExperience')
     },
     content: experienceContent,
     ok: {
       icon: 'fas fa-check',
-      label: game.i18n.localize('WOD5E.Add')
+      label: game.i18n.localize('AZTHARION.Add')
     },
     buttons: [
       {
         action: 'cancel',
         icon: 'fas fa-times',
-        label: game.i18n.localize('WOD5E.Cancel'),
+        label: game.i18n.localize('AZTHARION.Cancel'),
         type: 'button'
       }
     ],
-    classes: ['wod5e', system]
+    classes: ['aztharion', system]
   })
 
   if (result !== 'cancel') {
@@ -87,22 +87,22 @@ export const _onRemoveExperience = async function (event, target) {
   // Define the template to be used
   const template = `
     <div class="form-group">
-        <label>${game.i18n.format('WOD5E.ConfirmDeleteDescription', {
+        <label>${game.i18n.format('AZTHARION.ConfirmDeleteDescription', {
           string: experienceToDelete.name
         })}</label>
     </div>`
 
   const shouldDelete = await foundry.applications.api.DialogV2.confirm({
-    window: { title: game.i18n.localize('WOD5E.ConfirmDelete') },
+    window: { title: game.i18n.localize('AZTHARION.ConfirmDelete') },
     content: template,
     yes: {
-      label: game.i18n.localize('WOD5E.Delete')
+      label: game.i18n.localize('AZTHARION.Delete')
     },
     no: {
-      label: game.i18n.localize('WOD5E.Cancel'),
+      label: game.i18n.localize('AZTHARION.Cancel'),
       default: true
     },
-    classes: ['wod5e', system]
+    classes: ['aztharion', system]
   })
 
   if (shouldDelete) {
@@ -144,20 +144,20 @@ export const _onEditExperience = async function (event, target) {
   )
 
   const result = await foundry.applications.api.DialogV2.input({
-    window: { title: game.i18n.localize('WOD5E.Experience.EditExperience') },
+    window: { title: game.i18n.localize('AZTHARION.Experience.EditExperience') },
     content: experienceContent,
     ok: {
       icon: 'fas fa-check',
-      label: game.i18n.localize('WOD5E.Save')
+      label: game.i18n.localize('AZTHARION.Save')
     },
     buttons: [
       {
         action: 'cancel',
         icon: 'fas fa-times',
-        label: game.i18n.localize('WOD5E.Cancel')
+        label: game.i18n.localize('AZTHARION.Cancel')
       }
     ],
-    classes: ['wod5e', system]
+    classes: ['aztharion', system]
   })
 
   if (result !== 'cancel') {

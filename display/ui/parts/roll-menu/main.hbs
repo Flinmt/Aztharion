@@ -3,11 +3,11 @@
     <!-- Name input -->
     <div class="roll-basic-info flexrow">
       <label class="flexcol">
-        {{localize 'WOD5E.Name'}}
+        {{localize 'AZTHARION.Name'}}
         <input type="text" name="name" value="{{activeRoll.name}}"/>
       </label>
       <label class="flexcol" style="flex-grow: 0; padding-left: 10px;">
-        {{localize 'WOD5E.RollList.Difficulty'}}
+        {{localize 'AZTHARION.RollList.Difficulty'}}
         <input type="number" name="difficulty" min="0" value="{{activeRoll.difficulty}}" style="align-self: center;"/>
       </label>
     </div>
@@ -16,16 +16,16 @@
       <!-- Skill and Attribute selectors -->
       <div class="roll-dice-selectors flexrow">
         <label>
-          {{localize 'WOD5E.SkillsList.Label'}}
+          {{localize 'AZTHARION.SkillsList.Label'}}
           <select id="skillSelect" name="skillSelect">
-            <option value="">{{localize "WOD5E.None"}}</option>
+            <option value="">{{localize "AZTHARION.None"}}</option>
             {{selectOptions skillOptions selected=activeRoll.dice.skill localize=true}}
           </select>
         </label>
         <label>
-          {{localize 'WOD5E.AttributesList.Label'}}
+          {{localize 'AZTHARION.AttributesList.Label'}}
           <select id="attributeSelect" name="attributeSelect">
-            <option value="">{{localize "WOD5E.None"}}</option>
+            <option value="">{{localize "AZTHARION.None"}}</option>
             {{selectOptions attributeOptions selected=activeRoll.dice.attribute localize=true}}
           </select>
         </label>
@@ -41,11 +41,11 @@
       <div class="roll-options flexrow">
         <div class="option-toggle">
           <input type="checkbox" name="extendedRollCheckbox" {{#if activeRoll.isExtendedRoll}}checked{{/if}}/>
-          {{localize 'WOD5E.RollList.IsExtended'}}
+          {{localize 'AZTHARION.RollList.IsExtended'}}
         </div>
         <div class="option-toggle">
           <input type="checkbox" name="contestedRollCheckbox" {{#if activeRoll.isContestedRoll}}checked{{/if}}/>
-          {{localize 'WOD5E.RollList.IsContested'}}
+          {{localize 'AZTHARION.RollList.IsContested'}}
         </div>
       </div>
       -->
@@ -55,11 +55,11 @@
       <div class="roll-menu-footer-buttons">
         <div class="roll-button clickable-button" data-action="rollFromRollMenu">
           <i class="fa-solid fa-dice-d10"></i>
-          {{localize 'WOD5E.RollList.Label'}}
+          {{localize 'AZTHARION.RollList.Label'}}
         </div>
         <div class="prompt-button clickable-button" data-action="promptInChat">
           <i class="fas fa-comment-alt"></i>
-          {{localize 'WOD5E.RollList.PromptInChat'}}
+          {{localize 'AZTHARION.RollList.PromptInChat'}}
         </div>
       </div>
     </div>

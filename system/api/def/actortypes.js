@@ -21,13 +21,13 @@ export class ActorTypes extends BaseDefinitionClass {
   }
 
   static mortal = {
-    label: 'WOD5E.Mortal',
+    label: 'AZTHARION.Mortal',
     types: ['mortal'],
     sheetClass: MortalActorSheet
   }
 
   static spc = {
-    label: 'WOD5E.SPC.Label',
+    label: 'AZTHARION.SPC.Label',
     types: ['spc'],
     sheetClass: SPCActorSheet
   }
@@ -39,7 +39,7 @@ export class ActorTypes extends BaseDefinitionClass {
   }
 
   static ghoul = {
-    label: 'WOD5E.VTM.Ghoul',
+    label: 'AZTHARION.VTM.Ghoul',
     types: ['ghoul'],
     sheetClass: GhoulActorSheet
   }
@@ -57,7 +57,7 @@ export class ActorTypes extends BaseDefinitionClass {
   }
 
   static group = {
-    label: 'WOD5E.GroupSheet',
+    label: 'AZTHARION.GroupSheet',
     types: ['group'],
     sheetClass: GroupActorSheet
   }

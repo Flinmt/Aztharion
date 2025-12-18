@@ -12,10 +12,10 @@ export async function _increaseHunger(actor, amount, rollMode) {
   if (amount > 0 && currentHunger === hungerMax) {
     foundry.documents.ChatMessage.implementation.create({
       flags: {
-        wod5e: {
-          name: game.i18n.localize('WOD5E.VTM.HungerFull1'),
-          img: 'systems/wod5e/assets/icons/dice/vampire/bestial-failure.png',
-          description: game.i18n.localize('WOD5E.VTM.HungerFull2')
+        aztharion: {
+          name: game.i18n.localize('AZTHARION.VTM.HungerFull1'),
+          img: 'systems/aztharion/assets/icons/dice/vampire/bestial-failure.png',
+          description: game.i18n.localize('AZTHARION.VTM.HungerFull2')
         }
       }
     })

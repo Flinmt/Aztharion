@@ -16,9 +16,9 @@ import { cssVariablesRecord } from './update-css-variables.js'
  */
 export const loadSettings = async function () {
   // Whether definitions will be sorted alphabetically based on the currently selected language
-  game.settings.register('wod5e', 'sortDefAlphabetically', {
-    name: game.i18n.localize('WOD5E.Settings.SortDefAlphabetically'),
-    hint: game.i18n.localize('WOD5E.Settings.SortDefAlphabeticallyHint'),
+  game.settings.register('aztharion', 'sortDefAlphabetically', {
+    name: game.i18n.localize('AZTHARION.Settings.SortDefAlphabetically'),
+    hint: game.i18n.localize('AZTHARION.Settings.SortDefAlphabeticallyHint'),
     scope: 'world',
     config: true,
     type: new foundry.data.fields.StringField({
@@ -26,18 +26,18 @@ export const loadSettings = async function () {
       blank: false,
       initial: 'default',
       choices: {
-        default: 'WOD5E.Settings.Default',
-        all: 'WOD5E.Settings.All',
-        none: 'WOD5E.Settings.None'
+        default: 'AZTHARION.Settings.Default',
+        all: 'AZTHARION.Settings.All',
+        none: 'AZTHARION.Settings.None'
       }
     }),
     requiresReload: true
   })
 
   // Deactivate Vampire Revised Font
-  game.settings.register('wod5e', 'disableVampireFont', {
-    name: game.i18n.localize('WOD5E.Settings.DisableVampireFont'),
-    hint: game.i18n.localize('WOD5E.Settings.DisableVampireFontHint'),
+  game.settings.register('aztharion', 'disableVampireFont', {
+    name: game.i18n.localize('AZTHARION.Settings.DisableVampireFont'),
+    hint: game.i18n.localize('AZTHARION.Settings.DisableVampireFontHint'),
     scope: 'client',
     config: true,
     default: false,
@@ -46,9 +46,9 @@ export const loadSettings = async function () {
   })
 
   // Whether the actor banner will appear on sheets or not
-  game.settings.register('wod5e', 'actorBanner', {
-    name: game.i18n.localize('WOD5E.Settings.ActorBanner'),
-    hint: game.i18n.localize('WOD5E.Settings.ActorBannerHint'),
+  game.settings.register('aztharion', 'actorBanner', {
+    name: game.i18n.localize('AZTHARION.Settings.ActorBanner'),
+    hint: game.i18n.localize('AZTHARION.Settings.ActorBannerHint'),
     scope: 'client',
     config: true,
     default: true,
@@ -64,39 +64,39 @@ export const loadSettings = async function () {
   */
 
   // Automation Menu
-  game.settings.registerMenu('wod5e', 'automationMenu', {
-    name: game.i18n.localize('WOD5E.Settings.AutomationSettings'),
-    hint: game.i18n.localize('WOD5E.Settings.AutomationSettingsHint'),
-    label: game.i18n.localize('WOD5E.Settings.AutomationSettings'),
+  game.settings.registerMenu('aztharion', 'automationMenu', {
+    name: game.i18n.localize('AZTHARION.Settings.AutomationSettings'),
+    hint: game.i18n.localize('AZTHARION.Settings.AutomationSettingsHint'),
+    label: game.i18n.localize('AZTHARION.Settings.AutomationSettings'),
     icon: 'fas fa-wrench',
     type: AutomationMenu,
     restricted: true
   })
 
   // Disable All Automation
-  game.settings.register('wod5e', 'disableAutomation', {
-    name: game.i18n.localize('WOD5E.Settings.DisableAutomation'),
-    hint: game.i18n.localize('WOD5E.Settings.DisableAutomationHint'),
+  game.settings.register('aztharion', 'disableAutomation', {
+    name: game.i18n.localize('AZTHARION.Settings.DisableAutomation'),
+    hint: game.i18n.localize('AZTHARION.Settings.DisableAutomationHint'),
     scope: 'world',
     config: false,
     default: false,
     type: Boolean,
     onChange: async (value) => {
       if (value) {
-        await game.settings.set('wod5e', 'automatedWillpower', false)
-        await game.settings.set('wod5e', 'automatedHunger', false)
-        await game.settings.set('wod5e', 'automatedOblivion', false)
-        await game.settings.set('wod5e', 'automatedRage', false)
+        await game.settings.set('aztharion', 'automatedWillpower', false)
+        await game.settings.set('aztharion', 'automatedHunger', false)
+        await game.settings.set('aztharion', 'automatedOblivion', false)
+        await game.settings.set('aztharion', 'automatedRage', false)
       } else {
-        await game.settings.set('wod5e', 'automatedWillpower', true)
-        await game.settings.set('wod5e', 'automatedHunger', true)
-        await game.settings.set('wod5e', 'automatedOblivion', true)
-        await game.settings.set('wod5e', 'automatedRage', true)
+        await game.settings.set('aztharion', 'automatedWillpower', true)
+        await game.settings.set('aztharion', 'automatedHunger', true)
+        await game.settings.set('aztharion', 'automatedOblivion', true)
+        await game.settings.set('aztharion', 'automatedRage', true)
       }
 
       // Re-render the automation window once settings are updated
       const AutomationWindow = Object.values(ui.windows).filter(
-        (w) => w.id === 'wod5e-automation'
+        (w) => w.id === 'aztharion-automation'
       )[0]
       if (AutomationWindow) {
         AutomationWindow.render()
@@ -105,9 +105,9 @@ export const loadSettings = async function () {
   })
 
   // Automated Willpower
-  game.settings.register('wod5e', 'automatedWillpower', {
-    name: game.i18n.localize('WOD5E.Settings.AutomateWillpower'),
-    hint: game.i18n.localize('WOD5E.Settings.AutomateWillpowerHint'),
+  game.settings.register('aztharion', 'automatedWillpower', {
+    name: game.i18n.localize('AZTHARION.Settings.AutomateWillpower'),
+    hint: game.i18n.localize('AZTHARION.Settings.AutomateWillpowerHint'),
     scope: 'world',
     config: false,
     default: true,
@@ -115,9 +115,9 @@ export const loadSettings = async function () {
   })
 
   // Automated Hunger
-  game.settings.register('wod5e', 'automatedHunger', {
-    name: game.i18n.localize('WOD5E.Settings.AutomateHunger'),
-    hint: game.i18n.localize('WOD5E.Settings.AutomateHungerHint'),
+  game.settings.register('aztharion', 'automatedHunger', {
+    name: game.i18n.localize('AZTHARION.Settings.AutomateHunger'),
+    hint: game.i18n.localize('AZTHARION.Settings.AutomateHungerHint'),
     scope: 'world',
     config: false,
     default: true,
@@ -125,9 +125,9 @@ export const loadSettings = async function () {
   })
 
   // Automated Oblivion Rolls
-  game.settings.register('wod5e', 'automatedOblivion', {
-    name: game.i18n.localize('WOD5E.Settings.AutomateOblivion'),
-    hint: game.i18n.localize('WOD5E.Settings.AutomateOblivionHint'),
+  game.settings.register('aztharion', 'automatedOblivion', {
+    name: game.i18n.localize('AZTHARION.Settings.AutomateOblivion'),
+    hint: game.i18n.localize('AZTHARION.Settings.AutomateOblivionHint'),
     scope: 'world',
     config: false,
     default: true,
@@ -135,9 +135,9 @@ export const loadSettings = async function () {
   })
 
   // Automated Rage
-  game.settings.register('wod5e', 'automatedRage', {
-    name: game.i18n.localize('WOD5E.Settings.AutomateRage'),
-    hint: game.i18n.localize('WOD5E.Settings.AutomateRageHint'),
+  game.settings.register('aztharion', 'automatedRage', {
+    name: game.i18n.localize('AZTHARION.Settings.AutomateRage'),
+    hint: game.i18n.localize('AZTHARION.Settings.AutomateRageHint'),
     scope: 'world',
     config: false,
     default: true,
@@ -149,10 +149,10 @@ export const loadSettings = async function () {
   */
 
   // Register the storyteller menu
-  game.settings.registerMenu('wod5e', 'storytellerMenu', {
-    name: game.i18n.localize('WOD5E.Settings.StorytellerMenu'),
-    hint: game.i18n.localize('WOD5E.Settings.StorytellerMenuHint'),
-    label: game.i18n.localize('WOD5E.Settings.StorytellerMenu'),
+  game.settings.registerMenu('aztharion', 'storytellerMenu', {
+    name: game.i18n.localize('AZTHARION.Settings.StorytellerMenu'),
+    hint: game.i18n.localize('AZTHARION.Settings.StorytellerMenuHint'),
+    label: game.i18n.localize('AZTHARION.Settings.StorytellerMenu'),
     icon: 'fas fa-bars',
     type: StorytellerMenu,
     restricted: true
@@ -183,9 +183,9 @@ export const loadSettings = async function () {
 
   for (const [, value] of Object.entries(modCustomList)) {
     // Register the modification
-    game.settings.register('wod5e', `modified${value.defCategory}`, {
-      name: game.i18n.localize(`WOD5E.Settings.Modified${value.defCategory}`),
-      hint: game.i18n.localize(`WOD5E.Settings.Modified${value.defCategory}Hint`),
+    game.settings.register('aztharion', `modified${value.defCategory}`, {
+      name: game.i18n.localize(`AZTHARION.Settings.Modified${value.defCategory}`),
+      hint: game.i18n.localize(`AZTHARION.Settings.Modified${value.defCategory}Hint`),
       scope: 'world',
       config: false,
       default: [],
@@ -200,9 +200,9 @@ export const loadSettings = async function () {
     })
 
     // Register the custom subtype
-    game.settings.register('wod5e', `custom${value.defCategory}`, {
-      name: game.i18n.localize(`WOD5E.Settings.Custom${value.defCategory}`),
-      hint: game.i18n.localize(`WOD5E.Settings.Custom${value.defCategory}Hint`),
+    game.settings.register('aztharion', `custom${value.defCategory}`, {
+      name: game.i18n.localize(`AZTHARION.Settings.Custom${value.defCategory}`),
+      hint: game.i18n.localize(`AZTHARION.Settings.Custom${value.defCategory}Hint`),
       scope: 'world',
       config: false,
       default: [],
@@ -221,9 +221,9 @@ export const loadSettings = async function () {
   }
 
   // Automatically collapse chat message descriptions
-  game.settings.register('wod5e', 'autoCollapseDescriptions', {
-    name: game.i18n.localize('WOD5E.Settings.AutoCollapseDescriptions'),
-    hint: game.i18n.localize('WOD5E.Settings.AutoCollapseDescriptionsHint'),
+  game.settings.register('aztharion', 'autoCollapseDescriptions', {
+    name: game.i18n.localize('AZTHARION.Settings.AutoCollapseDescriptions'),
+    hint: game.i18n.localize('AZTHARION.Settings.AutoCollapseDescriptionsHint'),
     scope: 'client',
     config: true,
     default: false,
@@ -231,9 +231,9 @@ export const loadSettings = async function () {
   })
 
   // Override for the default actor header image
-  game.settings.register('wod5e', 'actorHeaderOverride', {
-    name: game.i18n.localize('WOD5E.Settings.ActorHeaderOverride'),
-    hint: game.i18n.localize('WOD5E.Settings.ActorHeaderOverrideHint'),
+  game.settings.register('aztharion', 'actorHeaderOverride', {
+    name: game.i18n.localize('AZTHARION.Settings.ActorHeaderOverride'),
+    hint: game.i18n.localize('AZTHARION.Settings.ActorHeaderOverrideHint'),
     scope: 'world',
     config: true,
     default: '',
@@ -246,9 +246,9 @@ export const loadSettings = async function () {
   })
 
   // Override for the default actor backgrounds
-  game.settings.register('wod5e', 'actorBackgroundOverride', {
-    name: game.i18n.localize('WOD5E.Settings.ActorBackgroundOverride'),
-    hint: game.i18n.localize('WOD5E.Settings.ActorBackgroundOverrideHint'),
+  game.settings.register('aztharion', 'actorBackgroundOverride', {
+    name: game.i18n.localize('AZTHARION.Settings.ActorBackgroundOverride'),
+    hint: game.i18n.localize('AZTHARION.Settings.ActorBackgroundOverrideHint'),
     scope: 'world',
     config: true,
     default: '',
@@ -261,9 +261,9 @@ export const loadSettings = async function () {
   })
 
   // Override for the "Gain" XP Icon
-  game.settings.register('wod5e', 'gainXpIconOverride', {
-    name: game.i18n.localize('WOD5E.Settings.GainXpIconOverride'),
-    hint: game.i18n.localize('WOD5E.Settings.GainXpIconOverrideHint'),
+  game.settings.register('aztharion', 'gainXpIconOverride', {
+    name: game.i18n.localize('AZTHARION.Settings.GainXpIconOverride'),
+    hint: game.i18n.localize('AZTHARION.Settings.GainXpIconOverrideHint'),
     scope: 'world',
     config: true,
     default: '',
@@ -279,9 +279,9 @@ export const loadSettings = async function () {
   })
 
   // Override for the "Spend" XP Icon
-  game.settings.register('wod5e', 'spendXpIconOverride', {
-    name: game.i18n.localize('WOD5E.Settings.SpendXpIconOverride'),
-    hint: game.i18n.localize('WOD5E.Settings.SpendXpIconOverrideHint'),
+  game.settings.register('aztharion', 'spendXpIconOverride', {
+    name: game.i18n.localize('AZTHARION.Settings.SpendXpIconOverride'),
+    hint: game.i18n.localize('AZTHARION.Settings.SpendXpIconOverrideHint'),
     scope: 'world',
     config: true,
     default: '',
@@ -297,9 +297,9 @@ export const loadSettings = async function () {
   })
 
   // Override for the "Neutral" XP Icon
-  game.settings.register('wod5e', 'neutralXpIconOverride', {
-    name: game.i18n.localize('WOD5E.Settings.NeutralXpIconOverride'),
-    hint: game.i18n.localize('WOD5E.Settings.NeutralXpIconOverrideHint'),
+  game.settings.register('aztharion', 'neutralXpIconOverride', {
+    name: game.i18n.localize('AZTHARION.Settings.NeutralXpIconOverride'),
+    hint: game.i18n.localize('AZTHARION.Settings.NeutralXpIconOverrideHint'),
     scope: 'world',
     config: true,
     default: '',
@@ -315,9 +315,9 @@ export const loadSettings = async function () {
   })
 
   // World Version, only really needed by developers
-  game.settings.register('wod5e', 'worldVersion', {
-    name: game.i18n.localize('WOD5E.Settings.WorldVersion'),
-    hint: game.i18n.localize('WOD5E.Settings.WorldVersionHint'),
+  game.settings.register('aztharion', 'worldVersion', {
+    name: game.i18n.localize('AZTHARION.Settings.WorldVersion'),
+    hint: game.i18n.localize('AZTHARION.Settings.WorldVersionHint'),
     scope: 'world',
     config: true,
     default: '1.5',
@@ -325,7 +325,7 @@ export const loadSettings = async function () {
   })
 
   // Whether the user declined the migration or not
-  game.settings.register('wod5e', 'declinedMigration', {
+  game.settings.register('aztharion', 'declinedMigration', {
     scope: 'world',
     config: false,
     default: false,
@@ -333,7 +333,7 @@ export const loadSettings = async function () {
   })
 
   // Whether the world has finished the settings migration or not
-  game.settings.register('wod5e', 'settingsMigrationComplete', {
+  game.settings.register('aztharion', 'settingsMigrationComplete', {
     scope: 'world',
     config: false,
     default: false,
@@ -345,10 +345,10 @@ export const loadSettings = async function () {
   */
 
   // Register the splat colors menu
-  game.settings.registerMenu('wod5e', 'splatColorsMenu', {
-    name: game.i18n.localize('WOD5E.Settings.SplatColorsMenu'),
-    hint: game.i18n.localize('WOD5E.Settings.SplatColorsHint'),
-    label: game.i18n.localize('WOD5E.Settings.SplatColorsMenu'),
+  game.settings.registerMenu('aztharion', 'splatColorsMenu', {
+    name: game.i18n.localize('AZTHARION.Settings.SplatColorsMenu'),
+    hint: game.i18n.localize('AZTHARION.Settings.SplatColorsHint'),
+    label: game.i18n.localize('AZTHARION.Settings.SplatColorsMenu'),
     icon: 'fa-solid fa-palette',
     type: SplatColorsMenu,
     restricted: true
@@ -363,7 +363,7 @@ export const loadSettings = async function () {
       const { settingId, defaultColor } = settings[settingKey]
 
       // Register the setting
-      game.settings.register('wod5e', settingId, {
+      game.settings.register('aztharion', settingId, {
         scope: 'world',
         config: false,
         default: defaultColor,
@@ -374,7 +374,7 @@ export const loadSettings = async function () {
 }
 
 function _rerenderStorytellerWindow() {
-  const storytellerWindow = Object.values(ui.windows).filter((w) => w.id === 'wod5e-storyteller')[0]
+  const storytellerWindow = Object.values(ui.windows).filter((w) => w.id === 'aztharion-storyteller')[0]
 
   if (storytellerWindow) {
     storytellerWindow.render()
@@ -385,7 +385,7 @@ function _rerenderStorytellerWindow() {
  * Set whether the system uses the vampireRevised font for headers or not
  */
 export const _updateHeaderFontPreference = async function () {
-  const clientSetting = game.settings.get('wod5e', 'disableVampireFont')
+  const clientSetting = game.settings.get('aztharion', 'disableVampireFont')
 
   if (clientSetting) {
     // Remove the class from the document body
@@ -400,9 +400,9 @@ export const _updateHeaderFontPreference = async function () {
  * Update the XP icons
  */
 export const _updateXpIconOverrides = async function () {
-  const spendIcon = game.settings.get('wod5e', 'spendXpIconOverride')
-  const gainIcon = game.settings.get('wod5e', 'gainXpIconOverride')
-  const neutralIcon = game.settings.get('wod5e', 'neutralXpIconOverride')
+  const spendIcon = game.settings.get('aztharion', 'spendXpIconOverride')
+  const gainIcon = game.settings.get('aztharion', 'gainXpIconOverride')
+  const neutralIcon = game.settings.get('aztharion', 'neutralXpIconOverride')
 
   if (spendIcon) {
     document.documentElement.style.setProperty('--xp-spend-icon', `url("/${spendIcon}")`)

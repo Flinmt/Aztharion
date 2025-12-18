@@ -8,15 +8,15 @@ export class Weapons extends BaseDefinitionClass {
   }
 
   static ranged = {
-    label: 'WOD5E.EquipmentList.Ranged'
+    label: 'AZTHARION.EquipmentList.Ranged'
   }
 
   static melee = {
-    label: 'WOD5E.EquipmentList.Melee'
+    label: 'AZTHARION.EquipmentList.Melee'
   }
 
   static supernatural = {
-    label: 'WOD5E.EquipmentList.Supernatural'
+    label: 'AZTHARION.EquipmentList.Supernatural'
   }
 }
 

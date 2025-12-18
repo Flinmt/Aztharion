@@ -9,16 +9,28 @@ import {
   prepareStatsContext,
   prepareLimitedContext
 } from '../scripts/prepare-partials.js'
-import { prepareDisciplinesContext } from './scripts/prepare-partials.js'
+import { prepareDisciplinesContext, prepareBloodContext } from './scripts/prepare-partials.js'
+import { prepareEdgesContext } from '../htr/scripts/prepare-partials.js'
 // Various button functions
 import {
   _onAddDiscipline,
-  _onRemoveDiscipline,
   _onDisciplineToChat,
+  _onRemoveDiscipline,
   _onSelectDiscipline,
   _onSelectDisciplinePower
 } from './scripts/disciplines.js'
+import { _onFrenzyRoll } from './scripts/frenzy-roll.js'
+import { _onEndFrenzy } from './scripts/end-frenzy.js'
 import { _onRemorseRoll } from './scripts/roll-remorse.js'
+import {
+  _onAddEdge,
+  _onRemoveEdge,
+  _onEdgeToChat,
+  _onSelectEdgePerk,
+  _onSelectEdge
+} from '../htr/scripts/edges.js'
+
+// import { _onDotCounterChange, _onDotCounterEmpty } from '../scripts/counters.js'
 // Base actor sheet to extend from
 import { WoDActorBase } from '../wod-actor-base.js'
 // Mixin
@@ -28,22 +40,31 @@ const { HandlebarsApplicationMixin } = foundry.applications.api
  * Extend the WoDActorBase document
  * @extends {WoDActorBase}
  */
-export class GhoulActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
+export class AztharionActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
   static DEFAULT_OPTIONS = {
-    classes: ['aztharion', 'actor', 'sheet', 'vampire'],
+    classes: ['aztharion', 'actor', 'sheet', 'vampire', 'aztharion'],
     actions: {
       addDiscipline: _onAddDiscipline,
       removeDiscipline: _onRemoveDiscipline,
       disciplineChat: _onDisciplineToChat,
       selectDiscipline: _onSelectDiscipline,
       selectDisciplinePower: _onSelectDisciplinePower,
-      remorseRoll: _onRemorseRoll
+      resistFrenzy: _onFrenzyRoll,
+      endFrenzy: _onEndFrenzy,
+      remorseRoll: _onRemorseRoll,
+      addEdge: _onAddEdge,
+      removeEdge: _onRemoveEdge,
+      edgeChat: _onEdgeToChat,
+      selectEdge: _onSelectEdge,
+      selectEdgePerk: _onSelectEdgePerk,
+      dotCounterChange: _onDotCounterChange,
+      dotCounterEmpty: _onDotCounterEmpty
     }
   }
 
   static PARTS = {
     header: {
-      template: 'systems/aztharion/display/vtm/actors/ghoul-sheet.hbs'
+      template: 'systems/aztharion/display/vtm/actors/aztharion-sheet.hbs'
     },
     tabs: {
       template: 'systems/aztharion/display/shared/actors/parts/tab-navigation.hbs'
@@ -56,6 +77,9 @@ export class GhoulActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
     },
     disciplines: {
       template: 'systems/aztharion/display/vtm/actors/parts/disciplines.hbs'
+    },
+    edges: {
+      template: 'systems/aztharion/display/htr/actors/parts/edges.hbs'
     },
     features: {
       template: 'systems/aztharion/display/shared/actors/parts/features.hbs'
@@ -99,6 +123,12 @@ export class GhoulActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
       title: 'AZTHARION.VTM.Disciplines',
       icon: '<span class="aztharion-symbol">b</span>'
     },
+    edges: {
+      id: 'edges',
+      group: 'primary',
+      title: 'AZTHARION.HTR.Edges',
+      icon: '<span class="aztharion-symbol hunter">e</span>'
+    },
     features: {
       id: 'features',
       group: 'primary',
@@ -137,10 +167,15 @@ export class GhoulActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
     const actor = this.actor
     const actorData = actor.system
 
+    // Filters for item-specific data
+    const clanFilter = actor.items.filter((item) => item.type === 'clan')
+
     // Prepare vampire-specific items
     data.domitor = actorData.headers.domitor
     data.humanity = actorData.humanity
     data.hunger = actorData.hunger
+    data.clan = clanFilter[0]
+    data.frenzyActive = actorData.frenzyActive
 
     return data
   }
@@ -165,6 +200,14 @@ export class GhoulActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
       // Disciplines
       case 'disciplines':
         return prepareDisciplinesContext(context, actor)
+
+      // Edges
+      case 'edges':
+        return prepareEdgesContext(context, actor)
+
+      // Disciplines
+      case 'blood':
+        return prepareBloodContext(context, actor)
 
       // Features
       case 'features':
@@ -193,4 +236,48 @@ export class GhoulActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
 
     return context
   }
+
+}
+
+/**
+ * Handle dot counters
+ */
+async function _onDotCounterChange(event, target) {
+  event.preventDefault()
+
+  // Top-level variables
+  const element = target
+  const dataset = element.dataset
+  const index = parseInt(dataset.index)
+  const parent = element.closest('.resource-value')
+  const fieldStrings = parent.dataset.name
+
+  // Actor
+  const actor = this.actor
+
+  // Debugging
+  // ui.notifications.info(`Debug: Updating ${fieldStrings} to ${index + 1} for ${actor.name}`)
+
+  // Update
+  if (index >= 0) {
+      await actor.update({ [fieldStrings]: index + 1 })
+  }
+}
+
+/**
+ * Handle empty dot counters
+ */
+async function _onDotCounterEmpty(event, target) {
+  event.preventDefault()
+  
+  // Top-level variables
+  const element = target
+  const parent = element.closest('.resource-value')
+  const fieldStrings = parent.dataset.name
+
+  // Actor
+  const actor = this.actor
+
+  // Update
+  await actor.update({ [fieldStrings]: 0 })
 }

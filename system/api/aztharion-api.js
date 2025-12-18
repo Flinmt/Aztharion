@@ -2,7 +2,7 @@ import { WOD5eDice } from '../scripts/system-rolls.js'
 import { _onConfirmRoll } from '../actor/scripts/roll.js'
 import { generateLocalizedLabel } from './generate-localization.js'
 
-export class wod5eAPI {
+export class aztharionAPI {
   /**
    * Class that handles all WOD5e rolls.
    *
@@ -47,7 +47,7 @@ export class wod5eAPI {
     macro = ''
   }) {
     if (!actor || !data) {
-      ui.notifications.error(game.i18n.localize('WOD5E.Notifications.NoActorDefined'))
+      ui.notifications.error(game.i18n.localize('AZTHARION.Notifications.NoActorDefined'))
 
       return
     }
@@ -80,7 +80,7 @@ export class wod5eAPI {
     if (!actor) return ui.notifications.warn('No actor defined.')
 
     // Prompt a roll from a dataset
-    WOD5E.api.RollFromDataset(
+    AZTHARION.api.RollFromDataset(
       {
         dataset: {
           selectDialog: true
@@ -110,16 +110,16 @@ export class wod5eAPI {
     const { skill, attribute, discipline, renown, difficulty } = dataset
 
     // Attribute definitions
-    const attributeOptions = WOD5E.Attributes.getList({})
+    const attributeOptions = AZTHARION.Attributes.getList({})
     // Skill definitions
-    const skillOptions = WOD5E.Skills.getList({})
+    const skillOptions = AZTHARION.Skills.getList({})
     // Discipline definitions
-    const disciplineOptions = WOD5E.Disciplines.getList({})
+    const disciplineOptions = AZTHARION.Disciplines.getList({})
     // Renown definitions
-    const renownOptions = WOD5E.Renown.getList({})
+    const renownOptions = AZTHARION.Renown.getList({})
 
     // Render selecting a skill/attribute to roll
-    const dialogTemplate = 'systems/wod5e/display/ui/select-dice-dialog.hbs'
+    const dialogTemplate = 'systems/aztharion/display/ui/select-dice-dialog.hbs'
     const dialogData = {
       system: actor.system.gamesystem,
       skill,
@@ -143,21 +143,21 @@ export class wod5eAPI {
     // Render the dialog window to select which skill/attribute combo to use
     const result = await foundry.applications.api.DialogV2.input({
       window: {
-        title: game.i18n.localize('WOD5E.RollList.SelectRoll')
+        title: game.i18n.localize('AZTHARION.RollList.SelectRoll')
       },
       content,
       ok: {
         icon: 'fas fa-dice',
-        label: game.i18n.localize('WOD5E.Confirm')
+        label: game.i18n.localize('AZTHARION.Confirm')
       },
       buttons: [
         {
           action: 'cancel',
           icon: 'fas fa-times',
-          label: game.i18n.localize('WOD5E.Cancel')
+          label: game.i18n.localize('AZTHARION.Cancel')
         }
       ],
-      classes: ['wod5e', actor.system.gamesystem]
+      classes: ['aztharion', actor.system.gamesystem]
     })
 
     if (result !== 'cancel') {
@@ -183,7 +183,7 @@ export class wod5eAPI {
       if (skillSelect) {
         // Add it to the label
         labelArray.push(
-          await WOD5E.api.generateLabelAndLocalize({ string: skillSelect, type: 'skills' })
+          await AZTHARION.api.generateLabelAndLocalize({ string: skillSelect, type: 'skills' })
         )
 
         // Add it to the value path if applicable
@@ -200,7 +200,7 @@ export class wod5eAPI {
       if (attributeSelect) {
         // Add it to the label
         labelArray.push(
-          await WOD5E.api.generateLabelAndLocalize({ string: attributeSelect, type: 'attributes' })
+          await AZTHARION.api.generateLabelAndLocalize({ string: attributeSelect, type: 'attributes' })
         )
 
         // Add it to the value path if applicable
@@ -214,14 +214,14 @@ export class wod5eAPI {
         selectorsArray = selectorsArray.concat([
           'attributes',
           `attributes.${attributeSelect}`,
-          `${WOD5E.Attributes.getList({})[attributeSelect].type}`
+          `${AZTHARION.Attributes.getList({})[attributeSelect].type}`
         ])
       }
       // Handle adding a second attribute to the dicepool
       if (attributeSelect2) {
         // Add it to the label
         labelArray.push(
-          await WOD5E.api.generateLabelAndLocalize({ string: attributeSelect2, type: 'attributes' })
+          await AZTHARION.api.generateLabelAndLocalize({ string: attributeSelect2, type: 'attributes' })
         )
 
         // Add it to the value path if applicable
@@ -235,14 +235,14 @@ export class wod5eAPI {
         selectorsArray = selectorsArray.concat([
           'attributes',
           `attributes.${attributeSelect2}`,
-          `${WOD5E.Attributes.getList({})[attributeSelect2].type}`
+          `${AZTHARION.Attributes.getList({})[attributeSelect2].type}`
         ])
       }
       // Handle adding a discipline to the dicepool
       if (disciplineSelect) {
         // Add it to the label
         labelArray.push(
-          await WOD5E.api.generateLabelAndLocalize({ string: disciplineSelect, type: 'discipline' })
+          await AZTHARION.api.generateLabelAndLocalize({ string: disciplineSelect, type: 'discipline' })
         )
 
         // Add it to the value path if applicable
@@ -267,7 +267,7 @@ export class wod5eAPI {
       if (renownSelect) {
         // Add it to the label
         labelArray.push(
-          await WOD5E.api.generateLabelAndLocalize({ string: renownSelect, type: 'renown' })
+          await AZTHARION.api.generateLabelAndLocalize({ string: renownSelect, type: 'renown' })
         )
 
         // Add it to the value path if applicable

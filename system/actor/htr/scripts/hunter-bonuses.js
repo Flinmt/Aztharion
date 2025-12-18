@@ -1,7 +1,7 @@
 export const getHunterModifiers = async function (actorData) {
   const bonuses = [
     {
-      source: game.i18n.localize('WOD5E.HTR.Drive'),
+      source: game.i18n.localize('AZTHARION.HTR.Drive'),
       value: actorData.desperation.value,
       paths: ['all'],
       unless: ['despair'],

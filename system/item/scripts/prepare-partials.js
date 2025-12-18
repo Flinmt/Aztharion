@@ -82,11 +82,11 @@ export const prepareEffectsContext = async function (context, item) {
 
   // Part-specific data
   context.modeOptions = {
-    2: 'WOD5E.ItemsList.Add',
-    5: 'WOD5E.ItemsList.Override'
+    2: 'AZTHARION.ItemsList.Add',
+    5: 'AZTHARION.ItemsList.Override'
   }
   context.flatSourceOptions = {
-    static: 'WOD5E.ItemsList.Static'
+    static: 'AZTHARION.ItemsList.Static'
   }
   context.effects = Object.entries(itemData.effects).reduce(
     (acc, [key, effect]) => {

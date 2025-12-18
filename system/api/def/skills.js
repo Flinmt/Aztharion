@@ -8,19 +8,19 @@ export class Skills extends BaseDefinitionClass {
   // Run any necessary compilation on ready
   static onReady() {
     // Handle adding custom disciplines from the game settings
-    let customSkills = game.settings.get('wod5e', 'customSkills') || {}
+    let customSkills = game.settings.get('aztharion', 'customSkills') || {}
 
     // Handle adding custom disciplines from any active modules
     const activeModules = game.modules.filter(
-      (module) => module.active === true && module.flags.wod5e
+      (module) => module.active === true && module.flags.aztharion
     )
     activeModules.forEach((module) => {
-      if (module.flags.wod5e.customSkills) {
-        customSkills = customSkills.concat(module.flags.wod5e.customSkills)
+      if (module.flags.aztharion.customSkills) {
+        customSkills = customSkills.concat(module.flags.aztharion.customSkills)
 
         // Log the custom data in the console
         console.log(
-          `World of Darkness 5e | Custom Skills added by ${module.id}: ${JSON.stringify(module.flags.wod5e.customSkills)}`
+          `World of Darkness 5e | Custom Skills added by ${module.id}: ${JSON.stringify(module.flags.aztharion.customSkills)}`
         )
       }
     })
@@ -49,137 +49,137 @@ export class Skills extends BaseDefinitionClass {
   }
 
   static athletics = {
-    label: 'WOD5E.SkillsList.Athletics',
+    label: 'AZTHARION.SkillsList.Athletics',
     type: 'physical'
   }
 
   static animalken = {
-    label: 'WOD5E.SkillsList.AnimalKen',
+    label: 'AZTHARION.SkillsList.AnimalKen',
     type: 'social'
   }
 
   static academics = {
-    label: 'WOD5E.SkillsList.Academics',
+    label: 'AZTHARION.SkillsList.Academics',
     type: 'mental'
   }
 
   static brawl = {
-    label: 'WOD5E.SkillsList.Brawl',
+    label: 'AZTHARION.SkillsList.Brawl',
     type: 'physical'
   }
 
   static etiquette = {
-    label: 'WOD5E.SkillsList.Etiquette',
+    label: 'AZTHARION.SkillsList.Etiquette',
     type: 'social'
   }
 
   static awareness = {
-    label: 'WOD5E.SkillsList.Awareness',
+    label: 'AZTHARION.SkillsList.Awareness',
     type: 'mental'
   }
 
   static craft = {
-    label: 'WOD5E.SkillsList.Craft',
+    label: 'AZTHARION.SkillsList.Craft',
     type: 'physical'
   }
 
   static insight = {
-    label: 'WOD5E.SkillsList.Insight',
+    label: 'AZTHARION.SkillsList.Insight',
     type: 'social'
   }
 
   static finance = {
-    label: 'WOD5E.SkillsList.Finance',
+    label: 'AZTHARION.SkillsList.Finance',
     type: 'mental'
   }
 
   static drive = {
-    label: 'WOD5E.SkillsList.Drive',
+    label: 'AZTHARION.SkillsList.Drive',
     type: 'physical'
   }
 
   static intimidation = {
-    label: 'WOD5E.SkillsList.Intimidation',
+    label: 'AZTHARION.SkillsList.Intimidation',
     type: 'social'
   }
 
   static investigation = {
-    label: 'WOD5E.SkillsList.Investigation',
+    label: 'AZTHARION.SkillsList.Investigation',
     type: 'mental'
   }
 
   static firearms = {
-    label: 'WOD5E.SkillsList.Firearms',
+    label: 'AZTHARION.SkillsList.Firearms',
     type: 'physical'
   }
 
   static leadership = {
-    label: 'WOD5E.SkillsList.Leadership',
+    label: 'AZTHARION.SkillsList.Leadership',
     type: 'social'
   }
 
   static medicine = {
-    label: 'WOD5E.SkillsList.Medicine',
+    label: 'AZTHARION.SkillsList.Medicine',
     type: 'mental'
   }
 
   static larceny = {
-    label: 'WOD5E.SkillsList.Larceny',
+    label: 'AZTHARION.SkillsList.Larceny',
     type: 'physical'
   }
 
   static performance = {
-    label: 'WOD5E.SkillsList.Performance',
+    label: 'AZTHARION.SkillsList.Performance',
     type: 'social'
   }
 
   static occult = {
-    label: 'WOD5E.SkillsList.Occult',
+    label: 'AZTHARION.SkillsList.Occult',
     type: 'mental'
   }
 
   static melee = {
-    label: 'WOD5E.SkillsList.Melee',
+    label: 'AZTHARION.SkillsList.Melee',
     type: 'physical'
   }
 
   static persuasion = {
-    label: 'WOD5E.SkillsList.Persuasion',
+    label: 'AZTHARION.SkillsList.Persuasion',
     type: 'social'
   }
 
   static politics = {
-    label: 'WOD5E.SkillsList.Politics',
+    label: 'AZTHARION.SkillsList.Politics',
     type: 'mental'
   }
 
   static stealth = {
-    label: 'WOD5E.SkillsList.Stealth',
+    label: 'AZTHARION.SkillsList.Stealth',
     type: 'physical'
   }
 
   static streetwise = {
-    label: 'WOD5E.SkillsList.Streetwise',
+    label: 'AZTHARION.SkillsList.Streetwise',
     type: 'social'
   }
 
   static science = {
-    label: 'WOD5E.SkillsList.Science',
+    label: 'AZTHARION.SkillsList.Science',
     type: 'mental'
   }
 
   static survival = {
-    label: 'WOD5E.SkillsList.Survival',
+    label: 'AZTHARION.SkillsList.Survival',
     type: 'physical'
   }
 
   static subterfuge = {
-    label: 'WOD5E.SkillsList.Subterfuge',
+    label: 'AZTHARION.SkillsList.Subterfuge',
     type: 'social'
   }
 
   static technology = {
-    label: 'WOD5E.SkillsList.Technology',
+    label: 'AZTHARION.SkillsList.Technology',
     type: 'mental'
   }
 }

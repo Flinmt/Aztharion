@@ -158,8 +158,8 @@ export const MigrateRolldataToDicepools = async function () {
   function getDicePath(string, data) {
     string.toLowerCase()
 
-    const skillsList = WOD5E.Skills.getList({})
-    const attributesList = WOD5E.Attributes.getList({})
+    const skillsList = AZTHARION.Skills.getList({})
+    const attributesList = AZTHARION.Attributes.getList({})
 
     if (string in skillsList) {
       return `skills.${string}`

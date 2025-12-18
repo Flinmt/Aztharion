@@ -56,7 +56,7 @@ export class GroupActorSheet extends HandlebarsApplicationMixin(
       icon: 'fa-solid fa-dice-d10',
       resizable: true
     },
-    classes: ['wod5e', 'actor', 'group', 'sheet'],
+    classes: ['aztharion', 'actor', 'group', 'sheet'],
     position: {
       width: 700,
       height: 600
@@ -95,28 +95,28 @@ export class GroupActorSheet extends HandlebarsApplicationMixin(
 
   static PARTS = {
     header: {
-      template: 'systems/wod5e/display/shared/actors/group-sheet.hbs'
+      template: 'systems/aztharion/display/shared/actors/group-sheet.hbs'
     },
     tabs: {
-      template: 'systems/wod5e/display/shared/actors/parts/tab-navigation.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/tab-navigation.hbs'
     },
     members: {
-      template: 'systems/wod5e/display/shared/actors/parts/group/group-members.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/group/group-members.hbs'
     },
     features: {
-      template: 'systems/wod5e/display/shared/actors/parts/group/features.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/group/features.hbs'
     },
     equipment: {
-      template: 'systems/wod5e/display/shared/actors/parts/equipment.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/equipment.hbs'
     },
     notepad: {
-      template: 'systems/wod5e/display/shared/actors/parts/notepad.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/notepad.hbs'
     },
     settings: {
-      template: 'systems/wod5e/display/shared/actors/parts/actor-settings.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/actor-settings.hbs'
     },
     banner: {
-      template: 'systems/wod5e/display/shared/actors/parts/type-banner.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/type-banner.hbs'
     }
   }
 
@@ -128,31 +128,31 @@ export class GroupActorSheet extends HandlebarsApplicationMixin(
     members: {
       id: 'members',
       group: 'primary',
-      title: 'WOD5E.Tabs.Members',
+      title: 'AZTHARION.Tabs.Members',
       icon: '<i class="fa-solid fa-person"></i>'
     },
     features: {
       id: 'features',
       group: 'primary',
-      title: 'WOD5E.Tabs.Features',
+      title: 'AZTHARION.Tabs.Features',
       icon: '<i class="fas fa-gem"></i>'
     },
     equipment: {
       id: 'equipment',
       group: 'primary',
-      title: 'WOD5E.Tabs.Equipment',
+      title: 'AZTHARION.Tabs.Equipment',
       icon: '<i class="fa-solid fa-toolbox"></i>'
     },
     notepad: {
       id: 'notepad',
       group: 'primary',
-      title: 'WOD5E.Tabs.Notes',
+      title: 'AZTHARION.Tabs.Notes',
       icon: '<i class="fas fa-sticky-note"></i>'
     },
     settings: {
       id: 'settings',
       group: 'primary',
-      title: 'WOD5E.Tabs.Settings',
+      title: 'AZTHARION.Tabs.Settings',
       icon: '<i class="fa-solid fa-gears"></i>'
     }
   }
@@ -209,7 +209,7 @@ export class GroupActorSheet extends HandlebarsApplicationMixin(
 
       features: actorData.features,
 
-      displayBanner: game.settings.get('wod5e', 'actorBanner'),
+      displayBanner: game.settings.get('aztharion', 'actorBanner'),
 
       headerbg: await getActorHeader(actor),
       actorbg: actor.system?.settings?.background,
@@ -526,7 +526,7 @@ export class GroupActorSheet extends HandlebarsApplicationMixin(
         !(actorType === 'group' && whitelist.includes(this.actor.system.groupType))
       ) {
         ui.notifications.warn(
-          game.i18n.format('WOD5E.ItemsList.ItemCannotBeDroppedOnActor', {
+          game.i18n.format('AZTHARION.ItemsList.ItemCannotBeDroppedOnActor', {
             string1: itemType,
             string2: actorType
           })
@@ -538,7 +538,7 @@ export class GroupActorSheet extends HandlebarsApplicationMixin(
       // If the blacklist contains any entries, we can check to make sure this actor type isn't disallowed for the item
       if (!foundry.utils.isEmpty(blacklist) && blacklist.indexOf(actorType) > -1) {
         ui.notifications.warn(
-          game.i18n.format('WOD5E.ItemsList.ItemCannotBeDroppedOnActor', {
+          game.i18n.format('AZTHARION.ItemsList.ItemCannotBeDroppedOnActor', {
             string1: itemType,
             string2: actorType
           })

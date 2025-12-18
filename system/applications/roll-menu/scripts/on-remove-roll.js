@@ -1,14 +1,14 @@
 export const _onRemoveSavedRoll = async function (event, target) {
   // Grab all the variables we need upfront
   const rollToRemove = target.closest('.saved-roll').getAttribute('data-id')
-  const currentActiveRoll = game.users.current.getFlag('wod5e', 'rollMenuActiveRoll')
+  const currentActiveRoll = game.users.current.getFlag('aztharion', 'rollMenuActiveRoll')
   const savedRolls = foundry.utils.duplicate(
-    game.users.current.getFlag('wod5e', 'rollMenuSavedRolls')
+    game.users.current.getFlag('aztharion', 'rollMenuSavedRolls')
   )
 
   // Define the content of the Dialog
   const content = `<p>
-    ${game.i18n.format('WOD5E.ConfirmDeleteDescription', {
+    ${game.i18n.format('AZTHARION.ConfirmDeleteDescription', {
       string: savedRolls[currentActiveRoll].name
     })}
   </p>`
@@ -16,18 +16,18 @@ export const _onRemoveSavedRoll = async function (event, target) {
   // Prompt a dialog for the user to confirm they want to delete the item
   const confirmDelete = await foundry.applications.api.DialogV2.wait({
     window: {
-      title: game.i18n.localize('WOD5E.ConfirmDelete')
+      title: game.i18n.localize('AZTHARION.ConfirmDelete')
     },
-    classes: ['wod5e', 'dialog'],
+    classes: ['aztharion', 'dialog'],
     content,
     modal: true,
     buttons: [
       {
-        label: game.i18n.localize('WOD5E.Confirm'),
+        label: game.i18n.localize('AZTHARION.Confirm'),
         action: true
       },
       {
-        label: game.i18n.localize('WOD5E.Cancel'),
+        label: game.i18n.localize('AZTHARION.Cancel'),
         action: false
       }
     ]
@@ -43,14 +43,14 @@ export const _onRemoveSavedRoll = async function (event, target) {
       const keys = Object.keys(savedRolls)
       const newActiveRoll = keys.length ? keys[0] : ''
 
-      await game.users.current.setFlag('wod5e', 'rollMenuActiveRoll', newActiveRoll)
+      await game.users.current.setFlag('aztharion', 'rollMenuActiveRoll', newActiveRoll)
     }
 
     // Update the saved rolls flag
-    await game.users.current.update({ [`flags.wod5e.rollMenuSavedRolls.-=${rollToRemove}`]: null })
+    await game.users.current.update({ [`flags.aztharion.rollMenuSavedRolls.-=${rollToRemove}`]: null })
 
     // Re-render the application window once settings are updated
-    const RollMenuApplication = foundry.applications.instances.get('wod5e-roll-menu')
+    const RollMenuApplication = foundry.applications.instances.get('aztharion-roll-menu')
     if (RollMenuApplication) {
       RollMenuApplication.render()
     }

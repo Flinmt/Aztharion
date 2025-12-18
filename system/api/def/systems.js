@@ -8,7 +8,7 @@ export class Systems extends BaseDefinitionClass {
   }
 
   static mortal = {
-    label: 'WOD5E.Mortal'
+    label: 'AZTHARION.Mortal'
   }
 
   static vampire = {

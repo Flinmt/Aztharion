@@ -59,7 +59,7 @@ export class WoDActorDirectory extends foundry.applications.sidebar.tabs.ActorDi
           ${group.name}
         </h3>
         <a class='create-button open-sheet' data-uuid='Actor.${group.id}' title='` +
-        game.i18n.localize('WOD5E.OpenSheet') +
+        game.i18n.localize('AZTHARION.OpenSheet') +
         `'>
           <i class="fas fa-user"></i>
         </a>

@@ -11,7 +11,7 @@ export const _onWillpowerRoll = async function (event) {
 
   WOD5eDice.Roll({
     basicDice: dicePool,
-    title: game.i18n.localize('WOD5E.Chat.RollingWillpower'),
+    title: game.i18n.localize('AZTHARION.Chat.RollingWillpower'),
     selectors: ['willpower'],
     actor,
     data: actor.system,

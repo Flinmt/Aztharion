@@ -1,10 +1,10 @@
 export class AutomationMenu extends FormApplication {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      title: game.i18n.localize('WOD5E.Settings.AutomationSettings'),
-      id: 'wod5e-automation',
-      classes: ['wod5e'],
-      template: 'systems/wod5e/display/ui/automation-menu.hbs',
+      title: game.i18n.localize('AZTHARION.Settings.AutomationSettings'),
+      id: 'aztharion-automation',
+      classes: ['aztharion'],
+      template: 'systems/aztharion/display/ui/automation-menu.hbs',
       width: 500,
       height: 'auto',
       resizable: true,
@@ -19,11 +19,11 @@ export class AutomationMenu extends FormApplication {
     const data = await super.getData()
 
     // Encrich editor content
-    data.disableAutomation = game.settings.get('wod5e', 'disableAutomation')
-    data.automatedWillpower = game.settings.get('wod5e', 'automatedWillpower')
-    data.automatedHunger = game.settings.get('wod5e', 'automatedHunger')
-    data.automatedOblivion = game.settings.get('wod5e', 'automatedOblivion')
-    data.automatedRage = game.settings.get('wod5e', 'automatedRage')
+    data.disableAutomation = game.settings.get('aztharion', 'disableAutomation')
+    data.automatedWillpower = game.settings.get('aztharion', 'automatedWillpower')
+    data.automatedHunger = game.settings.get('aztharion', 'automatedHunger')
+    data.automatedOblivion = game.settings.get('aztharion', 'automatedOblivion')
+    data.automatedRage = game.settings.get('aztharion', 'automatedRage')
 
     return data
   }
@@ -41,7 +41,7 @@ export class AutomationMenu extends FormApplication {
           const settingId = data.id
           const value = event.target.checked
 
-          game.settings.set('wod5e', settingId, value)
+          game.settings.set('aztharion', settingId, value)
         }
       })
     })

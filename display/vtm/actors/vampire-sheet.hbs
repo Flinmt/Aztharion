@@ -3,20 +3,20 @@
     <div class="header-fields">
         <div class="header-fields-left">
             {{!-- Health Tracker --}}
-            {{> "systems/wod5e/display/shared/actors/parts/health.hbs"}}
+            {{> "systems/aztharion/display/shared/actors/parts/health.hbs"}}
             {{!-- Willpower Tracker --}}
-            {{> "systems/wod5e/display/shared/actors/parts/willpower.hbs"}}
+            {{> "systems/aztharion/display/shared/actors/parts/willpower.hbs"}}
         </div>
     </div>
     <!-- Middle of the header -->
-    {{> "systems/wod5e/display/shared/actors/parts/header-profile.hbs"}}
+    {{> "systems/aztharion/display/shared/actors/parts/header-profile.hbs"}}
     <div class="header-fields">
         <div class="header-fields-right">
             <div class="flexcol">
                 <div class="field-section flexrow">
                     <div class="flexrow nowrap flexend">
                         <div class="flexcol shared-row">
-                            <label class="resource-label field-header">{{localize 'WOD5E.VTM.Clan'}}</label>
+                            <label class="resource-label field-header">{{localize 'AZTHARION.VTM.Clan'}}</label>
                             <div class="resource resource-content">
                                 {{#if clan}}
                                     <span class="data-item nowrap">
@@ -33,13 +33,13 @@
                             </div>
                         </div>
                     </div>
-                    {{> "systems/wod5e/display/vtm/actors/parts/frenzy.hbs"}}
+                    {{> "systems/aztharion/display/vtm/actors/parts/frenzy.hbs"}}
                 </div>
                 <div class="flexcol field-section">
-                    <label class="resource-label field-header">{{localize "WOD5E.VTM.Hunger"}}</label>
+                    <label class="resource-label field-header">{{localize "AZTHARION.VTM.Hunger"}}</label>
                     <div class="flexrow">
-                        {{> "systems/wod5e/display/vtm/actors/parts/hunger.hbs"}}
-                        {{> "systems/wod5e/display/vtm/actors/parts/rouse.hbs"}}
+                        {{> "systems/aztharion/display/vtm/actors/parts/hunger.hbs"}}
+                        {{> "systems/aztharion/display/vtm/actors/parts/rouse.hbs"}}
                     </div>
                 </div>
             </div>

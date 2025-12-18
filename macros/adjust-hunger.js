@@ -4,7 +4,7 @@ const actorsList = tokens.map((i) => i.actor)
 
 // Build the options for the select dropdown
 const content = new foundry.data.fields.NumberField({
-  label: game.i18n.localize('WOD5E.Compendiums.Macros.AdjustHungerBy'),
+  label: game.i18n.localize('AZTHARION.Compendiums.Macros.AdjustHungerBy'),
   required: true,
   nullable: false,
   initial: 0,
@@ -20,9 +20,9 @@ const content = new foundry.data.fields.NumberField({
 // Prompt a dialog to determine which edge we're adding
 const hungerModifier = await foundry.applications.api.DialogV2.prompt({
   window: {
-    title: game.i18n.localize('WOD5E.Compendiums.Macros.AdjustHunger')
+    title: game.i18n.localize('AZTHARION.Compendiums.Macros.AdjustHunger')
   },
-  classes: ['wod5e', 'macro', 'dialog', 'vampire', 'dialog'],
+  classes: ['aztharion', 'macro', 'dialog', 'vampire', 'dialog'],
   content,
   ok: {
     callback: (event, button) =>

@@ -6,7 +6,7 @@
 [![ESLint]][ESLint URL]
 [![Downloads]][Downloads URL]
 
-This system is for playing multiple World of Darkness 5th edition systems on the Foundry Virtual Tabletop System. For a list of the latest changes, see the [Changelog](https://github.com/WoD5E-Developers/wod5e/releases). You can also read further about the system in general on the [WOD5E Documentation](https://wod5e-developers.github.io/) site!
+This system is for playing multiple World of Darkness 5th edition systems on the Foundry Virtual Tabletop System. For a list of the latest changes, see the [Changelog](https://github.com/Aztharion-Developers/aztharion/releases). You can also read further about the system in general on the [AZTHARION Documentation](https://aztharion-developers.github.io/) site!
 
 Current supported systems include:
 * Vampire the Masquerade, 5th Edition
@@ -26,7 +26,7 @@ Replace the 1s with however many you want to roll for each type, and let the dic
 
 ## Feedback
 
-Bugs or feature requests created to this repository are greatly appreciate. Please use the [Issues](https://github.com/WoD5E-Developers/wod5e/issues) page for these!
+Bugs or feature requests created to this repository are greatly appreciate. Please use the [Issues](https://github.com/Aztharion-Developers/aztharion/issues) page for these!
 
 You can also reach out to Veilza on Discord, or leave a message in the #wod channel in the official Foundry Discord server, with any issues. We'd love to help you get your game running smoothly!
 
@@ -36,7 +36,7 @@ Please check the issues list before suggesting new features.
 
 The lead system developer is [Veilza](https://github.com/Veilza), and the original creator of the system is [Rayji96](https://github.com/Rayji96).
 
-There's lots of other people who contribute to the system, too, and you can find the full list of them down [here](https://github.com/WoD5E-Developers/.github/blob/main/contributors.md)!
+There's lots of other people who contribute to the system, too, and you can find the full list of them down [here](https://github.com/Aztharion-Developers/.github/blob/main/contributors.md)!
 
 If you'd like to help contribute too, just open a pull request any time!
 
@@ -66,17 +66,17 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-[Foundry Version Support]: https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dplastic%26url%3Dhttps%3A%2F%2Fgithub.com%2FWoD5E-Developers%2Fwod5e%2Freleases%2Flatest%2Fdownload%2Fsystem.json
-[System URL]: https://foundryvtt.com/packages/wod5e/
+[Foundry Version Support]: https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dplastic%26url%3Dhttps%3A%2F%2Fgithub.com%2FAztharion-Developers%2Faztharion%2Freleases%2Flatest%2Fdownload%2Fsystem.json
+[System URL]: https://foundryvtt.com/packages/aztharion/
 
 [GNU GPL v3 License]: https://img.shields.io/badge/License-GNU_GPL_v3-green
 [License URL]: ./LICENSE.md
 
-[ESLint]: https://github.com/WoD5E-Developers/wod5e/actions/workflows/.eslintrc.yml/badge.svg
-[ESLint URL]: https://github.com/WoD5E-Developers/wod5e/actions/workflows/.eslintrc.yml
+[ESLint]: https://github.com/Aztharion-Developers/aztharion/actions/workflows/.eslintrc.yml/badge.svg
+[ESLint URL]: https://github.com/Aztharion-Developers/aztharion/actions/workflows/.eslintrc.yml
 
-[Downloads]: https://img.shields.io/github/downloads/wod5e-developers/wod5e/wod5e.zip
-[Downloads URL]: https://github.com/WoD5E-Developers/wod5e/releases
+[Downloads]: https://img.shields.io/github/downloads/aztharion-developers/aztharion/aztharion.zip
+[Downloads URL]: https://github.com/Aztharion-Developers/aztharion/releases
 
 [Dark Pack]: https://s3-eu-north-1.amazonaws.com/pdx-campaign-wp-data/uploads/sites/10/2021/10/05102936/darkpack_logo2-300x300.png
 [Dark Pack URL]: https://www.paradoxinteractive.com/games/world-of-darkness/community/dark-pack-agreement

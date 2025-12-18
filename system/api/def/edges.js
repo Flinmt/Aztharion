@@ -8,19 +8,19 @@ export class Edges extends BaseDefinitionClass {
   // Run any necessary compilation on ready
   static onReady() {
     // Handle adding custom disciplines from the game settings
-    let customEdges = game.settings.get('wod5e', 'customEdges') || {}
+    let customEdges = game.settings.get('aztharion', 'customEdges') || {}
 
     // Handle adding custom disciplines from any active modules
     const activeModules = game.modules.filter(
-      (module) => module.active === true && module.flags.wod5e
+      (module) => module.active === true && module.flags.aztharion
     )
     activeModules.forEach((module) => {
-      if (module.flags.wod5e.customEdges) {
-        customEdges = customEdges.concat(module.flags.wod5e.customEdges)
+      if (module.flags.aztharion.customEdges) {
+        customEdges = customEdges.concat(module.flags.aztharion.customEdges)
 
         // Log the custom data in the console
         console.log(
-          `World of Darkness 5e | Custom Edges added by ${module.id}: ${JSON.stringify(module.flags.wod5e.customEdges)}`
+          `World of Darkness 5e | Custom Edges added by ${module.id}: ${JSON.stringify(module.flags.aztharion.customEdges)}`
         )
       }
     })
@@ -34,67 +34,67 @@ export class Edges extends BaseDefinitionClass {
   }
 
   static arsenal = {
-    label: 'WOD5E.HTR.Arsenal'
+    label: 'AZTHARION.HTR.Arsenal'
   }
 
   static fleet = {
-    label: 'WOD5E.HTR.Fleet'
+    label: 'AZTHARION.HTR.Fleet'
   }
 
   static ordnance = {
-    label: 'WOD5E.HTR.Ordnance'
+    label: 'AZTHARION.HTR.Ordnance'
   }
 
   static library = {
-    label: 'WOD5E.HTR.Library'
+    label: 'AZTHARION.HTR.Library'
   }
 
   static improvisedgear = {
-    label: 'WOD5E.HTR.ImprovisedGear'
+    label: 'AZTHARION.HTR.ImprovisedGear'
   }
 
   static globalaccess = {
-    label: 'WOD5E.HTR.GlobalAccess'
+    label: 'AZTHARION.HTR.GlobalAccess'
   }
 
   static dronejockey = {
-    label: 'WOD5E.HTR.DroneJockey'
+    label: 'AZTHARION.HTR.DroneJockey'
   }
 
   static beastwhisperer = {
-    label: 'WOD5E.HTR.BeastWhisperer'
+    label: 'AZTHARION.HTR.BeastWhisperer'
   }
 
   static sensetheunnatural = {
-    label: 'WOD5E.HTR.SenseTheUnnatural'
+    label: 'AZTHARION.HTR.SenseTheUnnatural'
   }
 
   static repeltheunnatural = {
-    label: 'WOD5E.HTR.RepelTheUnnatural'
+    label: 'AZTHARION.HTR.RepelTheUnnatural'
   }
 
   static thwarttheunnatural = {
-    label: 'WOD5E.HTR.ThwartTheUnnatural'
+    label: 'AZTHARION.HTR.ThwartTheUnnatural'
   }
 
   static artifact = {
-    label: 'WOD5E.HTR.Artifact'
+    label: 'AZTHARION.HTR.Artifact'
   }
 
   static turncoat = {
-    label: 'WOD5E.HTR.Turncoat'
+    label: 'AZTHARION.HTR.Turncoat'
   }
 
   static experimentalmedicine = {
-    label: 'WOD5E.HTR.ExperimentalMedicine'
+    label: 'AZTHARION.HTR.ExperimentalMedicine'
   }
 
   static cleansetheunnatural = {
-    label: 'WOD5E.HTR.CleanseTheUnnatural'
+    label: 'AZTHARION.HTR.CleanseTheUnnatural'
   }
 
   static greatdestiny = {
-    label: 'WOD5E.HTR.GreatDestiny'
+    label: 'AZTHARION.HTR.GreatDestiny'
   }
 }
 

@@ -36,7 +36,7 @@ export class WoDHotbar extends foundry.applications.ui.Hotbar {
     const item = fromUuidSync(document.uuid)
 
     // Create the macro command
-    const command = `WOD5E.api._onRollItemFromMacro('${item.name}')`
+    const command = `AZTHARION.api._onRollItemFromMacro('${item.name}')`
 
     return await Macro.create({
       name: item.name,

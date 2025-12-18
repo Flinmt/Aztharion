@@ -6,12 +6,12 @@ export const _onAddDiscipline = async function (event) {
   const actor = this.actor
 
   // Secondary variables
-  const disciplineList = WOD5E.Disciplines.getList({})
+  const disciplineList = AZTHARION.Disciplines.getList({})
 
   // Build the options for the select dropdown
   const content = new foundry.data.fields.StringField({
     choices: disciplineList,
-    label: game.i18n.localize('WOD5E.VTM.SelectDiscipline'),
+    label: game.i18n.localize('AZTHARION.VTM.SelectDiscipline'),
     required: true
   }).toFormGroup(
     {},
@@ -23,9 +23,9 @@ export const _onAddDiscipline = async function (event) {
   // Prompt a dialog to determine which discipline we're adding
   const disciplineSelected = await foundry.applications.api.DialogV2.prompt({
     window: {
-      title: game.i18n.localize('WOD5E.VTM.AddDiscipline')
+      title: game.i18n.localize('AZTHARION.VTM.AddDiscipline')
     },
-    classes: ['wod5e', 'dialog', 'vampire', 'dialog'],
+    classes: ['aztharion', 'dialog', 'vampire', 'dialog'],
     content,
     ok: {
       callback: (event, button) =>
@@ -67,7 +67,7 @@ export const _onDisciplineToChat = async function (event, target) {
 
   foundry.documents.ChatMessage.implementation.create({
     flags: {
-      wod5e: {
+      aztharion: {
         name: discipline.displayName,
         img: 'icons/svg/dice-target.svg',
         description: discipline?.description

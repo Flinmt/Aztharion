@@ -210,7 +210,7 @@ export class WoDActor extends Actor {
     }
 
     // If the actor is a player, update the default permissions to limited
-    if (this.hasPlayerOwner && !this.getFlag('wod5e', 'manualDefaultOwnership') && game.user.isGM) {
+    if (this.hasPlayerOwner && !this.getFlag('aztharion', 'manualDefaultOwnership') && game.user.isGM) {
       this.update({ 'ownership.default': CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED })
     }
 
@@ -272,7 +272,7 @@ export class WoDActor extends Actor {
 
     // If the default ownership is ever not limited, update the manualDefaultOwnership flag
     if (actor.ownership.default !== CONST.DOCUMENT_OWNERSHIP_LEVELS.LIMITED) {
-      await actor.setFlag('wod5e', 'manualDefaultOwnership', true)
+      await actor.setFlag('aztharion', 'manualDefaultOwnership', true)
     }
 
     // If the actor is a group...

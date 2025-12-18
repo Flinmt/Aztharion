@@ -60,22 +60,22 @@ export class BaseDefinitionClass {
     // Check if modifications are enabled
     if (this.modsEnabled && this.defCategory) {
       // Get the modifications for a particular defCategory from the game settings
-      modifications = game.settings.get('wod5e', `modified${this.defCategory}`) || {}
+      modifications = game.settings.get('aztharion', `modified${this.defCategory}`) || {}
 
       // Handle adding modifications from any active modules
       const activeModules = game.modules.filter(
-        (module) => module.active === true && module.flags.wod5e
+        (module) => module.active === true && module.flags.aztharion
       )
       activeModules.forEach((module) => {
         // Check that this module has any modifications for the current definition type
-        if (module.flags.wod5e.modifications && module.flags.wod5e.modifications[this.type]) {
+        if (module.flags.aztharion.modifications && module.flags.aztharion.modifications[this.type]) {
           // Push modifications from the module flags by searching up modifications: { defCategory: { ..} }
           // to follow the same pattern as custom categories
-          modifications = [...modifications, ...module.flags.wod5e.modifications[this.type]]
+          modifications = [...modifications, ...module.flags.aztharion.modifications[this.type]]
 
           // Log the modification data in the console
           console.log(
-            `World of Darkness 5e | Modified ${this.defCategory} added by ${module.id}: ${JSON.stringify(module.flags.wod5e.modifications[this.type])}`
+            `World of Darkness 5e | Modified ${this.defCategory} added by ${module.id}: ${JSON.stringify(module.flags.aztharion.modifications[this.type])}`
           )
         }
       })
@@ -137,7 +137,7 @@ export class BaseDefinitionClass {
 
   static setSortAlphabetically() {
     // This will set the static property on the class that calls this method
-    const sortingSetting = game.settings.get('wod5e', 'sortDefAlphabetically')
+    const sortingSetting = game.settings.get('aztharion', 'sortDefAlphabetically')
 
     if (sortingSetting === 'all' || sortingSetting === 'default') {
       this.sortAlphabetically = true

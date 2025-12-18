@@ -3,11 +3,11 @@ export const _onRollFromRollMenu = async function (event) {
 
   // Ensure we have a valid actor selected
   const actor = game.actors.get(ChatMessage.getSpeaker().actor)
-  if (!actor) ui.notifications.warn(game.i18n.localize('WOD5E.Notifications.NoTokenSelected'))
+  if (!actor) ui.notifications.warn(game.i18n.localize('AZTHARION.Notifications.NoTokenSelected'))
 
   // Grab data from user config flags to determine the currently active roll
-  const activeRoll = await game.users.current.getFlag('wod5e', 'rollMenuActiveRoll')
-  const savedRolls = await game.users.current.getFlag('wod5e', 'rollMenuSavedRolls')
+  const activeRoll = await game.users.current.getFlag('aztharion', 'rollMenuActiveRoll')
+  const savedRolls = await game.users.current.getFlag('aztharion', 'rollMenuSavedRolls')
   const activeRollObject = savedRolls[activeRoll]
 
   // Construct the valuePaths array that gets sent to the rollFromDataset function
@@ -18,7 +18,7 @@ export const _onRollFromRollMenu = async function (event) {
     valuePathsArray.push(`attributes.${activeRollObject.dice.attribute}.value`)
 
   // Pipe the roll to our RollFromDataset function
-  WOD5E.api.RollFromDataset({
+  AZTHARION.api.RollFromDataset({
     dataset: {
       label: activeRollObject.name,
       valuePaths: valuePathsArray.join(' '),

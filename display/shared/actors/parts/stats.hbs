@@ -3,14 +3,14 @@
         <div class="skills-attributes">
             <div class="resource-header">
                 <label class="header-label">
-                    {{localize "WOD5E.AttributesList.Attributes"}}
+                    {{localize "AZTHARION.AttributesList.Attributes"}}
                 </label>
             </div>
             <div class="stats-container attributes">
                 <div class="grid grid-3col stats-footer">
-                    <div class="field-header">{{localize "WOD5E.SPC.Physical"}}</div>
-                    <div class="field-header">{{localize "WOD5E.SPC.Social"}}</div>
-                    <div class="field-header">{{localize "WOD5E.SPC.Mental"}}</div>
+                    <div class="field-header">{{localize "AZTHARION.SPC.Physical"}}</div>
+                    <div class="field-header">{{localize "AZTHARION.SPC.Social"}}</div>
+                    <div class="field-header">{{localize "AZTHARION.SPC.Mental"}}</div>
                 </div>
                 <div class="stats-content">
                     {{#each sortedAttributes as |type key|}}
@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <label class="resource-header">{{localize "WOD5E.SkillsList.Skills"}}</label>
+            <label class="resource-header">{{localize "AZTHARION.SkillsList.Skills"}}</label>
             <div class="stats-container skills">
                 <div class="stats-content">
                     {{#each sortedSkills as |type key|}}
@@ -57,7 +57,7 @@
                                         data-skill="{{skill.id}}" data-select-dialog="true"
                                         data-use-flavor-path="true" data-flavor-path="skills.{{skill.id}}.description" data-macroid="{{skill.macroid}}">{{skill.displayName}}</label>
                                         {{#if hasSpecialties}}
-                                            <label class="specialty" title="{{localize "WOD5E.SkillsList.Specialties"}}:{{#each skill.specialtiesList as |bonus|}} {{bonus}}{{#unless @last}},{{/unless}}{{/each}}">S</label>
+                                            <label class="specialty" title="{{localize "AZTHARION.SkillsList.Specialties"}}:{{#each skill.specialtiesList as |bonus|}} {{bonus}}{{#unless @last}},{{/unless}}{{/each}}">S</label>
                                         {{/if}}
                                     </div>
                                     {{#if ../../settings.skillAttributeInputs}}
@@ -82,15 +82,15 @@
                     {{/each}}
                 </div>
                 <div class="grid grid-3col stats-footer">
-                    <div class="field-header">{{localize "WOD5E.SPC.Physical"}}</div>
-                    <div class="field-header">{{localize "WOD5E.SPC.Social"}}</div>
-                    <div class="field-header">{{localize "WOD5E.SPC.Mental"}}</div>
+                    <div class="field-header">{{localize "AZTHARION.SPC.Physical"}}</div>
+                    <div class="field-header">{{localize "AZTHARION.SPC.Social"}}</div>
+                    <div class="field-header">{{localize "AZTHARION.SPC.Mental"}}</div>
                 </div>
             </div>
         </div>
         <div class="side-panel">
             <div class="stat-panel-section">
-                <label class="resource-header">{{localize "WOD5E.ItemsList.Conditions"}}</label>
+                <label class="resource-header">{{localize "AZTHARION.ItemsList.Conditions"}}</label>
                 <div class="stats-container">
                     <div class="items-list flexcol">
                         {{#each conditions as |condition id|}}
@@ -100,23 +100,23 @@
                                 </div>
                                 <div class="item-name">{{condition.name}}</div>
                                 <div class="item-controls">
-                                    <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{condition._id}}" title="{{localize 'WOD5E.Edit'}}"><i
+                                    <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{condition._id}}" title="{{localize 'AZTHARION.Edit'}}"><i
                                         class="fas fa-edit"></i></a>
-                                    <a class="item-control condition-delete" data-action="itemDelete" data-item-id="{{condition._id}}" title="{{localize 'WOD5E.Delete'}}"><i
+                                    <a class="item-control condition-delete" data-action="itemDelete" data-item-id="{{condition._id}}" title="{{localize 'AZTHARION.Delete'}}"><i
                                         class="fas fa-trash"></i></a>
                                 </div>
                             </div>
                         {{/each}}
                     </div>
                     <div class="flex-group-center">
-                        <a class="item-control item-create" data-action="createItem" title="{{localize 'WOD5E.Add'}}" data-type="condition">
-                            <i class="fas fa-plus"></i> {{localize "WOD5E.Add"}}
+                        <a class="item-control item-create" data-action="createItem" title="{{localize 'AZTHARION.Add'}}" data-type="condition">
+                            <i class="fas fa-plus"></i> {{localize "AZTHARION.Add"}}
                         </a>
                     </div>
                 </div>
             </div>
             <div class="stat-panel-section">
-                <label class="resource-header">{{localize "WOD5E.ItemsList.CustomRolls"}}</label>
+                <label class="resource-header">{{localize "AZTHARION.ItemsList.CustomRolls"}}</label>
                 <div class="stats-container">
                     <div class="items-list flexcol">
                         {{#each customRolls as |roll id|}}
@@ -126,17 +126,17 @@
                                 </div>
                                 <div class="item-name">{{roll.name}}</div>
                                 <div class="item-controls">
-                                    <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{roll._id}}" title="{{localize 'WOD5E.Edit'}}"><i
+                                    <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{roll._id}}" title="{{localize 'AZTHARION.Edit'}}"><i
                                         class="fas fa-edit"></i></a>
-                                    <a class="item-control item-delete" data-action="itemDelete" data-item-id="{{roll._id}}" title="{{localize 'WOD5E.Delete'}}"><i
+                                    <a class="item-control item-delete" data-action="itemDelete" data-item-id="{{roll._id}}" title="{{localize 'AZTHARION.Delete'}}"><i
                                         class="fas fa-trash"></i></a>
                                 </div>
                             </div>
                         {{/each}}
                     </div>
                     <div class="flex-group-center">
-                        <a class="item-control item-create" data-action="createItem" title="{{localize 'WOD5E.Add'}}" data-type="customRoll">
-                            <i class="fas fa-plus"></i> {{localize "WOD5E.Add"}}
+                        <a class="item-control item-create" data-action="createItem" title="{{localize 'AZTHARION.Add'}}" data-type="customRoll">
+                            <i class="fas fa-plus"></i> {{localize "AZTHARION.Add"}}
                         </a>
                     </div>
                 </div>

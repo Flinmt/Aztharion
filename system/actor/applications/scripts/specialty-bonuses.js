@@ -1,7 +1,7 @@
 import { Skills } from '../../../api/def/skills.js'
 
 const bonusTemplate =
-  'systems/wod5e/display/shared/applications/skill-application/parts/specialty-display.hbs'
+  'systems/aztharion/display/shared/applications/skill-application/parts/specialty-display.hbs'
 
 export const _onAddModifier = async function (event) {
   event.preventDefault()
@@ -20,7 +20,7 @@ export const _onAddModifier = async function (event) {
   const bonusData = {
     actor,
     bonus: {
-      source: game.i18n.localize('WOD5E.ItemsList.NewSpecialty'),
+      source: game.i18n.localize('AZTHARION.ItemsList.NewSpecialty'),
       value: 1,
       paths: [`skills.${skill}`]
     },
@@ -43,13 +43,13 @@ export const _onAddModifier = async function (event) {
     content: bonusContent,
     ok: {
       icon: 'fas fa-check',
-      label: game.i18n.localize('WOD5E.Add')
+      label: game.i18n.localize('AZTHARION.Add')
     },
     buttons: [
       {
         action: 'cancel',
         icon: 'fas fa-times',
-        label: game.i18n.localize('WOD5E.Cancel')
+        label: game.i18n.localize('AZTHARION.Cancel')
       }
     ],
     render: (_event, dialog) => {
@@ -65,7 +65,7 @@ export const _onAddModifier = async function (event) {
         })
       })
     },
-    classes: ['wod5e', system]
+    classes: ['aztharion', system]
   })
 
   if (result !== 'cancel') {
@@ -152,13 +152,13 @@ export const _onEditModifier = async function (event, target) {
     content: bonusContent,
     ok: {
       icon: 'fas fa-check',
-      label: game.i18n.localize('WOD5E.Save')
+      label: game.i18n.localize('AZTHARION.Save')
     },
     buttons: [
       {
         action: 'cancel',
         icon: 'fas fa-times',
-        label: game.i18n.localize('WOD5E.Cancel')
+        label: game.i18n.localize('AZTHARION.Cancel')
       }
     ],
     render: (_event, dialog) => {
@@ -174,7 +174,7 @@ export const _onEditModifier = async function (event, target) {
         })
       })
     },
-    classes: ['wod5e', system]
+    classes: ['aztharion', system]
   })
 
   if (result !== 'cancel') {

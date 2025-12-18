@@ -2,9 +2,9 @@
 
 ## **Did you find a bug?**
 
-* **Ensure the bug hasn't already been reported** by searching the system repository's [issues list](https://github.com/WoD5E-Developers/wod5e/issues).
+* **Ensure the bug hasn't already been reported** by searching the system repository's [issues list](https://github.com/Aztharion-Developers/aztharion/issues).
 
-* If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/WoD5E-Developers/wod5e/issues/new). Be sure to include a **title and clear description and label it as bug** and as much relevant information as possible. **Steps to reproduce or a screenshot is a must!**
+* If you're unable to find an open issue addressing the problem, [open a new one](https://github.com/Aztharion-Developers/aztharion/issues/new). Be sure to include a **title and clear description and label it as bug** and as much relevant information as possible. **Steps to reproduce or a screenshot is a must!**
 
 ## **Did you write a patch that fixes a bug?**
 

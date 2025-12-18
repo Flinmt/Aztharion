@@ -1,6 +1,6 @@
 export const MigrateImageLinks = async function () {
   const oldPath = 'systems/vtm5e/'
-  const newPath = 'systems/wod5e/'
+  const newPath = 'systems/aztharion/'
   // Escape the oldPath for the regex
   const escapedOldPath = oldPath.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   // Create a case-insensitive regex to use in replacement functions
@@ -48,14 +48,14 @@ export const MigrateImageLinks = async function () {
 
   // Define the content of the Dialog
   const content = `<p>
-      There are ${total} documents needing to have their image paths updated from 'vtm5e' to 'wod5e'. Do you wish to have these image paths updated?
+      There are ${total} documents needing to have their image paths updated from 'vtm5e' to 'aztharion'. Do you wish to have these image paths updated?
     </p>`
 
   const updateEntitiesConfirm = await foundry.applications.api.DialogV2.wait({
     window: {
       title: 'Confirm Updating Entities'
     },
-    classes: ['wod5e', 'dialog'],
+    classes: ['aztharion', 'dialog'],
     content,
     modal: true,
     buttons: [
@@ -72,7 +72,7 @@ export const MigrateImageLinks = async function () {
 
   if (updateEntitiesConfirm) {
     const migrationProgress = ui.notifications.info(
-      `Migrating image paths of ${total} entities from vtm5e to wod5e. Do not close Foundry until complete.`,
+      `Migrating image paths of ${total} entities from vtm5e to aztharion. Do not close Foundry until complete.`,
       {
         progress: true
       }

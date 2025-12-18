@@ -6,7 +6,7 @@
                     <select name="system.dicepool.{{key}}.path">
                         {{selectOptions ../diceOptions selected=dice.path}}
                     </select>
-                    <a class="remove-dice" data-action="removeDice" data-dice-id="{{key}}" title="{{localize 'WOD5E.Delete'}}">
+                    <a class="remove-dice" data-action="removeDice" data-dice-id="{{key}}" title="{{localize 'AZTHARION.Delete'}}">
                         <i class="fa-solid fa-x"></i>
                     </a>
                 </div>
@@ -14,13 +14,13 @@
         </div>
     {{else}}
         <div class="flex-center">
-            {{localize "WOD5E.ItemsList.NoDiceSelectedHint"}}
+            {{localize "AZTHARION.ItemsList.NoDiceSelectedHint"}}
         </div>
     {{/if}}
     <hr>
     <div class="flex-center">
         <a class="add-dice" data-action="addDice">
-            {{localize "WOD5E.ItemsList.AddDice"}}
+            {{localize "AZTHARION.ItemsList.AddDice"}}
         </a>
     </div>
 </section>

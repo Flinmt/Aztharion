@@ -18,7 +18,7 @@ const { HandlebarsApplicationMixin } = foundry.applications.api
  */
 export class ConditionItemSheet extends HandlebarsApplicationMixin(WoDItemBase) {
   static DEFAULT_OPTIONS = {
-    classes: ['wod5e', 'item', 'sheet'],
+    classes: ['aztharion', 'item', 'sheet'],
     actions: {
       addEffect: _onAddEffect,
       removeEffect: _onRemoveEffect
@@ -27,22 +27,22 @@ export class ConditionItemSheet extends HandlebarsApplicationMixin(WoDItemBase) 
 
   static PARTS = {
     header: {
-      template: 'systems/wod5e/display/shared/items/condition-sheet.hbs'
+      template: 'systems/aztharion/display/shared/items/condition-sheet.hbs'
     },
     tabs: {
       template: 'templates/generic/tab-navigation.hbs'
     },
     description: {
-      template: 'systems/wod5e/display/shared/items/parts/description.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/description.hbs'
     },
     modifiers: {
-      template: 'systems/wod5e/display/shared/items/parts/modifiers.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/modifiers.hbs'
     },
     effects: {
-      template: 'systems/wod5e/display/shared/items/parts/effects.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/effects.hbs'
     },
     settings: {
-      template: 'systems/wod5e/display/shared/items/parts/item-settings.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/item-settings.hbs'
     }
   }
 
@@ -50,22 +50,22 @@ export class ConditionItemSheet extends HandlebarsApplicationMixin(WoDItemBase) 
     description: {
       id: 'description',
       group: 'primary',
-      label: 'WOD5E.Tabs.Description'
+      label: 'AZTHARION.Tabs.Description'
     },
     modifiers: {
       id: 'modifiers',
       group: 'primary',
-      label: 'WOD5E.ItemsList.Modifiers'
+      label: 'AZTHARION.ItemsList.Modifiers'
     },
     effects: {
       id: 'effects',
       group: 'primary',
-      label: 'WOD5E.ItemsList.Effects'
+      label: 'AZTHARION.ItemsList.Effects'
     },
     settings: {
       id: 'settings',
       group: 'primary',
-      label: 'WOD5E.ItemsList.ItemSettings'
+      label: 'AZTHARION.ItemsList.ItemSettings'
     }
   }
 

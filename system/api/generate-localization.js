@@ -58,20 +58,20 @@ export const generateLocalizedLabel = function (string = '', type = '') {
   } else if (type === 'grouptype' || type === 'group') {
     const grouptypes = {
       cell: {
-        displayName: game.i18n.localize('WOD5E.HTR.Cell')
+        displayName: game.i18n.localize('AZTHARION.HTR.Cell')
       },
       coterie: {
-        displayName: game.i18n.localize('WOD5E.VTM.Coterie')
+        displayName: game.i18n.localize('AZTHARION.VTM.Coterie')
       },
       pack: {
-        displayName: game.i18n.localize('WOD5E.WTA.Pack')
+        displayName: game.i18n.localize('AZTHARION.WTA.Pack')
       }
     }
 
     return findLabel(grouptypes, string)
   } else {
     // Return the base localization if nothing else is found
-    return game.i18n.localize(`WOD5E.${string}`)
+    return game.i18n.localize(`AZTHARION.${string}`)
   }
 
   // Function to actually grab the localized label

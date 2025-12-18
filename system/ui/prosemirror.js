@@ -14,7 +14,7 @@ export const ProseMirrorSettings = async () => {
       return [
         'span',
         {
-          class: 'wod5e-symbol'
+          class: 'aztharion-symbol'
         },
         node.attrs.letter || ''
       ]
@@ -37,14 +37,14 @@ export const ProseMirrorSettings = async () => {
     const wodMark = menu.schema.marks.wodSymbol
     if (!wodMark) return
 
-    // The below letters map to the /wod5e/assets/fonts/wod5e-symbols.ttf file
+    // The below letters map to the /aztharion/assets/fonts/aztharion-symbols.ttf file
     const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
 
     // Generate children elements for the "World of Darkness" dropdown in ProseMirror
     const children = letters.map((letter) => ({
       action: `wod-symbol-${letter}`,
       title: letter,
-      class: 'wod5e-symbol',
+      class: 'aztharion-symbol',
       priority: 1,
       cmd: insertWodSymbol(letter, menu.schema)
     }))
@@ -52,7 +52,7 @@ export const ProseMirrorSettings = async () => {
     // Add the dropdown element
     if (dropdowns.format?.entries) {
       dropdowns.format.entries.push({
-        action: 'wod5e',
+        action: 'aztharion',
         title: 'World of Darkness',
         children
       })

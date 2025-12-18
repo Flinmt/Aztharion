@@ -3,36 +3,36 @@
     <div class="header-fields">
         <div class="header-fields-left">
             {{!-- Health Tracker --}}
-            {{> "systems/wod5e/display/shared/actors/parts/health.hbs"}}
+            {{> "systems/aztharion/display/shared/actors/parts/health.hbs"}}
 
             {{!-- Willpower Tracker --}}
-            {{> "systems/wod5e/display/shared/actors/parts/willpower.hbs"}}
+            {{> "systems/aztharion/display/shared/actors/parts/willpower.hbs"}}
         </div>
     </div>
     <!-- Middle of the header -->
-    {{> "systems/wod5e/display/shared/actors/parts/header-profile.hbs"}}
+    {{> "systems/aztharion/display/shared/actors/parts/header-profile.hbs"}}
     <div class="header-fields">
         <div class="header-fields-right">
             <div class="flexcol">
                 {{#if generalDifficultyEnabled}}
-                    {{> "systems/wod5e/display/shared/actors/parts/spc/generaldifficulty.hbs"}}
+                    {{> "systems/aztharion/display/shared/actors/parts/spc/generaldifficulty.hbs"}}
                 {{/if}}
 
                 {{#ifeq currentActorType 'vampire'}}
                     <div class="flexrow field-section">
                         <div class="flexcol">
-                            <label class="resource-label field-header">{{localize 'WOD5E.VTM.Hunger'}}</label>
-                            {{> "systems/wod5e/display/vtm/actors/parts/hunger.hbs"}}
+                            <label class="resource-label field-header">{{localize 'AZTHARION.VTM.Hunger'}}</label>
+                            {{> "systems/aztharion/display/vtm/actors/parts/hunger.hbs"}}
                         </div>
-                        {{> "systems/wod5e/display/shared/actors/parts/spc/blood-potency.hbs"}}
+                        {{> "systems/aztharion/display/shared/actors/parts/spc/blood-potency.hbs"}}
                     </div>
                 {{/ifeq}}
 
                 {{#ifeq currentActorType 'hunter'}}
                     <div class="field-section">
                         <div class="flexcol">
-                            <label class="resource-label field-header">{{localize 'WOD5E.HTR.Despair'}}</label>
-                            {{> "systems/wod5e/display/htr/actors/parts/despair.hbs"}}
+                            <label class="resource-label field-header">{{localize 'AZTHARION.HTR.Despair'}}</label>
+                            {{> "systems/aztharion/display/htr/actors/parts/despair.hbs"}}
                         </div>
                     </div>
                 {{/ifeq}}
@@ -40,8 +40,8 @@
                 {{#ifeq currentActorType 'werewolf'}}
                     <div class="field-section">
                         <div class="flexcol">
-                            <label class="resource-label field-header">{{localize 'WOD5E.WTA.Rage'}}</label>
-                            {{> "systems/wod5e/display/wta/actors/parts/rage-value.hbs"}}
+                            <label class="resource-label field-header">{{localize 'AZTHARION.WTA.Rage'}}</label>
+                            {{> "systems/aztharion/display/wta/actors/parts/rage-value.hbs"}}
                         </div>
                     </div>
                 {{/ifeq}}
@@ -51,10 +51,10 @@
                         <div class="flexcol">
                             <!-- Power Dicepool -->
                             <div class="flexcol flex-center">
-                                <a class="field-header flexrow resource-label rollable" for="{{localize 'WOD5E.WTA.Power'}}" data-action="roll" data-use-absolute-value="true"
-                                    data-absolute-value="{{power.value}}" data-label="{{localize 'WOD5E.WTA.Power'}}"
+                                <a class="field-header flexrow resource-label rollable" for="{{localize 'AZTHARION.WTA.Power'}}" data-action="roll" data-use-absolute-value="true"
+                                    data-absolute-value="{{power.value}}" data-label="{{localize 'AZTHARION.WTA.Power'}}"
                                     {{#if noAdvancedDice}} data-disable-advanced-dice="true"{{/if}}>
-                                    {{localize 'WOD5E.WTA.Power'}}
+                                    {{localize 'AZTHARION.WTA.Power'}}
                                     <i class="fa-solid fa-dice-d10"></i>
                                 </a>
                                 {{#if locked}}

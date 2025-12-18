@@ -1,13 +1,13 @@
 export const cssVariablesRecord = () => {
   const record = {
     vampire: {
-      label: game.i18n.format('WOD5E.Settings.StringStyling', {
+      label: game.i18n.format('AZTHARION.Settings.StringStyling', {
         string: game.i18n.localize('TYPES.Actor.vampire')
       }),
       settings: {
         vampireBaseColor: {
           id: 'vampire-base-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringBaseColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringBaseColor', {
             string: game.i18n.localize('TYPES.Actor.vampire')
           }),
           settingId: 'vampireBaseColor',
@@ -16,7 +16,7 @@ export const cssVariablesRecord = () => {
         },
         vampirePrimaryColor: {
           id: 'vampire-primary-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringPrimaryColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringPrimaryColor', {
             string: game.i18n.localize('TYPES.Actor.vampire')
           }),
           settingId: 'vampirePrimaryColor',
@@ -25,7 +25,7 @@ export const cssVariablesRecord = () => {
         },
         vampireSecondaryColor: {
           id: 'vampire-secondary-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringSecondaryColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringSecondaryColor', {
             string: game.i18n.localize('TYPES.Actor.vampire')
           }),
           settingId: 'vampireSecondaryColor',
@@ -34,7 +34,7 @@ export const cssVariablesRecord = () => {
         },
         vampireTertiaryColor: {
           id: 'vampire-tertiary-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringTertiaryColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringTertiaryColor', {
             string: game.i18n.localize('TYPES.Actor.vampire')
           }),
           settingId: 'vampireTertiaryColor',
@@ -44,13 +44,13 @@ export const cssVariablesRecord = () => {
       }
     },
     hunter: {
-      label: game.i18n.format('WOD5E.Settings.StringStyling', {
+      label: game.i18n.format('AZTHARION.Settings.StringStyling', {
         string: game.i18n.localize('TYPES.Actor.hunter')
       }),
       settings: {
         hunterBaseColor: {
           id: 'hunter-base-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringBaseColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringBaseColor', {
             string: game.i18n.localize('TYPES.Actor.hunter')
           }),
           settingId: 'hunterBaseColor',
@@ -59,7 +59,7 @@ export const cssVariablesRecord = () => {
         },
         hunterPrimaryColor: {
           id: 'hunter-primary-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringPrimaryColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringPrimaryColor', {
             string: game.i18n.localize('TYPES.Actor.hunter')
           }),
           settingId: 'hunterPrimaryColor',
@@ -68,7 +68,7 @@ export const cssVariablesRecord = () => {
         },
         hunterSecondaryColor: {
           id: 'hunter-secondary-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringSecondaryColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringSecondaryColor', {
             string: game.i18n.localize('TYPES.Actor.hunter')
           }),
           settingId: 'hunterSecondaryColor',
@@ -77,7 +77,7 @@ export const cssVariablesRecord = () => {
         },
         hunterTertiaryColor: {
           id: 'hunter-tertiary-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringTertiaryColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringTertiaryColor', {
             string: game.i18n.localize('TYPES.Actor.hunter')
           }),
           settingId: 'hunterTertiaryColor',
@@ -87,13 +87,13 @@ export const cssVariablesRecord = () => {
       }
     },
     werewolf: {
-      label: game.i18n.format('WOD5E.Settings.StringStyling', {
+      label: game.i18n.format('AZTHARION.Settings.StringStyling', {
         string: game.i18n.localize('TYPES.Actor.werewolf')
       }),
       settings: {
         werewolfBaseColor: {
           id: 'werewolf-base-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringBaseColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringBaseColor', {
             string: game.i18n.localize('TYPES.Actor.werewolf')
           }),
           settingId: 'werewolfBaseColor',
@@ -102,7 +102,7 @@ export const cssVariablesRecord = () => {
         },
         werewolfPrimaryColor: {
           id: 'werewolf-primary-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringPrimaryColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringPrimaryColor', {
             string: game.i18n.localize('TYPES.Actor.werewolf')
           }),
           settingId: 'werewolfPrimaryColor',
@@ -111,7 +111,7 @@ export const cssVariablesRecord = () => {
         },
         werewolfSecondaryColor: {
           id: 'werewolf-secondary-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringSecondaryColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringSecondaryColor', {
             string: game.i18n.localize('TYPES.Actor.werewolf')
           }),
           settingId: 'werewolfSecondaryColor',
@@ -120,7 +120,7 @@ export const cssVariablesRecord = () => {
         },
         werewolfTertiaryColor: {
           id: 'werewolf-tertiary-color',
-          settingName: game.i18n.format('WOD5E.Settings.StringTertiaryColor', {
+          settingName: game.i18n.format('AZTHARION.Settings.StringTertiaryColor', {
             string: game.i18n.localize('TYPES.Actor.werewolf')
           }),
           settingId: 'werewolfTertiaryColor',
@@ -142,24 +142,24 @@ export const _updateCSSVariable = async (settingName, cssVariableName, newColor)
   // If this isn't a valid hexcode, show the error message
   if (!validateColor(newColor)) {
     ui.notifications.error(
-      `Invalid hexcode or color name "${newColor}" given for setting ID wod5e.${settingName}`
+      `Invalid hexcode or color name "${newColor}" given for setting ID aztharion.${settingName}`
     )
     validColor = true
   }
 
   // If no color is provided or the color is invalid, reset to the default color
   if (!newColor || !validColor) {
-    const defaultColor = game.settings.settings.get(`wod5e.${settingName}`).default
+    const defaultColor = game.settings.settings.get(`aztharion.${settingName}`).default
     document.documentElement.style.setProperty(cssVariableName, defaultColor)
-    game.settings.set('wod5e', settingName, defaultColor)
+    game.settings.set('aztharion', settingName, defaultColor)
   } else {
     // Update the variable with the new color
     document.documentElement.style.setProperty(cssVariableName, newColor)
 
     // Only update the setting if we need to; this is mainly for the initial load, so we're
     // not unnecessarily re-setting a variable without changes
-    if (newColor !== game.settings.get('wod5e', settingName)) {
-      game.settings.set('wod5e', settingName, newColor)
+    if (newColor !== game.settings.get('aztharion', settingName)) {
+      game.settings.set('aztharion', settingName, newColor)
     }
   }
 }

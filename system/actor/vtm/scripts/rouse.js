@@ -29,7 +29,7 @@ export const _onRouseCheck = async function (actor, item, rollMode) {
     // Send the roll to the system
     WOD5eDice.Roll({
       advancedDice: cost + activeModifiers.totalValue,
-      title: `${game.i18n.localize('WOD5E.VTM.RousingBlood')} - ${item.name}`,
+      title: `${game.i18n.localize('AZTHARION.VTM.RousingBlood')} - ${item.name}`,
       actor,
       disableBasicDice: true,
       rerollHunger: rouseRerolls,

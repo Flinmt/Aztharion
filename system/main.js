@@ -20,7 +20,7 @@ import {
   _updateHeaderFontPreference,
   _updateXpIconOverrides
 } from './scripts/settings.js'
-// WOD5E functions and classes
+// AZTHARION functions and classes
 import {
   MortalDie,
   VampireDie,
@@ -31,9 +31,9 @@ import {
   WerewolfRageDie
 } from './dice/splat-dice.js'
 import { migrateWorld } from './scripts/migration.js'
-import { wod5eAPI } from './api/wod5e-api.js'
+import { aztharionAPI } from './api/aztharion-api.js'
 import { WOD5eRoll } from './scripts/system-rolls.js'
-// WOD5E Definitions
+// AZTHARION Definitions
 import { Systems } from './api/def/systems.js'
 import { Attributes } from './api/def/attributes.js'
 import { Skills } from './api/def/skills.js'
@@ -51,16 +51,16 @@ import { _updateToken } from './actor/wta/scripts/forms.js'
 import { RollPromptSockets } from './sockets/roll-prompt.js'
 import { WoDActorBase } from './actor/wod-actor-base.js'
 
-// Register the WOD5E global
-window.WOD5E = {
+// Register the AZTHARION global
+window.AZTHARION = {
   api: {
-    Roll: wod5eAPI.Roll,
-    PromptRoll: wod5eAPI.PromptRoll,
-    RollFromDataset: wod5eAPI.RollFromDataset,
-    getBasicDice: wod5eAPI.getBasicDice,
-    getAdvancedDice: wod5eAPI.getAdvancedDice,
-    getFlavorDescription: wod5eAPI.getFlavorDescription,
-    generateLabelAndLocalize: wod5eAPI.generateLabelAndLocalize,
+    Roll: aztharionAPI.Roll,
+    PromptRoll: aztharionAPI.PromptRoll,
+    RollFromDataset: aztharionAPI.RollFromDataset,
+    getBasicDice: aztharionAPI.getBasicDice,
+    getAdvancedDice: aztharionAPI.getAdvancedDice,
+    getFlavorDescription: aztharionAPI.getFlavorDescription,
+    generateLabelAndLocalize: aztharionAPI.generateLabelAndLocalize,
     migrateWorld,
     _onRollItemFromMacro
   },
@@ -87,7 +87,7 @@ Hooks.once('init', async function () {
   CONFIG.Actor.documentClass = WoDActor
   CONFIG.Item.documentClass = WoDItem
   CONFIG.ChatMessage.documentClass = WoDChatMessage
-  CONFIG.ChatMessage.template = 'systems/wod5e/display/ui/chat/chat-message-default.hbs'
+  CONFIG.ChatMessage.template = 'systems/aztharion/display/ui/chat/chat-message-default.hbs'
   // Custom UI implementations
   CONFIG.ui.chat = WoDChatLog
   CONFIG.ui.settings = WoDSettings
@@ -109,7 +109,7 @@ Hooks.once('init', async function () {
   for (const [, value] of Object.entries(actorTypesList)) {
     const { label, types, sheetClass } = value
 
-    foundry.documents.collections.Actors.registerSheet('wod5e', sheetClass, {
+    foundry.documents.collections.Actors.registerSheet('aztharion', sheetClass, {
       label,
       types,
       makeDefault: true
@@ -122,7 +122,7 @@ Hooks.once('init', async function () {
   for (const [, value] of Object.entries(itemTypesList)) {
     const { label, types, sheetClass } = value
 
-    foundry.documents.collections.Items.registerSheet('wod5e', sheetClass, {
+    foundry.documents.collections.Items.registerSheet('aztharion', sheetClass, {
       label,
       types,
       makeDefault: true
@@ -184,7 +184,7 @@ Hooks.once('ready', async function () {
       const { settingId, cssVariable } = settings[settingKey]
 
       // Get the current value of the setting
-      const settingValue = game.settings.get('wod5e', settingId)
+      const settingValue = game.settings.get('aztharion', settingId)
 
       // Update the CSS variable
       _updateCSSVariable(settingId, cssVariable, settingValue)

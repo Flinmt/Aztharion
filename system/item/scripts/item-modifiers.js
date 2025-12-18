@@ -1,6 +1,6 @@
 import { getSelectorsList } from '../../api/get-selectors-list.js'
 
-const bonusTemplate = 'systems/wod5e/display/shared/items/parts/modifier-display.hbs'
+const bonusTemplate = 'systems/aztharion/display/shared/items/parts/modifier-display.hbs'
 
 export const _onAddModifier = async function (event) {
   event.preventDefault()
@@ -12,7 +12,7 @@ export const _onAddModifier = async function (event) {
   const bonusData = {
     item,
     bonus: {
-      source: game.i18n.localize('WOD5E.Modifier.NewModifier'),
+      source: game.i18n.localize('AZTHARION.Modifier.NewModifier'),
       value: 1,
       paths: [],
       displayWhenInactive: false,
@@ -36,13 +36,13 @@ export const _onAddModifier = async function (event) {
     content: bonusContent,
     ok: {
       icon: 'fas fa-check',
-      label: game.i18n.localize('WOD5E.Add')
+      label: game.i18n.localize('AZTHARION.Add')
     },
     buttons: [
       {
         action: 'cancel',
         icon: 'fas fa-times',
-        label: game.i18n.localize('WOD5E.Cancel')
+        label: game.i18n.localize('AZTHARION.Cancel')
       }
     ],
     render: (_event, dialog) => {
@@ -156,13 +156,13 @@ export const _onEditModifier = async function (event, target) {
     content: bonusContent,
     ok: {
       icon: 'fas fa-check',
-      label: game.i18n.localize('WOD5E.Save')
+      label: game.i18n.localize('AZTHARION.Save')
     },
     buttons: [
       {
         action: 'cancel',
         icon: 'fas fa-times',
-        label: game.i18n.localize('WOD5E.Cancel')
+        label: game.i18n.localize('AZTHARION.Cancel')
       }
     ],
     render: (_event, dialog) => {

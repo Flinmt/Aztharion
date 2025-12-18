@@ -28,9 +28,9 @@ export const _onEditExceptionalPools = async function (event) {
   // Prompt the dialog
   const updatedPools = await foundry.applications.api.DialogV2.prompt({
     window: {
-      title: game.i18n.localize('WOD5E.SPC.AddSkill')
+      title: game.i18n.localize('AZTHARION.SPC.AddSkill')
     },
-    classes: ['wod5e', actor.system.gamesystem, 'exceptional-edit', 'dialog'],
+    classes: ['aztharion', actor.system.gamesystem, 'exceptional-edit', 'dialog'],
     content,
     ok: {
       callback: (event, button) => {

@@ -1,8 +1,8 @@
 // Static locations of various sets of icons
-const mortalDiceLocation = 'systems/wod5e/assets/icons/dice/mortal/'
-const vampireDiceLocation = 'systems/wod5e/assets/icons/dice/vampire/'
-const werewolfDiceLocation = 'systems/wod5e/assets/icons/dice/werewolf/'
-const hunterDiceLocation = 'systems/wod5e/assets/icons/dice/hunter/'
+const mortalDiceLocation = 'systems/aztharion/assets/icons/dice/mortal/'
+const vampireDiceLocation = 'systems/aztharion/assets/icons/dice/vampire/'
+const werewolfDiceLocation = 'systems/aztharion/assets/icons/dice/werewolf/'
+const hunterDiceLocation = 'systems/aztharion/assets/icons/dice/hunter/'
 
 // Baseline dice variables and icon filenames
 const normalDiceFaces = {

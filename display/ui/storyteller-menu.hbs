@@ -1,22 +1,22 @@
-<form autocomplete="off" class="wod5e-config-form storyteller-menu">
+<form autocomplete="off" class="aztharion-config-form storyteller-menu">
   {{!-- Cell Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <div class="item" data-tab="modifications">{{localize 'WOD5E.Settings.Modifications'}}</div>
-    <div class="item" data-tab="custom">{{localize 'WOD5E.Settings.Custom'}}</div>
+    <div class="item" data-tab="modifications">{{localize 'AZTHARION.Settings.Modifications'}}</div>
+    <div class="item" data-tab="custom">{{localize 'AZTHARION.Settings.Custom'}}</div>
   </nav>
 
   {{!-- Menu Body --}}
   <section class="sheet-body">
     {{!-- Modifications Tab --}}
-    {{> "systems/wod5e/display/ui/parts/storyteller-menu/modification-menu.hbs"}}
+    {{> "systems/aztharion/display/ui/parts/storyteller-menu/modification-menu.hbs"}}
 
     {{!-- Custom Tab --}}
-    {{> "systems/wod5e/display/ui/parts/storyteller-menu/custom-menu.hbs"}}
+    {{> "systems/aztharion/display/ui/parts/storyteller-menu/custom-menu.hbs"}}
 
     {{!-- Save button --}}
     <hr>
     <div>
-      <button type="button" class="save-modifications">{{localize 'WOD5E.Settings.SaveChanges'}}</button>
+      <button type="button" class="save-modifications">{{localize 'AZTHARION.Settings.SaveChanges'}}</button>
     </div>
   </section>
 </form>

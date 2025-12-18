@@ -27,15 +27,15 @@ function getDesperationLabel(data, difficultySet) {
   if (difficultySet && data.totalResult < data.difficulty) {
     // Despair on a failure
     labelClass = 'desperation-failure'
-    labelText = game.i18n.localize('WOD5E.HTR.Despair')
+    labelText = game.i18n.localize('AZTHARION.HTR.Despair')
   } else if (difficultySet && data.totalResult >= data.difficulty) {
     // Desperation success
     labelClass = 'desperation-success'
-    labelText = game.i18n.localize('WOD5E.HTR.DesperationSuccess')
+    labelText = game.i18n.localize('AZTHARION.HTR.DesperationSuccess')
   } else {
     // Possible desperation failure
     labelClass = 'desperation-failure'
-    labelText = game.i18n.localize('WOD5E.HTR.PossibleDesperationFailure')
+    labelText = game.i18n.localize('AZTHARION.HTR.PossibleDesperationFailure')
   }
 
   return {

@@ -2,26 +2,26 @@ export const getActorTypes = async function (actor) {
   const currentActorType = actor.type
 
   const playerTypes = {
-    mortal: 'WOD5E.Mortal',
+    mortal: 'AZTHARION.Mortal',
     vampire: 'TYPES.Actor.vampire',
-    ghoul: 'WOD5E.VTM.Ghoul',
+    ghoul: 'AZTHARION.VTM.Ghoul',
     werewolf: 'TYPES.Actor.werewolf',
     hunter: 'TYPES.Actor.hunter'
   }
 
   const spcTypes = {
-    mortal: 'WOD5E.Mortal',
-    ghoul: 'WOD5E.VTM.Ghoul',
+    mortal: 'AZTHARION.Mortal',
+    ghoul: 'AZTHARION.VTM.Ghoul',
     vampire: 'TYPES.Actor.vampire',
     werewolf: 'TYPES.Actor.werewolf',
-    spirit: 'WOD5E.WTA.Spirit',
+    spirit: 'AZTHARION.WTA.Spirit',
     hunter: 'TYPES.Actor.hunter'
   }
 
   const groupTypes = {
-    coterie: 'WOD5E.VTM.Coterie',
-    cell: 'WOD5E.HTR.Cell',
-    pack: 'WOD5E.WTA.Pack'
+    coterie: 'AZTHARION.VTM.Coterie',
+    cell: 'AZTHARION.HTR.Cell',
+    pack: 'AZTHARION.WTA.Pack'
   }
 
   if (currentActorType in playerTypes) {

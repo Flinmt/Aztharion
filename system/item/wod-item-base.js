@@ -30,7 +30,7 @@ export class WoDItemBase extends HandlebarsApplicationMixin(
       icon: 'fa-solid fa-dice-d10',
       resizable: true
     },
-    classes: ['wod5e', 'item', 'sheet'],
+    classes: ['aztharion', 'item', 'sheet'],
     position: {
       width: 530,
       height: 400
@@ -56,14 +56,14 @@ export class WoDItemBase extends HandlebarsApplicationMixin(
       // Allow this item to have its item updated from an existing data item
       controls.push({
         icon: 'fa-solid fa-down-long',
-        label: 'WOD5E.ItemsList.SyncFromDataItem',
+        label: 'AZTHARION.ItemsList.SyncFromDataItem',
         action: 'syncFromDataItem'
       })
     } else {
       // Allow this item to update all data items
       controls.push({
         icon: 'fa-solid fa-up-long',
-        label: 'WOD5E.ItemsList.SyncToDataItems',
+        label: 'AZTHARION.ItemsList.SyncToDataItems',
         action: 'syncToDataItems'
       })
     }
@@ -115,7 +115,7 @@ export class WoDItemBase extends HandlebarsApplicationMixin(
 
       gamesystem: itemData.gamesystem || 'mortal',
 
-      dataItemId: item.getFlag('wod5e', 'dataItemId') || '',
+      dataItemId: item.getFlag('aztharion', 'dataItemId') || '',
 
       sourcebook: item.system.source.book,
       pageNumber: item.system.source.page

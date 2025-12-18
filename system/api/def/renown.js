@@ -26,15 +26,15 @@ export class Renown extends BaseDefinitionClass {
   }
 
   static glory = {
-    label: 'WOD5E.WTA.Glory'
+    label: 'AZTHARION.WTA.Glory'
   }
 
   static honor = {
-    label: 'WOD5E.WTA.Honor'
+    label: 'AZTHARION.WTA.Honor'
   }
 
   static wisdom = {
-    label: 'WOD5E.WTA.Wisdom'
+    label: 'AZTHARION.WTA.Wisdom'
   }
 }
 

@@ -2,11 +2,11 @@
     <div class="flexrow">
         <div class="item-list">
             <div class="flexrow flex-center">
-                <div class="item-header">{{localize 'WOD5E.HTR.Edges'}}</div>
+                <div class="item-header">{{localize 'AZTHARION.HTR.Edges'}}</div>
                 <div class="item-controls">
-                    <a class="item-control add-edge flex-center" title="{{localize 'WOD5E.HTR.AddEdge'}}" data-action="addEdge">
+                    <a class="item-control add-edge flex-center" title="{{localize 'AZTHARION.HTR.AddEdge'}}" data-action="addEdge">
                         <i class="fas fa-plus"></i>
-                        {{localize "WOD5E.HTR.AddEdge"}}
+                        {{localize "AZTHARION.HTR.AddEdge"}}
                     </a>
                 </div>
             </div>
@@ -18,12 +18,12 @@
                             <a class="select-label" data-action="selectEdge" data-edge="{{key}}">{{edge.displayName}}</a>
                             <div class="item-controls">
                                 <!-- Icon to show the edge description to the chat-->
-                                <a class="item-control edge-chat" data-action="edgeChat" title="{{localize 'WOD5E.ItemsList.ShowToChat'}}" data-edge="{{key}}">
+                                <a class="item-control edge-chat" data-action="edgeChat" title="{{localize 'AZTHARION.ItemsList.ShowToChat'}}" data-edge="{{key}}">
                                     <i class="fas fa-comment-alt"></i>
                                 </a>
                                 <!-- Icon to delete the edge (as long as it doesn't have any powers) -->
                                 {{#if (eq edge.perks.length 0)}}
-                                    <a class="item-control edge-delete" data-action="removeEdge" title="{{localize 'WOD5E.Delete'}}" data-edge="{{key}}">
+                                    <a class="item-control edge-delete" data-action="removeEdge" title="{{localize 'AZTHARION.Delete'}}" data-edge="{{key}}">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 {{/if}}
@@ -50,7 +50,7 @@
                         <div class="item-name">
                             {{selectedEdge.displayName}}
                             <!-- Add new edge power -->
-                            <a class="item-control item-create" data-action="createItem" title="{{localize 'WOD5E.HTR.AddEdge'}}" data-type="perk" data-subtype="{{selectedEdge.id}}">
+                            <a class="item-control item-create" data-action="createItem" title="{{localize 'AZTHARION.HTR.AddEdge'}}" data-type="perk" data-subtype="{{selectedEdge.id}}">
                                 <i class="fas fa-plus"></i>
                             </a>
                         </div>
@@ -70,11 +70,11 @@
                                 </div>
                                 <div class="item-controls">
                                     <!-- Icon to edit the edge pool -->
-                                    <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{pool._id}}" title="{{localize 'WOD5E.Edit'}}">
+                                    <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{pool._id}}" title="{{localize 'AZTHARION.Edit'}}">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <!-- Icon to delete the edge pool -->
-                                    <a class="item-control item-delete" data-action="itemDelete" data-item-id="{{pool._id}}" title="{{localize 'WOD5E.Delete'}}">
+                                    <a class="item-control item-delete" data-action="itemDelete" data-item-id="{{pool._id}}" title="{{localize 'AZTHARION.Delete'}}">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </div>
@@ -83,12 +83,12 @@
                     </div>
                     <a class="flex-center add-edge-pool item-create" data-action="createItem" data-type="edgepool" data-subtype="{{selectedEdge.id}}">
                         <i class="fas fa-plus"></i>
-                        {{localize "WOD5E.HTR.AddEdgePool"}}
+                        {{localize "AZTHARION.HTR.AddEdgePool"}}
                     </a>
                 </div>
             {{else}}
                 <div class="edge category flex-center">
-                    {{localize 'WOD5E.HTR.NoEdgeSelected'}}
+                    {{localize 'AZTHARION.HTR.NoEdgeSelected'}}
                 </div>
             {{/if}}
 
@@ -101,15 +101,15 @@
                             </span>
                             <div class="item-controls flex-group-right">
                                 <!-- Icon to edit the power -->
-                                <a class="item-control item-edit" data-action="itemEdit" title="{{localize 'WOD5E.Edit'}}" data-item-id="{{selectedEdgePerk._id}}">
+                                <a class="item-control item-edit" data-action="itemEdit" title="{{localize 'AZTHARION.Edit'}}" data-item-id="{{selectedEdgePerk._id}}">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <!-- Icon to display the power in chat -->
-                                <a class="item-control item-chat" data-action="itemChat" title="{{localize 'WOD5E.ItemsList.ShowToChat'}}" data-item-id="{{selectedEdgePerk._id}}">
+                                <a class="item-control item-chat" data-action="itemChat" title="{{localize 'AZTHARION.ItemsList.ShowToChat'}}" data-item-id="{{selectedEdgePerk._id}}">
                                     <i class="fas fa-comment-alt"></i>
                                 </a>
                                 <!-- Icon to delete the power -->
-                                <a class="item-control item-delete" data-action="itemDelete" title="{{localize 'WOD5E.Delete'}}" data-item-id="{{selectedEdgePerk._id}}">
+                                <a class="item-control item-delete" data-action="itemDelete" title="{{localize 'AZTHARION.Delete'}}" data-item-id="{{selectedEdgePerk._id}}">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
@@ -125,7 +125,7 @@
                 </div>
             {{else}}
                 <div class="edge category flex-center">
-                    {{localize 'WOD5E.HTR.NoPerkSelected'}}
+                    {{localize 'AZTHARION.HTR.NoPerkSelected'}}
                 </div>
             {{/if}}
         </div>

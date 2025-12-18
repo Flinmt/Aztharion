@@ -84,17 +84,17 @@ export const loadHelpers = async function () {
 
   // Helper to define attributes lists
   Handlebars.registerHelper('getAttributesList', function () {
-    return WOD5E.Attributes.getList({})
+    return AZTHARION.Attributes.getList({})
   })
 
   // Helper to define skills lists
   Handlebars.registerHelper('getSkillsList', function () {
-    return WOD5E.Skills.getList({})
+    return AZTHARION.Skills.getList({})
   })
 
   // Helper to define disciplines lists
   Handlebars.registerHelper('getDisciplinesList', function () {
-    return WOD5E.Disciplines.getList({})
+    return AZTHARION.Disciplines.getList({})
   })
 
   // Check whether an object is empty or not
@@ -112,7 +112,7 @@ export const loadHelpers = async function () {
   })
 
   Handlebars.registerHelper('sortAbilities', function (unordered = {}) {
-    if (!game.settings.get('wod5e', 'chatRollerSortAbilities')) {
+    if (!game.settings.get('aztharion', 'chatRollerSortAbilities')) {
       return unordered
     }
     return Object.keys(unordered)

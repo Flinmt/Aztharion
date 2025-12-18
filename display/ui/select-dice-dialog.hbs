@@ -3,11 +3,11 @@
     {{#unless (or skill attribute)}}
       <div class="primary-selector">
         <div class="selector-title">
-          {{localize "WOD5E.SkillsList.Label"}}
+          {{localize "AZTHARION.SkillsList.Label"}}
         </div>
         <div class="selector-content">
           <select id="skillSelect" name="skillSelect">
-            <option value="">{{localize "WOD5E.None"}}</option>
+            <option value="">{{localize "AZTHARION.None"}}</option>
             {{selectOptions skillOptions selected=skill}}
           </select>
         </div>
@@ -16,21 +16,21 @@
       <div class="primary-selector">
         {{#if skill}}
           <div class="selector-title">
-            {{localize "WOD5E.SkillsList.Label"}}
+            {{localize "AZTHARION.SkillsList.Label"}}
           </div>
           <div class="selector-content">
             <select id="skillSelect" name="skillSelect">
-                <option value="">{{localize "WOD5E.None"}}</option>
+                <option value="">{{localize "AZTHARION.None"}}</option>
                 {{selectOptions skillOptions selected=skill}}
             </select>
           </div>
         {{else if attribute}}
           <div class="selector-title">
-            {{localize "WOD5E.AttributesList.Label"}}
+            {{localize "AZTHARION.AttributesList.Label"}}
           </div>
           <div class="selector-content">
             <select id="attributeSelect2" name="attributeSelect2">
-                <option value="">{{localize "WOD5E.None"}}</option>
+                <option value="">{{localize "AZTHARION.None"}}</option>
                 {{selectOptions attributeOptions selected=attribute2}}
             </select>
           </div>
@@ -43,11 +43,11 @@
     <!-- Attribute selection -->
     <div class="primary-selector">
         <div class="selector-title">
-          {{localize "WOD5E.AttributesList.Label"}}
+          {{localize "AZTHARION.AttributesList.Label"}}
         </div>
         <div class="selector-content">
           <select id="attributeSelect" name="attributeSelect">
-            <option value="">{{localize "WOD5E.None"}}</option>
+            <option value="">{{localize "AZTHARION.None"}}</option>
             {{selectOptions attributeOptions selected=attribute}}
           </select>
         </div>
@@ -59,9 +59,9 @@
     <hr>
     <div class="flexrow">
         <div class="secondary-selector">
-            <div class="selector-title">{{localize "WOD5E.VTM.AddDiscipline"}}</div>
+            <div class="selector-title">{{localize "AZTHARION.VTM.AddDiscipline"}}</div>
             <select id="disciplineSelect" name="disciplineSelect">
-            <option value="">{{localize "WOD5E.None"}}</option>
+            <option value="">{{localize "AZTHARION.None"}}</option>
             {{selectOptions disciplineOptions selected=discipline}}
             </select>
         </div>
@@ -70,7 +70,7 @@
       {{#ifnoteq actorType 'ghoul'}}
         {{#ifnoteq hungerValue actor.system.hunger.max}}
           <div class="secondary-selector">
-            <div class="selector-title">{{localize "WOD5E.VTM.BloodSurge"}}</div>
+            <div class="selector-title">{{localize "AZTHARION.VTM.BloodSurge"}}</div>
             <input id="bloodSurge" class="blood-surge" name="bloodSurge" type="checkbox"/>
           </div>
         {{/ifnoteq}}
@@ -82,9 +82,9 @@
   {{#ifeq system "werewolf"}}
     <hr>
     <div class="secondary-selector">
-        <div>{{localize "WOD5E.WTA.AddRenown"}}</div>
+        <div>{{localize "AZTHARION.WTA.AddRenown"}}</div>
         <select id="renownSelect" name="renownSelect">
-            <option value="">{{localize "WOD5E.None"}}</option>
+            <option value="">{{localize "AZTHARION.None"}}</option>
             {{selectOptions renownOptions selected=renown}}
         </select>
     </div>

@@ -53,10 +53,10 @@ export class WoDChatMessage extends ChatMessage {
       author: this.author,
 
       // Display info
-      title: this.flags?.wod5e?.title,
-      name: this.flags?.wod5e?.name,
-      description: this.flags?.wod5e?.description,
-      img: this.flags?.wod5e?.img,
+      title: this.flags?.aztharion?.title,
+      name: this.flags?.aztharion?.name,
+      description: this.flags?.aztharion?.description,
+      img: this.flags?.aztharion?.img,
       alias: this.alias,
       speakerActor,
       portrait: (speakerActor?.img ?? this.author?.avatar) || this.constructor.DEFAULT_AVATAR,
@@ -70,12 +70,12 @@ export class WoDChatMessage extends ChatMessage {
       ].filterJoin(' '),
 
       // System-specific flags
-      isRollPrompt: this.getFlag('wod5e', 'isRollPrompt'),
-      promptedRolls: this.getFlag('wod5e', 'promptedRolls'),
-      valuePaths: this.getFlag('wod5e', 'valuePaths'),
-      difficulty: this.getFlag('wod5e', 'difficulty'),
+      isRollPrompt: this.getFlag('aztharion', 'isRollPrompt'),
+      promptedRolls: this.getFlag('aztharion', 'promptedRolls'),
+      valuePaths: this.getFlag('aztharion', 'valuePaths'),
+      difficulty: this.getFlag('aztharion', 'difficulty'),
       isRoll: this?.isRoll || false,
-      isExtendedRoll: this.getFlag('wod5e', 'isExtendedRoll')
+      isExtendedRoll: this.getFlag('aztharion', 'isExtendedRoll')
     }
 
     // Render additional message data
@@ -103,7 +103,7 @@ export class WoDChatMessage extends ChatMessage {
     Hooks.callAll('renderChatMessageHTML', this, html, this.messageData)
 
     // Get whether descriptions should auto-collapse for this user or not and apply the styling
-    const autoCollapse = game.settings.get('wod5e', 'autoCollapseDescriptions')
+    const autoCollapse = game.settings.get('aztharion', 'autoCollapseDescriptions')
     if (!autoCollapse) {
       const collapsibleContent = html.querySelector('.collapsible-content')
       if (collapsibleContent) collapsibleContent.style.maxHeight = 'unset'

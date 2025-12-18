@@ -8,10 +8,10 @@ import { Gifts } from '../../api/def/gifts.js'
 export class StorytellerMenu extends FormApplication {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      title: game.i18n.localize('WOD5E.Settings.StorytellerMenu'),
-      id: 'wod5e-storyteller',
-      classes: ['wod5e'],
-      template: 'systems/wod5e/display/ui/storyteller-menu.hbs',
+      title: game.i18n.localize('AZTHARION.Settings.StorytellerMenu'),
+      id: 'aztharion-storyteller',
+      classes: ['aztharion'],
+      template: 'systems/aztharion/display/ui/storyteller-menu.hbs',
       width: 500,
       height: 450,
       resizable: true,
@@ -31,40 +31,40 @@ export class StorytellerMenu extends FormApplication {
 
     this.listKeys = {
       attribute: {
-        newModTitle: game.i18n.format('WOD5E.Settings.NewStringModification', {
-          string: game.i18n.localize('WOD5E.AttributesList.Label')
+        newModTitle: game.i18n.format('AZTHARION.Settings.NewStringModification', {
+          string: game.i18n.localize('AZTHARION.AttributesList.Label')
         }),
         defCategory: 'Attributes',
         labelCategory: 'AttributesList',
         defClass: Attributes
       },
       skill: {
-        newModTitle: game.i18n.format('WOD5E.Settings.NewStringModification', {
-          string: game.i18n.localize('WOD5E.SkillsList.Label')
+        newModTitle: game.i18n.format('AZTHARION.Settings.NewStringModification', {
+          string: game.i18n.localize('AZTHARION.SkillsList.Label')
         }),
         defCategory: 'Skills',
         labelCategory: 'SkillsList',
         defClass: Skills
       },
       discipline: {
-        newModTitle: game.i18n.format('WOD5E.Settings.NewStringModification', {
-          string: game.i18n.localize('WOD5E.VTM.Discipline')
+        newModTitle: game.i18n.format('AZTHARION.Settings.NewStringModification', {
+          string: game.i18n.localize('AZTHARION.VTM.Discipline')
         }),
         defCategory: 'Disciplines',
         labelCategory: 'DisciplinesList',
         defClass: Disciplines
       },
       edge: {
-        newModTitle: game.i18n.format('WOD5E.Settings.NewStringModification', {
-          string: game.i18n.localize('WOD5E.HTR.Edge')
+        newModTitle: game.i18n.format('AZTHARION.Settings.NewStringModification', {
+          string: game.i18n.localize('AZTHARION.HTR.Edge')
         }),
         defCategory: 'Edges',
         labelCategory: 'EdgesList',
         defClass: Edges
       },
       gift: {
-        newModTitle: game.i18n.format('WOD5E.Settings.NewStringModification', {
-          string: game.i18n.localize('WOD5E.WTA.Gift')
+        newModTitle: game.i18n.format('AZTHARION.Settings.NewStringModification', {
+          string: game.i18n.localize('AZTHARION.WTA.Gift')
         }),
         defCategory: 'Gifts',
         labelCategory: 'GiftsList',
@@ -80,24 +80,24 @@ export class StorytellerMenu extends FormApplication {
     const data = await super.getData()
 
     data.attributeTypes = {
-      physical: 'WOD5E.SPC.Physical',
-      social: 'WOD5E.SPC.Social',
-      mental: 'WOD5E.SPC.Mental'
+      physical: 'AZTHARION.SPC.Physical',
+      social: 'AZTHARION.SPC.Social',
+      mental: 'AZTHARION.SPC.Mental'
     }
 
     // Grab the modifications from the game settings and add them to the application data
-    data.attributeModifications = game.settings.get('wod5e', 'modifiedAttributes')
-    data.skillModifications = game.settings.get('wod5e', 'modifiedSkills')
-    data.disciplineModifications = game.settings.get('wod5e', 'modifiedDisciplines')
-    data.edgeModifications = game.settings.get('wod5e', 'modifiedEdges')
-    data.giftModifications = game.settings.get('wod5e', 'modifiedGifts')
+    data.attributeModifications = game.settings.get('aztharion', 'modifiedAttributes')
+    data.skillModifications = game.settings.get('aztharion', 'modifiedSkills')
+    data.disciplineModifications = game.settings.get('aztharion', 'modifiedDisciplines')
+    data.edgeModifications = game.settings.get('aztharion', 'modifiedEdges')
+    data.giftModifications = game.settings.get('aztharion', 'modifiedGifts')
 
     // Grab the custom features from the game settings and add them to the application data
-    data.customAttributes = game.settings.get('wod5e', 'customAttributes')
-    data.customSkills = game.settings.get('wod5e', 'customSkills')
-    data.customDisciplines = game.settings.get('wod5e', 'customDisciplines')
-    data.customEdges = game.settings.get('wod5e', 'customEdges')
-    data.customGifts = game.settings.get('wod5e', 'customGifts')
+    data.customAttributes = game.settings.get('aztharion', 'customAttributes')
+    data.customSkills = game.settings.get('aztharion', 'customSkills')
+    data.customDisciplines = game.settings.get('aztharion', 'customDisciplines')
+    data.customEdges = game.settings.get('aztharion', 'customEdges')
+    data.customGifts = game.settings.get('aztharion', 'customGifts')
 
     return data
   }
@@ -117,7 +117,7 @@ export class StorytellerMenu extends FormApplication {
     }
 
     const addCustomItem = async (listKey, label) => {
-      const list = await game.settings.get('wod5e', listKey)
+      const list = await game.settings.get('aztharion', listKey)
       const newItem = {
         id: foundry.utils.randomID(8),
         label
@@ -130,7 +130,7 @@ export class StorytellerMenu extends FormApplication {
 
       // Push the default item into the main list and save the new setting
       list.push(newItem)
-      await game.settings.set('wod5e', listKey, list)
+      await game.settings.set('aztharion', listKey, list)
     }
 
     handleClick('.add-mod-button', ({ type }) => this._onGenerateModPrompt(type))
@@ -193,39 +193,39 @@ export class StorytellerMenu extends FormApplication {
       })
 
       // Attributes
-      game.settings.set('wod5e', 'modifiedAttributes', modifications.attribute)
-      game.settings.set('wod5e', 'customAttributes', custom.attribute)
+      game.settings.set('aztharion', 'modifiedAttributes', modifications.attribute)
+      game.settings.set('aztharion', 'customAttributes', custom.attribute)
       // SKills
-      game.settings.set('wod5e', 'modifiedSkills', modifications.skill)
-      game.settings.set('wod5e', 'customSkills', custom.skill)
+      game.settings.set('aztharion', 'modifiedSkills', modifications.skill)
+      game.settings.set('aztharion', 'customSkills', custom.skill)
       // Disciplines
-      game.settings.set('wod5e', 'modifiedDisciplines', modifications.discipline)
-      game.settings.set('wod5e', 'customDisciplines', custom.discipline)
+      game.settings.set('aztharion', 'modifiedDisciplines', modifications.discipline)
+      game.settings.set('aztharion', 'customDisciplines', custom.discipline)
       // Edges
-      game.settings.set('wod5e', 'modifiedEdges', modifications.edge)
-      game.settings.set('wod5e', 'customEdges', custom.edge)
+      game.settings.set('aztharion', 'modifiedEdges', modifications.edge)
+      game.settings.set('aztharion', 'customEdges', custom.edge)
       // Gifts
-      game.settings.set('wod5e', 'modifiedGifts', modifications.gift)
-      game.settings.set('wod5e', 'customGifts', custom.gift)
+      game.settings.set('aztharion', 'modifiedGifts', modifications.gift)
+      game.settings.set('aztharion', 'customGifts', custom.gift)
     })
   }
 
   // Function for getting the information necessary for the selection dialog
   async _onGenerateModPrompt(type) {
-    const list = await WOD5E[this.listKeys[type].defCategory].getList({})
+    const list = await AZTHARION[this.listKeys[type].defCategory].getList({})
     this._onRenderPromptDialog(type, list, this.listKeys[type].newModTitle)
   }
 
   // Function for rendering the dialog for adding a new modification
   async _onRenderPromptDialog(type, list, title) {
     const modifiedKey = `modified${this.listKeys[type].defCategory}`
-    const modifiedList = await game.settings.get('wod5e', modifiedKey)
+    const modifiedList = await game.settings.get('aztharion', modifiedKey)
 
     const effectiveList = Object.fromEntries(
       Object.entries(list).filter((item) => !modifiedList.some((mod) => mod.id === item[0]))
     )
 
-    const template = 'systems/wod5e/display/ui/select-dialog.hbs'
+    const template = 'systems/aztharion/display/ui/select-dialog.hbs'
     const content = await foundry.applications.handlebars.renderTemplate(template, {
       options: effectiveList
     })
@@ -235,13 +235,13 @@ export class StorytellerMenu extends FormApplication {
       content,
       ok: {
         icon: 'fas fa-check',
-        label: game.i18n.localize('WOD5E.Add')
+        label: game.i18n.localize('AZTHARION.Add')
       },
       buttons: [
         {
           action: 'cancel',
           icon: 'fas fa-times',
-          label: game.i18n.localize('WOD5E.Cancel'),
+          label: game.i18n.localize('AZTHARION.Cancel'),
           type: 'button'
         }
       ]
@@ -251,24 +251,24 @@ export class StorytellerMenu extends FormApplication {
       const id = result.optionSelect
       const label = list[id]?.label || id
       modifiedList.push({ id, label, rename: '', hidden: false })
-      await game.settings.set('wod5e', modifiedKey, modifiedList)
+      await game.settings.set('aztharion', modifiedKey, modifiedList)
     }
   }
 
   // Function for removing a change
   async _onRemoveChange(type, id) {
     const modifiedKey = `modified${this.listKeys[type].defCategory}`
-    let modifiedList = await game.settings.get('wod5e', modifiedKey)
+    let modifiedList = await game.settings.get('aztharion', modifiedKey)
     modifiedList = modifiedList.filter((item) => item.id !== id)
-    await game.settings.set('wod5e', modifiedKey, modifiedList)
+    await game.settings.set('aztharion', modifiedKey, modifiedList)
   }
 
   // Function for removing a custom feature
   async _onRemoveCustom(type, id) {
     const customKey = `custom${this.listKeys[type].defCategory}`
     delete this.listKeys[type].defClass[id]
-    let customList = await game.settings.get('wod5e', customKey)
+    let customList = await game.settings.get('aztharion', customKey)
     customList = customList.filter((item) => item.id !== id)
-    await game.settings.set('wod5e', customKey, customList)
+    await game.settings.set('aztharion', customKey, customList)
   }
 }

@@ -13,7 +13,7 @@ export const _onHaranoRoll = async function (event) {
 
   WOD5eDice.Roll({
     basicDice: dicePool,
-    title: game.i18n.localize('WOD5E.WTA.HaranoTest'),
+    title: game.i18n.localize('AZTHARION.WTA.HaranoTest'),
     actor,
     data: actor.system,
     quickRoll: false,
@@ -34,7 +34,7 @@ export const _onHaugloskRoll = async function (event) {
 
   WOD5eDice.Roll({
     basicDice: dicePool,
-    title: game.i18n.localize('WOD5E.WTA.HaugloskTest'),
+    title: game.i18n.localize('AZTHARION.WTA.HaugloskTest'),
     actor,
     data: actor.system,
     quickRoll: false,

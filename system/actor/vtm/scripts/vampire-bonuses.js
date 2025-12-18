@@ -5,7 +5,7 @@ export const getVampireModifiers = async function (actorData) {
 
   const bonuses = [
     {
-      source: game.i18n.localize('WOD5E.VTM.BloodPotency'),
+      source: game.i18n.localize('AZTHARION.VTM.BloodPotency'),
       value: bloodPotency.power,
       paths: ['disciplines'],
       activeWhen: {
@@ -13,7 +13,7 @@ export const getVampireModifiers = async function (actorData) {
       }
     },
     {
-      source: game.i18n.localize('WOD5E.VTM.BloodSurge'),
+      source: game.i18n.localize('AZTHARION.VTM.BloodSurge'),
       value: bloodPotency.surge,
       paths: ['attributes'],
       unless: ['willpower', 'humanity', 'extended', 'frenzy'],

@@ -7,36 +7,36 @@ export const _onLostTheWolf = async function (actor) {
   let buttons = {}
 
   // If automatedRage is disabled, we don't wat to show this dialogue
-  if (!game.settings.get('wod5e', 'automatedRage')) return
+  if (!game.settings.get('aztharion', 'automatedRage')) return
 
   // Define the template to be used
   const template = `
     <div class="form-group">
-        <label>${game.i18n.localize('WOD5E.WTA.LostWolfShiftDown')}</label>
+        <label>${game.i18n.localize('AZTHARION.WTA.LostWolfShiftDown')}</label>
     </div>`
 
   // Define the buttons and push them to the buttons variable
   buttons = [
     {
       action: 'homid',
-      label: game.i18n.localize('WOD5E.WTA.HomidName'),
+      label: game.i18n.localize('AZTHARION.WTA.HomidName'),
       default: true
     },
     {
       action: 'lupus',
-      label: game.i18n.localize('WOD5E.WTA.LupusName')
+      label: game.i18n.localize('AZTHARION.WTA.LupusName')
     },
     {
       action: 'override',
-      label: game.i18n.localize('WOD5E.WTA.StayInCurrentForm')
+      label: game.i18n.localize('AZTHARION.WTA.StayInCurrentForm')
     }
   ]
 
   const result = await foundry.applications.api.DialogV2.wait({
-    window: { title: game.i18n.localize('WOD5E.WTA.LostTheWolf') },
+    window: { title: game.i18n.localize('AZTHARION.WTA.LostTheWolf') },
     content: template,
     buttons,
-    classes: ['wod5e', 'werewolf']
+    classes: ['aztharion', 'werewolf']
   })
 
   if (result === 'override') {
@@ -81,7 +81,7 @@ export const handleFormChange = async function (event, target, actor, form, dice
   const selectors = []
 
   // If automatedRage is turned on and the actor's rage is 0, present a warning
-  if (game.settings.get('wod5e', 'automatedRage') && actor.system.rage.value === 0) {
+  if (game.settings.get('aztharion', 'automatedRage') && actor.system.rage.value === 0) {
     _onInsufficientRage(actor, form)
   } else {
     // Variables
@@ -177,23 +177,23 @@ export const _onInsufficientRage = async function (actor, form) {
   // Define the template to be used
   const template = `
     <div class="form-group">
-        <label>${game.i18n.localize('WOD5E.WTA.LostWolfShiftAnyway')}</label>
+        <label>${game.i18n.localize('AZTHARION.WTA.LostWolfShiftAnyway')}</label>
     </div>`
 
   const shouldShift = await foundry.applications.api.DialogV2.confirm({
     window: {
-      title: game.i18n.localize('WOD5E.WTA.LostTheWolf')
+      title: game.i18n.localize('AZTHARION.WTA.LostTheWolf')
     },
     content: template,
     yes: {
       icon: 'fas fa-check',
-      label: game.i18n.localize('WOD5E.WTA.Shift')
+      label: game.i18n.localize('AZTHARION.WTA.Shift')
     },
     no: {
       icon: 'fas fa-times',
-      label: game.i18n.localize('WOD5E.Cancel')
+      label: game.i18n.localize('AZTHARION.Cancel')
     },
-    classes: ['wod5e', 'werewolf']
+    classes: ['aztharion', 'werewolf']
   })
 
   if (shouldShift) {

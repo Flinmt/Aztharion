@@ -5,14 +5,14 @@ export const getEffectKeys = () => {
   const keysList = []
 
   // Attributes
-  const attributes = WOD5E.Attributes.getList({
+  const attributes = AZTHARION.Attributes.getList({
     useValuePath: true
   })
   // "All Attributes" key
   keysList.push({
     id: 'attributes',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.AttributesList.Attributes')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.AttributesList.Attributes')
     })
   })
   // Individual attributes
@@ -26,36 +26,36 @@ export const getEffectKeys = () => {
   // Physical Attributes
   keysList.push({
     id: 'physical',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.SPC.Physical')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.SPC.Physical')
     })
   })
 
   // Mental Attributes
   keysList.push({
     id: 'mental',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.SPC.Mental')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.SPC.Mental')
     })
   })
 
   // Social Attributes
   keysList.push({
     id: 'social',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.SPC.Social')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.SPC.Social')
     })
   })
 
   // Skills
-  const skills = WOD5E.Skills.getList({
+  const skills = AZTHARION.Skills.getList({
     useValuePath: true
   })
   // "All Skills" key
   keysList.push({
     id: 'skills',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.SkillsList.Skills')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.SkillsList.Skills')
     })
   })
   // Individual skills
@@ -69,28 +69,28 @@ export const getEffectKeys = () => {
   // "Health Max" key
   keysList.push({
     id: 'system.health.max',
-    displayName: game.i18n.format('WOD5E.MaxString', {
-      string: game.i18n.localize('WOD5E.Health')
+    displayName: game.i18n.format('AZTHARION.MaxString', {
+      string: game.i18n.localize('AZTHARION.Health')
     })
   })
 
   // "Willpower Max" key
   keysList.push({
     id: 'system.willpower.max',
-    displayName: game.i18n.format('WOD5E.MaxString', {
-      string: game.i18n.localize('WOD5E.Willpower')
+    displayName: game.i18n.format('AZTHARION.MaxString', {
+      string: game.i18n.localize('AZTHARION.Willpower')
     })
   })
 
   // Vampire
-  const disciplines = WOD5E.Disciplines.getList({
+  const disciplines = AZTHARION.Disciplines.getList({
     useValuePath: true
   })
   // "All Disciplines" key
   keysList.push({
     id: 'disciplines',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.VTM.Disciplines')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.VTM.Disciplines')
     })
   })
   // Individual disciplines
@@ -103,21 +103,21 @@ export const getEffectKeys = () => {
   // "Hunger Max" key
   keysList.push({
     id: 'system.hunger.max',
-    displayName: game.i18n.format('WOD5E.MaxString', {
-      string: game.i18n.localize('WOD5E.VTM.Hunger')
+    displayName: game.i18n.format('AZTHARION.MaxString', {
+      string: game.i18n.localize('AZTHARION.VTM.Hunger')
     })
   })
 
   // Werewolf
   // Renown
-  const renown = WOD5E.Renown.getList({
+  const renown = AZTHARION.Renown.getList({
     useValuePath: true
   })
   // "All Renown" key
   keysList.push({
     id: 'renown',
-    displayName: game.i18n.format('WOD5E.Modifier.AllString', {
-      string: game.i18n.localize('WOD5E.WTA.Renown')
+    displayName: game.i18n.format('AZTHARION.Modifier.AllString', {
+      string: game.i18n.localize('AZTHARION.WTA.Renown')
     })
   })
   // Individual renown
@@ -130,8 +130,8 @@ export const getEffectKeys = () => {
   // "Rage Max" key
   keysList.push({
     id: 'system.rage.max',
-    displayName: game.i18n.format('WOD5E.MaxString', {
-      string: game.i18n.localize('WOD5E.WTA.Rage')
+    displayName: game.i18n.format('AZTHARION.MaxString', {
+      string: game.i18n.localize('AZTHARION.WTA.Rage')
     })
   })
 

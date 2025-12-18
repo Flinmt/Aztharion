@@ -34,30 +34,30 @@ export class WereForms extends BaseDefinitionClass {
   }
 
   static homid = {
-    label: 'WOD5E.WTA.HomidName',
-    nickname: 'WOD5E.WTA.HomidTitle',
+    label: 'AZTHARION.WTA.HomidName',
+    nickname: 'AZTHARION.WTA.HomidTitle',
     cost: 0,
-    glyph: 'systems/wod5e/assets/icons/werewolf-forms/homid.webp',
-    attributes: [{ label: 'WOD5E.WTA.SilverImmunity' }]
+    glyph: 'systems/aztharion/assets/icons/werewolf-forms/homid.webp',
+    attributes: [{ label: 'AZTHARION.WTA.SilverImmunity' }]
   }
 
   static glabro = {
-    label: 'WOD5E.WTA.GlabroName',
-    nickname: 'WOD5E.WTA.GlabroTitle',
+    label: 'AZTHARION.WTA.GlabroName',
+    nickname: 'AZTHARION.WTA.GlabroTitle',
     cost: 1,
-    glyph: 'systems/wod5e/assets/icons/werewolf-forms/glabro.webp',
+    glyph: 'systems/aztharion/assets/icons/werewolf-forms/glabro.webp',
     attributes: [
-      { label: 'WOD5E.WTA.GlabroPhysicalTests' },
+      { label: 'AZTHARION.WTA.GlabroPhysicalTests' },
       {
-        label: 'WOD5E.WTA.GlabroSocialTests',
+        label: 'AZTHARION.WTA.GlabroSocialTests',
         hintIcon: '*',
-        hintDescription: 'WOD5E.WTA.GlabroSocialTestExclusion'
+        hintDescription: 'AZTHARION.WTA.GlabroSocialTestExclusion'
       },
-      { label: 'WOD5E.WTA.GlabroRegenerate' }
+      { label: 'AZTHARION.WTA.GlabroRegenerate' }
     ],
     bonuses: [
       {
-        source: 'WOD5E.WTA.GlabroName',
+        source: 'AZTHARION.WTA.GlabroName',
         value: 2,
         paths: ['attributes.strength', 'attributes.dexterity', 'attributes.stamina'],
         activeWhen: {
@@ -67,7 +67,7 @@ export class WereForms extends BaseDefinitionClass {
         }
       },
       {
-        source: 'WOD5E.WTA.GlabroName',
+        source: 'AZTHARION.WTA.GlabroName',
         value: -2,
         paths: ['attributes.charisma', 'attributes.manipulation', 'attributes.composure'],
         unless: ['skills.intimidation'],
@@ -81,27 +81,27 @@ export class WereForms extends BaseDefinitionClass {
   }
 
   static crinos = {
-    label: 'WOD5E.WTA.CrinosName',
-    nickname: 'WOD5E.WTA.CrinosTitle',
+    label: 'AZTHARION.WTA.CrinosName',
+    nickname: 'AZTHARION.WTA.CrinosTitle',
     cost: 2,
-    glyph: 'systems/wod5e/assets/icons/werewolf-forms/crinos.webp',
+    glyph: 'systems/aztharion/assets/icons/werewolf-forms/crinos.webp',
     attributes: [
-      { label: 'WOD5E.WTA.CrinosFrenzy' },
-      { label: 'WOD5E.WTA.CrinosPhysicalTests' },
-      { label: 'WOD5E.WTA.CrinosHealth' },
+      { label: 'AZTHARION.WTA.CrinosFrenzy' },
+      { label: 'AZTHARION.WTA.CrinosPhysicalTests' },
+      { label: 'AZTHARION.WTA.CrinosHealth' },
       {
-        label: 'WOD5E.WTA.CrinosSocialTests',
+        label: 'AZTHARION.WTA.CrinosSocialTests',
         hintIcon: '*',
-        hintDescription: 'WOD5E.WTA.CrinosSocialTestExclusion'
+        hintDescription: 'AZTHARION.WTA.CrinosSocialTestExclusion'
       },
-      { label: 'WOD5E.WTA.CrinosRegenerate' },
-      { label: 'WOD5E.WTA.CrinosClaws' },
-      { label: 'WOD5E.WTA.CrinosBite' },
-      { label: 'WOD5E.WTA.CausesDelirium' }
+      { label: 'AZTHARION.WTA.CrinosRegenerate' },
+      { label: 'AZTHARION.WTA.CrinosClaws' },
+      { label: 'AZTHARION.WTA.CrinosBite' },
+      { label: 'AZTHARION.WTA.CausesDelirium' }
     ],
     bonuses: [
       {
-        source: 'WOD5E.WTA.CrinosName',
+        source: 'AZTHARION.WTA.CrinosName',
         value: 4,
         paths: ['attributes.strength', 'attributes.dexterity', 'attributes.stamina'],
         activeWhen: {
@@ -114,24 +114,24 @@ export class WereForms extends BaseDefinitionClass {
   }
 
   static hispo = {
-    label: 'WOD5E.WTA.HispoName',
-    nickname: 'WOD5E.WTA.HispoTitle',
+    label: 'AZTHARION.WTA.HispoName',
+    nickname: 'AZTHARION.WTA.HispoTitle',
     cost: 1,
-    glyph: 'systems/wod5e/assets/icons/werewolf-forms/hispo.webp',
+    glyph: 'systems/aztharion/assets/icons/werewolf-forms/hispo.webp',
     attributes: [
       {
-        label: 'WOD5E.WTA.HispoPhysicalTests',
+        label: 'AZTHARION.WTA.HispoPhysicalTests',
         hintIcon: '*',
-        hintDescription: 'WOD5E.WTA.HispoBonusExclusion'
+        hintDescription: 'AZTHARION.WTA.HispoBonusExclusion'
       },
-      { label: 'WOD5E.WTA.HispoStealthTests' },
-      { label: 'WOD5E.WTA.HispoSocialTests' },
-      { label: 'WOD5E.WTA.HispoRegenerate' },
-      { label: 'WOD5E.WTA.HispoBite' }
+      { label: 'AZTHARION.WTA.HispoStealthTests' },
+      { label: 'AZTHARION.WTA.HispoSocialTests' },
+      { label: 'AZTHARION.WTA.HispoRegenerate' },
+      { label: 'AZTHARION.WTA.HispoBite' }
     ],
     bonuses: [
       {
-        source: 'WOD5E.WTA.HispoName',
+        source: 'AZTHARION.WTA.HispoName',
         value: 2,
         paths: ['attributes.strength', 'attributes.dexterity', 'attributes.stamina'],
         unless: ['skills.stealth'],
@@ -142,7 +142,7 @@ export class WereForms extends BaseDefinitionClass {
         }
       },
       {
-        source: 'WOD5E.WTA.HispoName',
+        source: 'AZTHARION.WTA.HispoName',
         value: -2,
         paths: ['skills.stealth'],
         activeWhen: {
@@ -155,11 +155,11 @@ export class WereForms extends BaseDefinitionClass {
   }
 
   static lupus = {
-    label: 'WOD5E.WTA.LupusName',
-    nickname: 'WOD5E.WTA.LupusTitle',
+    label: 'AZTHARION.WTA.LupusName',
+    nickname: 'AZTHARION.WTA.LupusTitle',
     cost: 0,
-    glyph: 'systems/wod5e/assets/icons/werewolf-forms/lupus.webp',
-    attributes: [{ label: 'WOD5E.WTA.SilverImmunity' }, { label: 'WOD5E.WTA.LupusSocialTests' }]
+    glyph: 'systems/aztharion/assets/icons/werewolf-forms/lupus.webp',
+    attributes: [{ label: 'AZTHARION.WTA.SilverImmunity' }, { label: 'AZTHARION.WTA.LupusSocialTests' }]
   }
 }
 

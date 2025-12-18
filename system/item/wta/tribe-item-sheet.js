@@ -16,28 +16,28 @@ const { HandlebarsApplicationMixin } = foundry.applications.api
  */
 export class TribeItemSheet extends HandlebarsApplicationMixin(WoDItemBase) {
   static DEFAULT_OPTIONS = {
-    classes: ['wod5e', 'item', 'sheet'],
+    classes: ['aztharion', 'item', 'sheet'],
     actions: {}
   }
 
   static PARTS = {
     header: {
-      template: 'systems/wod5e/display/wta/items/tribe-sheet.hbs'
+      template: 'systems/aztharion/display/wta/items/tribe-sheet.hbs'
     },
     tabs: {
       template: 'templates/generic/tab-navigation.hbs'
     },
     description: {
-      template: 'systems/wod5e/display/shared/items/parts/description.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/description.hbs'
     },
     patronSpirit: {
-      template: 'systems/wod5e/display/wta/items/parts/patron-spirit.hbs'
+      template: 'systems/aztharion/display/wta/items/parts/patron-spirit.hbs'
     },
     modifiers: {
-      template: 'systems/wod5e/display/shared/items/parts/modifiers.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/modifiers.hbs'
     },
     settings: {
-      template: 'systems/wod5e/display/shared/items/parts/item-settings.hbs'
+      template: 'systems/aztharion/display/shared/items/parts/item-settings.hbs'
     }
   }
 
@@ -45,22 +45,22 @@ export class TribeItemSheet extends HandlebarsApplicationMixin(WoDItemBase) {
     description: {
       id: 'description',
       group: 'primary',
-      label: 'WOD5E.Tabs.Description'
+      label: 'AZTHARION.Tabs.Description'
     },
     patronSpirit: {
       id: 'patronSpirit',
       group: 'primary',
-      label: 'WOD5E.WTA.PatronSpirit'
+      label: 'AZTHARION.WTA.PatronSpirit'
     },
     modifiers: {
       id: 'modifiers',
       group: 'primary',
-      label: 'WOD5E.ItemsList.Modifiers'
+      label: 'AZTHARION.ItemsList.Modifiers'
     },
     settings: {
       id: 'settings',
       group: 'primary',
-      label: 'WOD5E.ItemsList.ItemSettings'
+      label: 'AZTHARION.ItemsList.ItemSettings'
     }
   }
 

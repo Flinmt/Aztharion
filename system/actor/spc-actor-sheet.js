@@ -24,7 +24,7 @@ const { HandlebarsApplicationMixin } = foundry.applications.api
  */
 export class SPCActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
   static DEFAULT_OPTIONS = {
-    classes: ['wod5e', 'actor', 'spc', 'sheet'],
+    classes: ['aztharion', 'actor', 'spc', 'sheet'],
     actions: {
       createSPCPower: _onCreatePower,
       deleteSPCPower: _onDeletePower,
@@ -37,34 +37,34 @@ export class SPCActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
 
   static PARTS = {
     header: {
-      template: 'systems/wod5e/display/shared/actors/spc-sheet.hbs'
+      template: 'systems/aztharion/display/shared/actors/spc-sheet.hbs'
     },
     tabs: {
-      template: 'systems/wod5e/display/shared/actors/parts/tab-navigation.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/tab-navigation.hbs'
     },
     stats: {
-      template: 'systems/wod5e/display/shared/actors/parts/spc/stats.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/spc/stats.hbs'
     },
     features: {
-      template: 'systems/wod5e/display/shared/actors/parts/features.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/features.hbs'
     },
     equipment: {
-      template: 'systems/wod5e/display/shared/actors/parts/equipment.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/equipment.hbs'
     },
     biography: {
-      template: 'systems/wod5e/display/shared/actors/parts/biography.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/biography.hbs'
     },
     notepad: {
-      template: 'systems/wod5e/display/shared/actors/parts/notepad.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/notepad.hbs'
     },
     settings: {
-      template: 'systems/wod5e/display/shared/actors/parts/actor-settings.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/actor-settings.hbs'
     },
     banner: {
-      template: 'systems/wod5e/display/shared/actors/parts/type-banner.hbs'
+      template: 'systems/aztharion/display/shared/actors/parts/type-banner.hbs'
     },
     limited: {
-      template: 'systems/wod5e/display/shared/actors/limited-sheet.hbs'
+      template: 'systems/aztharion/display/shared/actors/limited-sheet.hbs'
     }
   }
 
@@ -72,37 +72,37 @@ export class SPCActorSheet extends HandlebarsApplicationMixin(WoDActorBase) {
     stats: {
       id: 'stats',
       group: 'primary',
-      title: 'WOD5E.Tabs.Stats',
+      title: 'AZTHARION.Tabs.Stats',
       icon: '<i class="fa-regular fa-chart-line"></i>'
     },
     features: {
       id: 'features',
       group: 'primary',
-      title: 'WOD5E.Tabs.Features',
+      title: 'AZTHARION.Tabs.Features',
       icon: '<i class="fas fa-gem"></i>'
     },
     equipment: {
       id: 'equipment',
       group: 'primary',
-      title: 'WOD5E.Tabs.Equipment',
+      title: 'AZTHARION.Tabs.Equipment',
       icon: '<i class="fa-solid fa-toolbox"></i>'
     },
     biography: {
       id: 'biography',
       group: 'primary',
-      title: 'WOD5E.Tabs.Biography',
+      title: 'AZTHARION.Tabs.Biography',
       icon: '<i class="fas fa-id-card"></i>'
     },
     notepad: {
       id: 'notepad',
       group: 'primary',
-      title: 'WOD5E.Tabs.Notes',
+      title: 'AZTHARION.Tabs.Notes',
       icon: '<i class="fas fa-sticky-note"></i>'
     },
     settings: {
       id: 'settings',
       group: 'primary',
-      title: 'WOD5E.Tabs.Settings',
+      title: 'AZTHARION.Tabs.Settings',
       icon: '<i class="fa-solid fa-gears"></i>'
     }
   }

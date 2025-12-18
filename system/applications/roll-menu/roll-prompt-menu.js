@@ -9,7 +9,7 @@ const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api
 export class RollMenuApplication extends HandlebarsApplicationMixin(ApplicationV2) {
   static DEFAULT_OPTIONS = {
     tag: 'form',
-    id: 'wod5e-roll-menu',
+    id: 'aztharion-roll-menu',
     form: {
       submitOnChange: true,
       handler: RollMenuApplication.applicationHandler
@@ -19,7 +19,7 @@ export class RollMenuApplication extends HandlebarsApplicationMixin(ApplicationV
       title: 'Roll Menu',
       resizable: true
     },
-    classes: ['wod5e', 'dialog-app', 'sheet', 'application', 'roll-menu'],
+    classes: ['aztharion', 'dialog-app', 'sheet', 'application', 'roll-menu'],
     position: {
       width: 480,
       height: 300
@@ -35,27 +35,27 @@ export class RollMenuApplication extends HandlebarsApplicationMixin(ApplicationV
 
   static PARTS = {
     savedRolls: {
-      template: 'systems/wod5e/display/ui/parts/roll-menu/saved-rolls.hbs'
+      template: 'systems/aztharion/display/ui/parts/roll-menu/saved-rolls.hbs'
     },
     body: {
-      template: 'systems/wod5e/display/ui/parts/roll-menu/main.hbs'
+      template: 'systems/aztharion/display/ui/parts/roll-menu/main.hbs'
     }
   }
 
   async _prepareContext() {
     const data = await super._prepareContext()
 
-    data.activeRollID = game.users.current.getFlag('wod5e', 'rollMenuActiveRoll') || ''
-    data.savedRolls = game.users.current.getFlag('wod5e', 'rollMenuSavedRolls') || {}
+    data.activeRollID = game.users.current.getFlag('aztharion', 'rollMenuActiveRoll') || ''
+    data.savedRolls = game.users.current.getFlag('aztharion', 'rollMenuSavedRolls') || {}
 
     // Splat definitions
-    data.splatOptions = WOD5E.Systems.getList({})
+    data.splatOptions = AZTHARION.Systems.getList({})
 
     // Attribute definitions
-    data.attributeOptions = WOD5E.Attributes.getList({})
+    data.attributeOptions = AZTHARION.Attributes.getList({})
 
     // Skill definitions
-    data.skillOptions = WOD5E.Skills.getList({})
+    data.skillOptions = AZTHARION.Skills.getList({})
 
     return data
   }
@@ -79,16 +79,16 @@ export class RollMenuApplication extends HandlebarsApplicationMixin(ApplicationV
   static async applicationHandler(event, form, formData) {
     const data = formData.object
 
-    let activeRoll = game.users.current.getFlag('wod5e', 'rollMenuActiveRoll') || ''
+    let activeRoll = game.users.current.getFlag('aztharion', 'rollMenuActiveRoll') || ''
 
     // If there's no active roll, generate a new ID
     if (!activeRoll) {
       activeRoll = foundry.utils.randomID(8)
-      game.users.current.setFlag('wod5e', 'rollMenuActiveRoll', activeRoll)
+      game.users.current.setFlag('aztharion', 'rollMenuActiveRoll', activeRoll)
     }
 
     // If there is an active roll, we can update it as input fields are updated
-    const savedRolls = game.users.current.getFlag('wod5e', 'rollMenuSavedRolls') || {}
+    const savedRolls = game.users.current.getFlag('aztharion', 'rollMenuSavedRolls') || {}
 
     // Ensure that the savedRolls object exists, then add/update it
     if (savedRolls) {
@@ -105,7 +105,7 @@ export class RollMenuApplication extends HandlebarsApplicationMixin(ApplicationV
     }
 
     // Save the mutated object
-    await game.users.current.setFlag('wod5e', 'rollMenuSavedRolls', savedRolls)
+    await game.users.current.setFlag('aztharion', 'rollMenuSavedRolls', savedRolls)
 
     // Re-render the application
     this.render()

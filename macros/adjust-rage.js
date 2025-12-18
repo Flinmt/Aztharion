@@ -4,7 +4,7 @@ const actorsList = tokens.map((i) => i.actor)
 
 // Build the options for the select dropdown
 const content = new foundry.data.fields.NumberField({
-  label: game.i18n.localize('WOD5E.Compendiums.Macros.AdjustRageBy'),
+  label: game.i18n.localize('AZTHARION.Compendiums.Macros.AdjustRageBy'),
   required: true,
   nullable: false,
   initial: 0,
@@ -20,9 +20,9 @@ const content = new foundry.data.fields.NumberField({
 // Prompt a dialog to determine which edge we're adding
 const rageModifier = await foundry.applications.api.DialogV2.prompt({
   window: {
-    title: game.i18n.localize('WOD5E.Compendiums.Macros.AdjustRage')
+    title: game.i18n.localize('AZTHARION.Compendiums.Macros.AdjustRage')
   },
-  classes: ['wod5e', 'macro', 'dialog', 'werewolf', 'dialog'],
+  classes: ['aztharion', 'macro', 'dialog', 'werewolf', 'dialog'],
   content,
   ok: {
     callback: (event, button) =>

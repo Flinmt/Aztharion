@@ -38,9 +38,9 @@ export const _onWillpowerReroll = async (roll) => {
   // Prompt dialog
   await foundry.applications.api.DialogV2.prompt({
     window: {
-      title: game.i18n.localize('WOD5E.Chat.WillpowerReroll')
+      title: game.i18n.localize('AZTHARION.Chat.WillpowerReroll')
     },
-    classes: ['wod5e', system, 'dialog'],
+    classes: ['aztharion', system, 'dialog'],
     content,
     ok: {
       label: 'Reroll',
@@ -91,7 +91,7 @@ export const _onWillpowerReroll = async (roll) => {
       WOD5eDice.Roll({
         basicDice: diceSelected.length - rageDiceSelected.length,
         advancedDice: rageDiceSelected.length,
-        title: game.i18n.localize('WOD5E.Chat.WillpowerReroll'),
+        title: game.i18n.localize('AZTHARION.Chat.WillpowerReroll'),
         actor,
         willpowerDamage: actor ? 1 : 0, // If no actor is set, we don't need to damage any willpower
         quickRoll: true,

@@ -7,8 +7,8 @@ export async function _applyOblivionStains(actor, amount, rollMode) {
   if (!rollMode) rollMode = game.settings.get('core', 'rollMode')
 
   if (newStains > 0) {
-    const chatMessage = `<p class="roll-label uppercase">${game.i18n.localize('WOD5E.VTM.OblivionStainsTitle')}</p>
-    <p class="roll-content">${game.i18n.format('WOD5E.VTM.OblivionStainsContent', {
+    const chatMessage = `<p class="roll-label uppercase">${game.i18n.localize('AZTHARION.VTM.OblivionStainsTitle')}</p>
+    <p class="roll-content">${game.i18n.format('AZTHARION.VTM.OblivionStainsContent', {
       actor: actor.name,
       amount
     })}</p>`

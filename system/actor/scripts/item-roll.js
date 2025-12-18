@@ -90,12 +90,12 @@ export const _rollItem = async function (actor, item) {
   const advancedCheckDice = activeModifiers.totalACDValue
 
   // Get the number of basicDice and advancedDice
-  basicDice = await WOD5E.api.getBasicDice({
+  basicDice = await AZTHARION.api.getBasicDice({
     valuePaths,
     flatMod: flatMod + activeModifiers.totalValue,
     actor
   })
-  advancedDice = disableAdvancedDice ? 0 : await WOD5E.api.getAdvancedDice({ actor })
+  advancedDice = disableAdvancedDice ? 0 : await AZTHARION.api.getAdvancedDice({ actor })
 
   // Define the actor's gamesystem, defaulting to "mortal" if it's not in the systems list
   const system = actorData.gamesystem

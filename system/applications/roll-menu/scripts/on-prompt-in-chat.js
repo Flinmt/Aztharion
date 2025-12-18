@@ -2,8 +2,8 @@ export const _onPromptInChat = async function (event) {
   event.preventDefault()
 
   // Grab data from user config flags to determine the currently active roll
-  const activeRoll = await game.users.current.getFlag('wod5e', 'rollMenuActiveRoll')
-  const savedRolls = await game.users.current.getFlag('wod5e', 'rollMenuSavedRolls')
+  const activeRoll = await game.users.current.getFlag('aztharion', 'rollMenuActiveRoll')
+  const savedRolls = await game.users.current.getFlag('aztharion', 'rollMenuSavedRolls')
   const activeRollObject = savedRolls[activeRoll]
 
   // Construct the valuePaths array that gets sent to the rollFromDataset function
@@ -32,15 +32,15 @@ export const _onPromptInChat = async function (event) {
       // Dynamically determine whether to append the 'difficulty' part of the title or not
       activeRollObject.difficulty > 0
         ? ' vs <b>' +
-          game.i18n.format('WOD5E.Chat.DifficultyString', {
+          game.i18n.format('AZTHARION.Chat.DifficultyString', {
             string: activeRollObject.difficulty
           }) +
           '</b>'
         : ''
     }`,
     flags: {
-      wod5e: {
-        template: 'systems/wod5e/display/ui/chat/chat-message-roll-prompt.hbs',
+      aztharion: {
+        template: 'systems/aztharion/display/ui/chat/chat-message-roll-prompt.hbs',
         valuePaths: valuePathsArray.join(' '),
         isRollPrompt: true,
         promptedRolls,

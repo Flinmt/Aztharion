@@ -8,28 +8,28 @@ export const getDicepoolList = async (document) => {
   const isNotEmbedded = !game.items.get('ScZcmxk1WGC0GAQu')?.isEmbedded
 
   // Attributes
-  const attributes = WOD5E.Attributes.getList({})
+  const attributes = AZTHARION.Attributes.getList({})
   for (const [key, value] of Object.entries(attributes)) {
     masterList.push({
       value: `attributes.${key}`,
       label: value.displayName,
-      group: game.i18n.localize('WOD5E.AttributesList.Attributes')
+      group: game.i18n.localize('AZTHARION.AttributesList.Attributes')
     })
   }
 
   // Skills
-  const skills = WOD5E.Skills.getList({})
+  const skills = AZTHARION.Skills.getList({})
   for (const [key, value] of Object.entries(skills)) {
     masterList.push({
       value: `skills.${key}`,
       label: value.displayName,
-      group: game.i18n.localize('WOD5E.SkillsList.Skills')
+      group: game.i18n.localize('AZTHARION.SkillsList.Skills')
     })
   }
 
   // Vampire
   if (gamesystem === 'vampire' || isNotEmbedded) {
-    const disciplines = WOD5E.Disciplines.getList({})
+    const disciplines = AZTHARION.Disciplines.getList({})
     for (const [key, value] of Object.entries(disciplines)) {
       // Add an exlusion list for disciplines that should not be included here (Ceremonies and Rituals)
       const excludedDisciplineKeys = ['ceremonies', 'rituals']
@@ -38,7 +38,7 @@ export const getDicepoolList = async (document) => {
         masterList.push({
           value: `disciplines.${key}`,
           label: value.displayName,
-          group: game.i18n.localize('WOD5E.VTM.Disciplines')
+          group: game.i18n.localize('AZTHARION.VTM.Disciplines')
         })
       }
     }
@@ -46,12 +46,12 @@ export const getDicepoolList = async (document) => {
 
   // Werewolf
   if (gamesystem === 'werewolf' || isNotEmbedded) {
-    const renown = WOD5E.Renown.getList({})
+    const renown = AZTHARION.Renown.getList({})
     for (const [key, value] of Object.entries(renown)) {
       masterList.push({
         value: `renown.${key}`,
         label: value.displayName,
-        group: game.i18n.localize('WOD5E.WTA.Renown')
+        group: game.i18n.localize('AZTHARION.WTA.Renown')
       })
     }
   }

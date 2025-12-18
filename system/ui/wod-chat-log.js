@@ -41,7 +41,7 @@ export class WoDChatLog extends foundry.applications.sidebar.tabs.ChatLog {
     // Reroll options
     contextOptions.push(
       {
-        name: game.i18n.localize('WOD5E.Chat.WillpowerReroll'),
+        name: game.i18n.localize('AZTHARION.Chat.WillpowerReroll'),
         icon: '<i class="fas fa-redo"></i>',
         condition: (li) => {
           // Only show this context menu if the person is GM or author of the message
@@ -62,13 +62,13 @@ export class WoDChatLog extends foundry.applications.sidebar.tabs.ChatLog {
             // Has no rerolled dice
             rerolledDice === 0 &&
             // Is NOT a roll prompt
-            !message.flags?.wod5e?.isRollPrompt
+            !message.flags?.aztharion?.isRollPrompt
           )
         },
         callback: (li) => _onWillpowerReroll(li)
       },
       {
-        name: game.i18n.localize('WOD5E.Chat.Reroll'),
+        name: game.i18n.localize('AZTHARION.Chat.Reroll'),
         icon: '<i class="fas fa-redo"></i>',
         condition: (li) => {
           // Only show this context menu if the person is GM or author of the message
@@ -89,7 +89,7 @@ export class WoDChatLog extends foundry.applications.sidebar.tabs.ChatLog {
             // Has no rerolled dice
             rerolledDice === 0 &&
             // Is NOT a roll prompt
-            !message.flags?.wod5e?.isRollPrompt
+            !message.flags?.aztharion?.isRollPrompt
           )
         },
         callback: (li) => _onAnyReroll(li)
@@ -108,20 +108,20 @@ Hooks.on('renderChatInput', (context) => {
   // If we don't find the chat controls element, do nothing
   if (!chatControls) return
 
-  // Don't add anything if wod5e-chat-buttons already exists
-  if (html.querySelector('.wod5e-chat-buttons')) return
+  // Don't add anything if aztharion-chat-buttons already exists
+  if (html.querySelector('.aztharion-chat-buttons')) return
 
   // Add the system's custom chat buttons
-  const wod5eChatButtons = document.createElement('div')
-  wod5eChatButtons.innerHTML = `
-    <div class="wod5e-chat-buttons flexrow">
+  const aztharionChatButtons = document.createElement('div')
+  aztharionChatButtons.innerHTML = `
+    <div class="aztharion-chat-buttons flexrow">
       <button type="button" class="ui-control icon fa-solid fa-dice-d10" data-action="renderRollMenu"
-        data-tooltip aria-label="${game.i18n.localize('WOD5E.RollList.OpenRollMenu')}">
+        data-tooltip aria-label="${game.i18n.localize('AZTHARION.RollList.OpenRollMenu')}">
       </button>
     </div>
   `
 
   chatControls.forEach((element) => {
-    element.prepend(wod5eChatButtons)
+    element.prepend(aztharionChatButtons)
   })
 })

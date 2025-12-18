@@ -2,8 +2,8 @@
     <!-- Iterate through each of the edge lists -->
     <div class="description-field">
         <div class="resource-label field-header flex-center">
-            {{localize "WOD5E.HTR.Edges"}}
-            <a class="power-create" data-action="createSPCPower" title="{{localize 'WOD5E.VTM.AddEdge'}}" data-type="edge">
+            {{localize "AZTHARION.HTR.Edges"}}
+            <a class="power-create" data-action="createSPCPower" title="{{localize 'AZTHARION.VTM.AddEdge'}}" data-type="edge">
                 <i class="fas fa-plus"></i>
             </a>
         </div>
@@ -27,10 +27,10 @@
                                     </span>
                                 </div>
                                 <div class="item-controls">
-                                    <a class="item-control item-create" data-action="createItem" title="{{localize 'WOD5E.Add'}}" data-type="perk" data-subtype="{{key}}">
+                                    <a class="item-control item-create" data-action="createItem" title="{{localize 'AZTHARION.Add'}}" data-type="perk" data-subtype="{{key}}">
                                         <i class="fas fa-plus"></i>
                                     </a>
-                                    <a class="item-control power-delete" data-action="deleteSPCPower" title="{{localize 'WOD5E.Delete'}}" data-type="perk" data-id="{{key}}">
+                                    <a class="item-control power-delete" data-action="deleteSPCPower" title="{{localize 'AZTHARION.Delete'}}" data-type="perk" data-id="{{key}}">
                                         <i class="fas fa-trash"></i>
                                     </a>
                                 </div>
@@ -49,9 +49,9 @@
                                                 data-select-dialog="false" data-label="{{power.name}}" {{#if ../noAdvancedDice}} data-disable-advanced-dice="true"{{/if}}>
                                                 <i class="fa-solid fa-dice-d10"></i>
                                             </a>
-                                            <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{power._id}}" title="{{localize 'WOD5E.Edit'}}"><i
+                                            <a class="item-control item-edit" data-action="itemEdit" data-item-id="{{power._id}}" title="{{localize 'AZTHARION.Edit'}}"><i
                                                 class="fas fa-edit"></i></a>
-                                            <a class="item-control item-delete" data-action="itemDelete" data-item-id="{{power._id}}" title="{{localize 'WOD5E.Delete'}}"><i
+                                            <a class="item-control item-delete" data-action="itemDelete" data-item-id="{{power._id}}" title="{{localize 'AZTHARION.Delete'}}"><i
                                                 class="fas fa-trash"></i></a>
                                         </div>
                                     </div>

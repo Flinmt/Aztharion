@@ -9,12 +9,12 @@ export const _onAddGift = async function (event) {
   const actor = this.actor
 
   // Secondary variables
-  const giftList = WOD5E.Gifts.getList({})
+  const giftList = AZTHARION.Gifts.getList({})
 
   // Build the options for the select dropdown
   const content = new foundry.data.fields.StringField({
     choices: giftList,
-    label: game.i18n.localize('WOD5E.WTA.SelectGift'),
+    label: game.i18n.localize('AZTHARION.WTA.SelectGift'),
     required: true
   }).toFormGroup(
     {},
@@ -26,9 +26,9 @@ export const _onAddGift = async function (event) {
   // Prompt a dialog to determine which gift we're adding
   const giftSelected = await foundry.applications.api.DialogV2.prompt({
     window: {
-      title: game.i18n.localize('WOD5E.WTA.AddGift')
+      title: game.i18n.localize('AZTHARION.WTA.AddGift')
     },
-    classes: ['wod5e', 'dialog', 'werewolf', 'dialog'],
+    classes: ['aztharion', 'dialog', 'werewolf', 'dialog'],
     content,
     ok: {
       callback: (event, button) =>
@@ -84,7 +84,7 @@ export const _onGiftCost = async function (actor, item, rollMode) {
     // Send the roll to the system
     WOD5eDice.Roll({
       advancedDice: cost + activeModifiers.totalValue,
-      title: `${game.i18n.localize('WOD5E.WTA.RageDice')} - ${item.name}`,
+      title: `${game.i18n.localize('AZTHARION.WTA.RageDice')} - ${item.name}`,
       actor,
       rollMode,
       disableBasicDice: true,
@@ -106,7 +106,7 @@ export const _onGiftToChat = async function (event, target) {
 
   foundry.documents.ChatMessage.implementation.create({
     flags: {
-      wod5e: {
+      aztharion: {
         name: gift.displayName,
         img: 'icons/svg/dice-target.svg',
         description: gift?.description || ''

@@ -6,12 +6,12 @@ export const _onAddEdge = async function (event) {
   const actor = this.actor
 
   // Secondary variables
-  const edgeList = WOD5E.Edges.getList({})
+  const edgeList = AZTHARION.Edges.getList({})
 
   // Build the options for the select dropdown
   const content = new foundry.data.fields.StringField({
     choices: edgeList,
-    label: game.i18n.localize('WOD5E.HTR.SelectEdge'),
+    label: game.i18n.localize('AZTHARION.HTR.SelectEdge'),
     required: true
   }).toFormGroup(
     {},
@@ -23,9 +23,9 @@ export const _onAddEdge = async function (event) {
   // Prompt a dialog to determine which edge we're adding
   const edgeSelected = await foundry.applications.api.DialogV2.prompt({
     window: {
-      title: game.i18n.localize('WOD5E.HTR.AddEdge')
+      title: game.i18n.localize('AZTHARION.HTR.AddEdge')
     },
-    classes: ['wod5e', 'dialog', 'hunter', 'dialog'],
+    classes: ['aztharion', 'dialog', 'hunter', 'dialog'],
     content,
     ok: {
       callback: (event, button) =>
@@ -67,7 +67,7 @@ export const _onEdgeToChat = async function (event, target) {
 
   foundry.documents.ChatMessage.implementation.create({
     flags: {
-      wod5e: {
+      aztharion: {
         name: edge.displayName,
         img: 'icons/svg/dice-target.svg',
         description: edge?.description || ''

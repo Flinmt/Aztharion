@@ -1,18 +1,18 @@
 <section class="tab {{tab.cssClass}}" data-tab="{{tab.id}}" data-group="{{tab.group}}">
     <div class="form-group">
-        <label>{{localize "WOD5E.ActorSettings.ActorHeaderBackground" }}</label>
+        <label>{{localize "AZTHARION.ActorSettings.ActorHeaderBackground" }}</label>
         <div class="form-fields">
             <file-picker class="actor-header-bg-filepicker" name="system.settings.headerbg" type="imagevideo" value="{{headerbg}}"></file-picker>
         </div>
     </div>
     <div class="form-group">
-        <label>{{localize "WOD5E.ActorSettings.ActorBackground" }}</label>
+        <label>{{localize "AZTHARION.ActorSettings.ActorBackground" }}</label>
         <div class="form-fields">
             <file-picker class="actor-background-filepicker" name="system.settings.background" type="imagevideo" value="{{actorbg}}"></file-picker>
         </div>
     </div>
     <div class="form-group">
-        <label>{{localize "WOD5E.ActorSettings.ActorType" }}</label>
+        <label>{{localize "AZTHARION.ActorSettings.ActorType" }}</label>
         <div class="form-fields">
             <select class="actor-type-selector" name="{{actorTypePath}}" data-type="String"{{#if actor.limited}} disabled{{/if}}>
                 {{selectOptions actorOptions selected=currentActorType localize=true}}
@@ -22,7 +22,7 @@
 
     {{#if hasSkillAttributeData}}
         <div class="form-group">
-            <label>{{localize "WOD5E.ActorSettings.UseInputFieldsForStats" }}</label>
+            <label>{{localize "AZTHARION.ActorSettings.UseInputFieldsForStats" }}</label>
             <div class="form-fields">
                 <input type="checkbox" name="system.settings.skillAttributeInputs" {{#if settings.skillAttributeInputs}}checked{{/if}}>
             </div>
@@ -31,7 +31,7 @@
 
     {{#ifeq baseActorType 'spc'}}
         <div class="form-group">
-            <label>{{localize "WOD5E.ActorSettings.ShowGeneralDifficulty" }}</label>
+            <label>{{localize "AZTHARION.ActorSettings.ShowGeneralDifficulty" }}</label>
             <div class="form-fields">
                 <input type="checkbox" name="system.settings.generalDifficultyEnabled" {{#if generalDifficultyEnabled}}checked{{/if}}>
             </div>
@@ -41,7 +41,7 @@
     {{#if showOptionalPowers}}
         {{#ifeq gamesystem 'vampire'}}
             <div class="form-group">
-                <label>{{localize "WOD5E.ActorSettings.ShowDisciplines" }}</label>
+                <label>{{localize "AZTHARION.ActorSettings.ShowDisciplines" }}</label>
                 <div class="form-fields">
                     <input type="checkbox" name="system.settings.enableDisciplines" {{#if enableDisciplines}}checked{{/if}}>
                 </div>
@@ -49,7 +49,7 @@
         {{/ifeq}}
         {{#ifeq gamesystem 'hunter'}}
             <div class="form-group">
-                <label>{{localize "WOD5E.ActorSettings.ShowEdges" }}</label>
+                <label>{{localize "AZTHARION.ActorSettings.ShowEdges" }}</label>
                 <div class="form-fields">
                     <input type="checkbox" name="system.settings.enableEdges" {{#if enableEdges}}checked{{/if}}>
                 </div>
@@ -57,7 +57,7 @@
         {{/ifeq}}
         {{#ifeq gamesystem 'werewolf'}}
             <div class="form-group">
-                <label>{{localize "WOD5E.ActorSettings.ShowGifts" }}</label>
+                <label>{{localize "AZTHARION.ActorSettings.ShowGifts" }}</label>
                 <div class="form-fields">
                     <input type="checkbox" name="system.settings.enableGifts" {{#if enableGifts}}checked{{/if}}>
                 </div>

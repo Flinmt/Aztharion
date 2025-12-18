@@ -40,9 +40,9 @@ export const _onAnyReroll = async (roll) => {
   // Prompt dialog
   await foundry.applications.api.DialogV2.prompt({
     window: {
-      title: game.i18n.localize('WOD5E.Chat.Reroll')
+      title: game.i18n.localize('AZTHARION.Chat.Reroll')
     },
-    classes: ['wod5e', system, 'dialog'],
+    classes: ['aztharion', system, 'dialog'],
     content,
     ok: {
       label: 'Reroll',
@@ -94,7 +94,7 @@ export const _onAnyReroll = async (roll) => {
       WOD5eDice.Roll({
         basicDice: diceSelected.length - totalAdvancedDiceSelected,
         advancedDice: totalAdvancedDiceSelected,
-        title: game.i18n.localize('WOD5E.Chat.Reroll'),
+        title: game.i18n.localize('AZTHARION.Chat.Reroll'),
         actor,
         quickRoll: true,
         rollMode,

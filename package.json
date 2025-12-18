@@ -1,5 +1,5 @@
 {
-  "name": "wod5e",
+  "name": "aztharion",
   "version": "5.0.0-prerelease",
   "description": "CSS compiler for the Vampire 5e system",
   "scripts": {
@@ -31,7 +31,7 @@
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WoD5E-Developers/wod5e.git"
+    "url": "git+https://github.com/Aztharion-Developers/aztharion.git"
   },
   "keywords": [
     "vampire-the-masquerade",
@@ -42,9 +42,9 @@
     "hunter-the-reckoning"
   ],
   "bugs": {
-    "url": "https://github.com/WoD5E-Developers/wod5e/issues"
+    "url": "https://github.com/Aztharion-Developers/aztharion/issues"
   },
-  "homepage": "https://github.com/WoD5E-Developers/wod5e#readme",
+  "homepage": "https://github.com/Aztharion-Developers/aztharion#readme",
   "dependencies": {
     "@eslint/compat": "^1.4.1",
     "eslint-plugin-prettier": "^5.5.4"

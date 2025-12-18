@@ -1,4 +1,4 @@
-<div class="resource-label garou-forms-label">{{localize "WOD5E.WTA.FormsOfGarou"}}</div>
+<div class="resource-label garou-forms-label">{{localize "AZTHARION.WTA.FormsOfGarou"}}</div>
 <div class="flexrow grid grid-5col forms">
     {{#each forms as |form id|}}
         <div>
@@ -8,12 +8,12 @@
             </div>
             <div class="form resource{{#if form.active}} form-active{{/if}}">
                 {{#ifeq ../activeForm id}}
-                    <button type="button" class="werewolf-button active">{{localize "WOD5E.WTA.Active"}}</button>
+                    <button type="button" class="werewolf-button active">{{localize "AZTHARION.WTA.Active"}}</button>
                 {{else}}
                     <button type="button" class="werewolf-button change-form{{#if form.disabled}} disabled-form{{/if}}"
-                    title="{{#if form.disabled}}{{localize 'WOD5E.WTA.LostWolfFormChange'}}{{/if}}"
+                    title="{{#if form.disabled}}{{localize 'AZTHARION.WTA.LostWolfFormChange'}}{{/if}}"
                     data-form="{{id}}" data-action="shiftForm" data-rage-cost="{{form.cost}}" type="button" name="{{id}}">
-                        {{form.cost}} {{localize "WOD5E.WTA.RageDice"}}
+                        {{form.cost}} {{localize "AZTHARION.WTA.RageDice"}}
                     </button>
                 {{/ifeq}}
                 <div class="resource-content">
@@ -30,8 +30,8 @@
                     </ul>
                 </div>
                 <div class="flexrow">
-                    <button type="button" class="werewolf-button were-form-chat" data-form="{{id}}" data-action="formChat">{{localize "WOD5E.WTA.PostFormToChat"}}</button>
-                    <button type="button" class="werewolf-button were-form-edit lockable-button" data-form="{{id}}" data-action="editForm">{{localize "WOD5E.Edit"}}</button>
+                    <button type="button" class="werewolf-button were-form-chat" data-form="{{id}}" data-action="formChat">{{localize "AZTHARION.WTA.PostFormToChat"}}</button>
+                    <button type="button" class="werewolf-button were-form-edit lockable-button" data-form="{{id}}" data-action="editForm">{{localize "AZTHARION.Edit"}}</button>
                 </div>
             </div>
         </div>

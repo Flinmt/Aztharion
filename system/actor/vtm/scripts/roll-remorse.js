@@ -14,7 +14,7 @@ export const _onRemorseRoll = async function (event) {
 
   WOD5eDice.Roll({
     basicDice: dicePool,
-    title: game.i18n.localize('WOD5E.VTM.RollingRemorse'),
+    title: game.i18n.localize('AZTHARION.VTM.RollingRemorse'),
     selectors: ['humanity'],
     actor,
     data: actor.system,
@@ -36,10 +36,10 @@ export const _onRemorseRoll = async function (event) {
 
         foundry.documents.ChatMessage.implementation.create({
           flags: {
-            wod5e: {
-              name: game.i18n.localize('WOD5E.VTM.RemorseFailed'),
-              img: 'systems/wod5e/assets/icons/dice/vampire/bestial-failure.png',
-              description: game.i18n.format('WOD5E.VTM.RemorseFailedDescription', {
+            aztharion: {
+              name: game.i18n.localize('AZTHARION.VTM.RemorseFailed'),
+              img: 'systems/aztharion/assets/icons/dice/vampire/bestial-failure.png',
+              description: game.i18n.format('AZTHARION.VTM.RemorseFailedDescription', {
                 actor: actor.name
               })
             }

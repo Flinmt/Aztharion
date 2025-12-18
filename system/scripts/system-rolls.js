@@ -231,7 +231,7 @@ class WOD5eDice {
       if (roll.advancedDice) await handleFailure(system, roll.advancedDice.results)
 
       // Handle willpower damage
-      if (willpowerDamage > 0 && game.settings.get('wod5e', 'automatedWillpower'))
+      if (willpowerDamage > 0 && game.settings.get('aztharion', 'automatedWillpower'))
         _damageWillpower(null, null, actor, willpowerDamage, rollMode)
 
       // Roll any advanced check dice that need to be rolled in a separate rollmessage
@@ -239,7 +239,7 @@ class WOD5eDice {
         await this.Roll({
           actor,
           data,
-          title: `${game.i18n.localize('WOD5E.VTM.RousingBlood')} - ${title}`,
+          title: `${game.i18n.localize('AZTHARION.VTM.RousingBlood')} - ${title}`,
           system,
           disableBasicDice: true,
           advancedDice: advancedCheckDice,
@@ -274,7 +274,7 @@ class WOD5eDice {
       if (originMessage) {
         const chatMessage = game.messages.get(originMessage)
 
-        if (chatMessage && chatMessage.getFlag('wod5e', 'isRollPrompt')) {
+        if (chatMessage && chatMessage.getFlag('aztharion', 'isRollPrompt')) {
           disableMessageOutput = true
 
           const socketData = {
@@ -287,7 +287,7 @@ class WOD5eDice {
           if (chatMessage.isOwner) {
             updateRollPrompt(socketData)
           } else {
-            game.socket.emit('system.wod5e', socketData)
+            game.socket.emit('system.aztharion', socketData)
           }
         }
       }
@@ -322,7 +322,7 @@ class WOD5eDice {
       const situationalModifiers = actor ? await getSituationalModifiers({ actor, selectors }) : {}
 
       // Roll dialog template
-      const dialogTemplate = `systems/wod5e/display/ui/${system}-roll-dialog.hbs`
+      const dialogTemplate = `systems/aztharion/display/ui/${system}-roll-dialog.hbs`
       // Data that the dialog template needs
       const dialogData = {
         system,
@@ -345,7 +345,7 @@ class WOD5eDice {
       // as well as any callbacks or other functions with the roll
       return foundry.applications.api.DialogV2.wait({
         window: {
-          title: title || game.i18n.localize('WOD5E.RollList.Label')
+          title: title || game.i18n.localize('AZTHARION.RollList.Label')
         },
         content,
         actions: {
@@ -364,7 +364,7 @@ class WOD5eDice {
               `<div class="form-group custom-modifier">
                 <div class="mod-label">
                   <a class="mod-delete" data-action="deleteCustomMode" title="` +
-              game.i18n.localize('WOD5E.Delete') +
+              game.i18n.localize('AZTHARION.Delete') +
               `">
                     <i class="fas fa-trash"></i>
                   </a>
@@ -384,7 +384,7 @@ class WOD5eDice {
           {
             action: 'roll',
             icon: 'fas fa-dice',
-            label: game.i18n.localize('WOD5E.RollList.Label'),
+            label: game.i18n.localize('AZTHARION.RollList.Label'),
             default: true,
             callback: async (_event, _button, dialog) => {
               const dialogHTML = dialog.element
@@ -412,10 +412,10 @@ class WOD5eDice {
           {
             action: 'cancel',
             icon: 'fas fa-times',
-            label: game.i18n.localize('WOD5E.Cancel')
+            label: game.i18n.localize('AZTHARION.Cancel')
           }
         ],
-        classes: ['wod5e', system, 'roll-dialog'],
+        classes: ['aztharion', system, 'roll-dialog'],
         render: (_event, dialog) => {
           const dialogHTML = dialog.element
 
@@ -562,20 +562,20 @@ class WOD5eDice {
         if (
           system === 'vampire' &&
           increaseHunger &&
-          game.settings.get('wod5e', 'automatedHunger')
+          game.settings.get('aztharion', 'automatedHunger')
         ) {
           _increaseHunger(actor, failures, rollMode)
         } else if (
           system === 'werewolf' &&
           decreaseRage &&
-          game.settings.get('wod5e', 'automatedRage')
+          game.settings.get('aztharion', 'automatedRage')
         ) {
           _decreaseRage(actor, failures, rollMode)
         }
       }
 
       // Handle Oblivion rouse checks here
-      if (selectors.includes('oblivion-rouse') && game.settings.get('wod5e', 'automatedOblivion')) {
+      if (selectors.includes('oblivion-rouse') && game.settings.get('aztharion', 'automatedOblivion')) {
         const oblivionTriggers = diceResults.filter(
           (result) => [1, 10].includes(result.result) && !result.discarded
         ).length

@@ -1,10 +1,10 @@
 export const MigrateSystemFlags = async function () {
-  // Filter down to entities in the world that only have a vtm5e flag set without a wod5e flag set
-  const actorsList = game.actors.filter((a) => a.flags?.vtm5e && !a.flags?.wod5e)
+  // Filter down to entities in the world that only have a vtm5e flag set without a aztharion flag set
+  const actorsList = game.actors.filter((a) => a.flags?.vtm5e && !a.flags?.aztharion)
 
-  const itemsList = game.items.filter((i) => i.flags?.vtm5e && !i.flags?.wod5e)
+  const itemsList = game.items.filter((i) => i.flags?.vtm5e && !i.flags?.aztharion)
 
-  const messagesList = game.messages.filter((m) => m.flags?.vtm5e && !m.flags?.wod5e)
+  const messagesList = game.messages.filter((m) => m.flags?.vtm5e && !m.flags?.aztharion)
 
   // Get the compendium collections
   const actorCompendiums = game.packs.filter((c) => c.metadata.type === 'Actor' && !c.locked)
@@ -16,12 +16,12 @@ export const MigrateSystemFlags = async function () {
   // Load all item documents from all item compendiums
   const compendiumItems = (await Promise.all(itemCompendiums.map((c) => c.getDocuments()))).flat()
 
-  // Filter each to those containing a vtm5e flag and not a wod5e flag
+  // Filter each to those containing a vtm5e flag and not a aztharion flag
   const compendiumActorsList = compendiumActors.filter(
-    (doc) => doc.flags?.vtm5e && !doc.flags?.wod5e
+    (doc) => doc.flags?.vtm5e && !doc.flags?.aztharion
   )
 
-  const compendiumItemsList = compendiumItems.filter((doc) => doc.flags?.vtm5e && !doc.flags?.wod5e)
+  const compendiumItemsList = compendiumItems.filter((doc) => doc.flags?.vtm5e && !doc.flags?.aztharion)
 
   const allLists = [actorsList, itemsList, messagesList, compendiumActorsList, compendiumItemsList]
 
@@ -33,7 +33,7 @@ export const MigrateSystemFlags = async function () {
       'Migrating all entity flags. Do not shut down the game server until this is finished.'
     )
 
-    // Migrate all vtm5e flags to wod5e flags
+    // Migrate all vtm5e flags to aztharion flags
     for (const actor of actorsList) {
       await updateFlags(actor)
     }
@@ -62,7 +62,7 @@ export const MigrateSystemFlags = async function () {
     const oldFlags = entity.flags.vtm5e
     entity.update({
       flags: {
-        wod5e: oldFlags
+        aztharion: oldFlags
       }
     })
   }

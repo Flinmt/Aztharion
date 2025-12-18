@@ -57,7 +57,7 @@ export class WoDActorBase extends HandlebarsApplicationMixin(
       icon: 'fa-solid fa-dice-d10',
       resizable: true
     },
-    classes: ['wod5e', 'actor', 'sheet'],
+    classes: ['aztharion', 'actor', 'sheet'],
     position: {
       width: 1000,
       height: 800
@@ -166,7 +166,7 @@ export class WoDActorBase extends HandlebarsApplicationMixin(
 
       features: actorData.features,
 
-      displayBanner: game.settings.get('wod5e', 'actorBanner'),
+      displayBanner: game.settings.get('aztharion', 'actorBanner'),
 
       headerbg: await getActorHeader(actor),
       actorbg: actor.system?.settings?.background,
@@ -490,7 +490,7 @@ export class WoDActorBase extends HandlebarsApplicationMixin(
         !(actorType === 'group' && whitelist.includes(this.actor.system.groupType))
       ) {
         ui.notifications.warn(
-          game.i18n.format('WOD5E.ItemsList.ItemCannotBeDroppedOnActor', {
+          game.i18n.format('AZTHARION.ItemsList.ItemCannotBeDroppedOnActor', {
             string1: itemType,
             string2: actorType
           })
@@ -502,7 +502,7 @@ export class WoDActorBase extends HandlebarsApplicationMixin(
       // If the blacklist contains any entries, we can check to make sure this actor type isn't disallowed for the item
       if (!foundry.utils.isEmpty(blacklist) && blacklist.indexOf(actorType) > -1) {
         ui.notifications.warn(
-          game.i18n.format('WOD5E.ItemsList.ItemCannotBeDroppedOnActor', {
+          game.i18n.format('AZTHARION.ItemsList.ItemCannotBeDroppedOnActor', {
             string1: itemType,
             string2: actorType
           })

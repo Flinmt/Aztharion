@@ -7,8 +7,8 @@ export async function _decreaseRage(actor, amount, rollMode) {
   if (!rollMode) rollMode = game.settings.get('core', 'rollMode')
 
   if (newRageAmount === 0 && currentRage > 0) {
-    const chatMessage = `<p class="roll-label uppercase">${game.i18n.localize('WOD5E.WTA.LostTheWolf')}</p>
-    <p class="roll-content result-rage result-possible">${game.i18n.localize('WOD5E.WTA.LostWolfWarning')}</p>`
+    const chatMessage = `<p class="roll-label uppercase">${game.i18n.localize('AZTHARION.WTA.LostTheWolf')}</p>
+    <p class="roll-content result-rage result-possible">${game.i18n.localize('AZTHARION.WTA.LostWolfWarning')}</p>`
 
     // Post the message to the chat
     const message = ChatMessage.applyRollMode(

@@ -17,7 +17,7 @@ export class WereformApplication extends HandlebarsApplicationMixin(ApplicationV
   }
 
   static DEFAULT_OPTIONS = {
-    id: 'wod5e-wereform-editor',
+    id: 'aztharion-wereform-editor',
     tag: 'form',
     form: {
       submitOnChange: true,
@@ -28,7 +28,7 @@ export class WereformApplication extends HandlebarsApplicationMixin(ApplicationV
       title: 'WereForm Editor',
       resizable: true
     },
-    classes: ['wod5e', 'sheet', 'werewolf', 'application', 'wereform'],
+    classes: ['aztharion', 'sheet', 'werewolf', 'application', 'wereform'],
     position: {
       width: 480,
       height: 400
@@ -39,17 +39,17 @@ export class WereformApplication extends HandlebarsApplicationMixin(ApplicationV
   static PARTS = {
     form: {
       template:
-        'systems/wod5e/display/wta/applications/wereform-application/wereform-application.hbs'
+        'systems/aztharion/display/wta/applications/wereform-application/wereform-application.hbs'
     },
     tabs: {
       template: 'templates/generic/tab-navigation.hbs'
     },
     description: {
-      template: 'systems/wod5e/display/wta/applications/wereform-application/parts/description.hbs'
+      template: 'systems/aztharion/display/wta/applications/wereform-application/parts/description.hbs'
     },
     tokenSettings: {
       template:
-        'systems/wod5e/display/wta/applications/wereform-application/parts/token-settings.hbs'
+        'systems/aztharion/display/wta/applications/wereform-application/parts/token-settings.hbs'
     }
   }
 
@@ -62,13 +62,13 @@ export class WereformApplication extends HandlebarsApplicationMixin(ApplicationV
       id: 'description',
       group: 'primary',
       icon: '',
-      label: 'WOD5E.Tabs.Description'
+      label: 'AZTHARION.Tabs.Description'
     },
     tokenSettings: {
       id: 'token-settings',
       group: 'primary',
       icon: '',
-      label: 'WOD5E.Tabs.TokenSettings'
+      label: 'AZTHARION.Tabs.TokenSettings'
     }
   }
 

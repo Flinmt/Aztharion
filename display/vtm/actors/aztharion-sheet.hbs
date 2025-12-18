@@ -1,4 +1,4 @@
-{{!-- Ghoul Sheet Header --}}
+{{!-- Vampire Sheet Header --}}
 <header class="actor-header" {{#if headerbg}} style="background: url({{headerbg}}) center;"{{/if}}>
     <div class="header-fields">
         <div class="header-fields-left">
@@ -12,13 +12,18 @@
     {{> "systems/aztharion/display/shared/actors/parts/header-profile.hbs"}}
     <div class="header-fields">
         <div class="header-fields-right">
-            <div class="flexcol field-section">
-                <label class="resource-label field-header">{{localize "AZTHARION.VTM.Humanity"}}</label>
-                {{> "systems/aztharion/display/vtm/actors/parts/humanity.hbs"}}
-            </div>
-            <div class="flexcol field-section">
-                <label class="resource-label field-header">{{localize 'AZTHARION.VTM.Domitor'}}</label>
-                <input name="system.headers.domitor" type="text" value="{{domitor}}" placeholder="{{localize 'AZTHARION.VTM.Domitor'}}" />
+            <div class="flexcol">
+                <div class="field-section flexrow">
+                    {{!-- Removed Clan Selector --}}
+                    {{!-- Removed Frenzy --}}
+                </div>
+                <div class="flexcol field-section">
+                    <label class="resource-label field-header">{{localize "AZTHARION.VTM.Hunger"}}</label>
+                    <div class="flexrow">
+                        {{> "systems/aztharion/display/vtm/actors/parts/hunger.hbs"}}
+                        {{> "systems/aztharion/display/vtm/actors/parts/rouse.hbs"}}
+                    </div>
+                </div>
             </div>
         </div>
     </div>

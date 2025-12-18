@@ -49,21 +49,21 @@ const skillKeys = [
 const skillDistributions = {
   specialist: {
     label: game.i18n.localize(
-      'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.Specialist'
+      'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.Specialist'
     ),
     values: [4, 3, 3, 3, 2, 2, 2, 1, 1, 1],
     count: 10
   },
   balanced: {
     label: game.i18n.localize(
-      'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.Balanced'
+      'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.Balanced'
     ),
     values: [3, 3, 3, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1],
     count: 15
   },
   jack: {
     label: game.i18n.localize(
-      'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.JackOfAllTrades'
+      'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.JackOfAllTrades'
     ),
     values: [3, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     count: 19
@@ -82,7 +82,7 @@ function shuffleArray(array) {
 async function createRandomCharacter() {
   const result = await foundry.applications.api.DialogV2.prompt({
     window: {
-      title: game.i18n.localize('WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.Title'),
+      title: game.i18n.localize('AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.Title'),
       icon: 'fas fa-user-plus'
     },
     position: {
@@ -91,11 +91,11 @@ async function createRandomCharacter() {
     content: `
             <form>
                 <div class="form-group">
-                    <label>${game.i18n.localize('WOD5E.Name')}</label>
-                    <input type="text" name="actorName" value="${game.i18n.localize('WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.NewCharacter')}" autofocus/>
+                    <label>${game.i18n.localize('AZTHARION.Name')}</label>
+                    <input type="text" name="actorName" value="${game.i18n.localize('AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.NewCharacter')}" autofocus/>
                 </div>
                 <div class="form-group">
-                    <label>${game.i18n.localize('WOD5E.ItemsList.Type')}</label>
+                    <label>${game.i18n.localize('AZTHARION.ItemsList.Type')}</label>
                     <select name="actorType">
                         <option value="mortal">${game.i18n.localize('TYPES.Actor.mortal')}</option>
                         <option value="vampire">${game.i18n.localize('TYPES.Actor.vampire')}</option>
@@ -105,15 +105,15 @@ async function createRandomCharacter() {
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>${game.i18n.localize('WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.SkillDistribution')}</label>
+                    <label>${game.i18n.localize('AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.SkillDistribution')}</label>
                     <select name="skillDistribution">
-                        <option value="specialist">${game.i18n.localize('WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.Specialist')}</option>
-                        <option value="balanced" selected>${game.i18n.localize('WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.Balanced')}</option>
-                        <option value="jack">${game.i18n.localize('WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.JackOfAllTrades')}</option>
+                        <option value="specialist">${game.i18n.localize('AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.Specialist')}</option>
+                        <option value="balanced" selected>${game.i18n.localize('AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.Balanced')}</option>
+                        <option value="jack">${game.i18n.localize('AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.Options.JackOfAllTrades')}</option>
                     </select>
                 </div>
                 <p style="font-style: italic; margin-top: 1em; font-size: 0.9em;">
-                  ${game.i18n.localize('WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.AutoDistribute')}
+                  ${game.i18n.localize('AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.AutoDistribute')}
                 </p>
             </form>
         `,
@@ -126,7 +126,7 @@ async function createRandomCharacter() {
           actorName:
             formData.get('actorName') ||
             game.i18n.localize(
-              'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.NewCharacter'
+              'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.NewCharacter'
             ),
           actorType: formData.get('actorType') || 'vampire',
           skillDistribution: formData.get('skillDistribution') || 'balanced'
@@ -154,7 +154,7 @@ async function createRandomCharacter() {
   if (!newActor) {
     ui.notifications.error(
       game.i18n.localize(
-        'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Notifications.ErrorCreatingActor'
+        'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Notifications.ErrorCreatingActor'
       )
     )
     return
@@ -167,20 +167,20 @@ async function createRandomCharacter() {
   if (!sys.attributes || !sys.skills) {
     ui.notifications.warn(
       game.i18n.localize(
-        'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Notifications.PathNotFound'
+        'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Notifications.PathNotFound'
       )
     )
     console.log(
       'World of Darkness 5e | ' +
         game.i18n.localize(
-          'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.Notifications.ActorSystemData'
+          'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.Notifications.ActorSystemData'
         ),
       sys
     )
     console.log(
       'World of Darkness 5e | ' +
         game.i18n.localize(
-          'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Notifications.AvailableProperties'
+          'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Notifications.AvailableProperties'
         ),
       Object.keys(sys)
     )
@@ -197,8 +197,8 @@ async function createRandomCharacter() {
   }
 
   let chatContent = `<h3>${actorName}</h3>`
-  chatContent += `<p><strong>${game.i18n.localize('WOD5E.ItemsList.Type')}</strong> ${actorType} | <strong>${game.i18n.localize('WOD5E.Compendiums.Macros.RandomCharacterGenerator.Dialog.SkillDistribution')}</strong> ${skillDistributions[skillDistribution].label}</p>`
-  chatContent += `<h4>${game.i18n.localize('WOD5E.AttributesList.Label')}</h4><ul style="columns: 2;">`
+  chatContent += `<p><strong>${game.i18n.localize('AZTHARION.ItemsList.Type')}</strong> ${actorType} | <strong>${game.i18n.localize('AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Dialog.SkillDistribution')}</strong> ${skillDistributions[skillDistribution].label}</p>`
+  chatContent += `<h4>${game.i18n.localize('AZTHARION.AttributesList.Label')}</h4><ul style="columns: 2;">`
 
   // Attribute generation
   attributeKeys.forEach((key, index) => {
@@ -216,7 +216,7 @@ async function createRandomCharacter() {
   const selectedSkills = shuffledSkills.slice(0, distribution.count)
   const shuffledValues = shuffleArray([...distribution.values])
 
-  chatContent += `<h4>${game.i18n.localize('WOD5E.SkillsList.Label')}</h4><ul style="columns: 2;">`
+  chatContent += `<h4>${game.i18n.localize('AZTHARION.SkillsList.Label')}</h4><ul style="columns: 2;">`
   selectedSkills.forEach((key, index) => {
     const val = shuffledValues[index]
     updateData.system.skills[key] = { value: val }
@@ -254,9 +254,9 @@ async function createRandomCharacter() {
   }
 
   // Construct the chat message contents
-  chatContent += `<h4>${game.i18n.localize('WOD5E.Compendiums.Macros.RandomCharacterGenerator.Chat.DerivedValues')}</h4><ul>`
-  chatContent += `<li><strong>${game.i18n.localize('WOD5E.Health')}</strong> ${healthMax} (Stamina ${staminaValue} + 3)</li>`
-  chatContent += `<li><strong>${game.i18n.localize('WOD5E.Willpower')}</strong> ${willpowerMax} (Composure ${composureValue} + Resolve ${resolveValue})</li>`
+  chatContent += `<h4>${game.i18n.localize('AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Chat.DerivedValues')}</h4><ul>`
+  chatContent += `<li><strong>${game.i18n.localize('AZTHARION.Health')}</strong> ${healthMax} (Stamina ${staminaValue} + 3)</li>`
+  chatContent += `<li><strong>${game.i18n.localize('AZTHARION.Willpower')}</strong> ${willpowerMax} (Composure ${composureValue} + Resolve ${resolveValue})</li>`
   chatContent += `</ul>`
 
   // Update the actor
@@ -271,7 +271,7 @@ async function createRandomCharacter() {
 
     ui.notifications.info(
       game.i18n.format(
-        'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Notifications.StringCreated',
+        'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Notifications.StringCreated',
         {
           string: newActor.name
         }
@@ -281,18 +281,18 @@ async function createRandomCharacter() {
   } catch (error) {
     ui.notifications.error(
       game.i18n.localize(
-        'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Notifications.ErrorSettingValues'
+        'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Notifications.ErrorSettingValues'
       )
     )
     console.error(
       `World of Darkness 5e | ${game.i18n.localize(
-        'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Notifications.UpdateError'
+        'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Notifications.UpdateError'
       )}`,
       error
     )
     console.log(
       `World of Darkness 5e | ${game.i18n.localize(
-        'WOD5E.Compendiums.Macros.RandomCharacterGenerator.Notifications.AttemptedUpdateData'
+        'AZTHARION.Compendiums.Macros.RandomCharacterGenerator.Notifications.AttemptedUpdateData'
       )}`,
       updateData
     )

@@ -20,7 +20,7 @@ export const _onEditSkill = async function (event, target) {
       skill
     },
     {
-      classes: ['wod5e', system, 'dialog']
+      classes: ['aztharion', system, 'dialog']
     }
   ).render(true)
 }

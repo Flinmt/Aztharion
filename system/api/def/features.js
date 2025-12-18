@@ -8,19 +8,19 @@ export class Features extends BaseDefinitionClass {
   }
 
   static background = {
-    label: 'WOD5E.ItemsList.Background'
+    label: 'AZTHARION.ItemsList.Background'
   }
 
   static merit = {
-    label: 'WOD5E.ItemsList.Merit'
+    label: 'AZTHARION.ItemsList.Merit'
   }
 
   static flaw = {
-    label: 'WOD5E.ItemsList.Flaw'
+    label: 'AZTHARION.ItemsList.Flaw'
   }
 
   static boon = {
-    label: 'WOD5E.ItemsList.Boon'
+    label: 'AZTHARION.ItemsList.Boon'
   }
 }
 

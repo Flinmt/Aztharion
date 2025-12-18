@@ -8,19 +8,19 @@ export class Attributes extends BaseDefinitionClass {
   // Run any necessary compilation on ready
   static onReady() {
     // Handle adding custom disciplines from the game settings
-    let customAttributes = game.settings.get('wod5e', 'customAttributes') || {}
+    let customAttributes = game.settings.get('aztharion', 'customAttributes') || {}
 
     // Handle adding custom disciplines from any active modules
     const activeModules = game.modules.filter(
-      (module) => module.active === true && module.flags.wod5e
+      (module) => module.active === true && module.flags.aztharion
     )
     activeModules.forEach((module) => {
-      if (module.flags.wod5e.customAttributes) {
-        customAttributes = customAttributes.concat(module.flags.wod5e.customAttributes)
+      if (module.flags.aztharion.customAttributes) {
+        customAttributes = customAttributes.concat(module.flags.aztharion.customAttributes)
 
         // Log the custom data in the console
         console.log(
-          `World of Darkness 5e | Custom Attributes added by ${module.id}: ${JSON.stringify(module.flags.wod5e.customAttributes)}`
+          `World of Darkness 5e | Custom Attributes added by ${module.id}: ${JSON.stringify(module.flags.aztharion.customAttributes)}`
         )
       }
     })
@@ -49,47 +49,47 @@ export class Attributes extends BaseDefinitionClass {
   }
 
   static strength = {
-    label: 'WOD5E.AttributesList.Strength',
+    label: 'AZTHARION.AttributesList.Strength',
     type: 'physical'
   }
 
   static charisma = {
-    label: 'WOD5E.AttributesList.Charisma',
+    label: 'AZTHARION.AttributesList.Charisma',
     type: 'social'
   }
 
   static intelligence = {
-    label: 'WOD5E.AttributesList.Intelligence',
+    label: 'AZTHARION.AttributesList.Intelligence',
     type: 'mental'
   }
 
   static dexterity = {
-    label: 'WOD5E.AttributesList.Dexterity',
+    label: 'AZTHARION.AttributesList.Dexterity',
     type: 'physical'
   }
 
   static manipulation = {
-    label: 'WOD5E.AttributesList.Manipulation',
+    label: 'AZTHARION.AttributesList.Manipulation',
     type: 'social'
   }
 
   static wits = {
-    label: 'WOD5E.AttributesList.Wits',
+    label: 'AZTHARION.AttributesList.Wits',
     type: 'mental'
   }
 
   static stamina = {
-    label: 'WOD5E.AttributesList.Stamina',
+    label: 'AZTHARION.AttributesList.Stamina',
     type: 'physical'
   }
 
   static composure = {
-    label: 'WOD5E.AttributesList.Composure',
+    label: 'AZTHARION.AttributesList.Composure',
     type: 'social'
   }
 
   static resolve = {
-    label: 'WOD5E.AttributesList.Resolve',
+    label: 'AZTHARION.AttributesList.Resolve',
     type: 'mental'
   }
 }
