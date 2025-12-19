@@ -10,6 +10,7 @@ import {
   prepareLimitedContext
 } from '../scripts/prepare-partials.js'
 import { prepareDisciplinesContext, prepareBloodContext } from './scripts/prepare-partials.js'
+import { prepareEdgesContext } from '../htr/scripts/prepare-partials.js'
 // Various button functions
 import {
   _onAddDiscipline,
@@ -21,6 +22,13 @@ import {
 import { _onFrenzyRoll } from './scripts/frenzy-roll.js'
 import { _onEndFrenzy } from './scripts/end-frenzy.js'
 import { _onRemorseRoll } from './scripts/roll-remorse.js'
+import {
+  _onAddEdge,
+  _onRemoveEdge,
+  _onEdgeToChat,
+  _onSelectEdgePerk,
+  _onSelectEdge
+} from '../htr/scripts/edges.js'
 // Base actor sheet to extend from
 import { WoDActorBase } from '../wod-actor-base.js'
 // Mixin
@@ -41,7 +49,12 @@ export class VampireActorSheet extends HandlebarsApplicationMixin(WoDActorBase) 
       selectDisciplinePower: _onSelectDisciplinePower,
       resistFrenzy: _onFrenzyRoll,
       endFrenzy: _onEndFrenzy,
-      remorseRoll: _onRemorseRoll
+      remorseRoll: _onRemorseRoll,
+      addEdge: _onAddEdge,
+      removeEdge: _onRemoveEdge,
+      edgeChat: _onEdgeToChat,
+      selectEdge: _onSelectEdge,
+      selectEdgePerk: _onSelectEdgePerk
     }
   }
 
@@ -60,6 +73,9 @@ export class VampireActorSheet extends HandlebarsApplicationMixin(WoDActorBase) 
     },
     disciplines: {
       template: 'systems/aztharion/display/vtm/actors/parts/disciplines.hbs'
+    },
+    edges: {
+      template: 'systems/aztharion/display/htr/actors/parts/edges.hbs'
     },
 
     features: {
@@ -103,6 +119,12 @@ export class VampireActorSheet extends HandlebarsApplicationMixin(WoDActorBase) 
       group: 'primary',
       title: 'AZTHARION.VTM.Disciplines',
       icon: '<span class="aztharion-symbol">b</span>'
+    },
+    edges: {
+      id: 'edges',
+      group: 'primary',
+      title: 'AZTHARION.HTR.Edges',
+      icon: '<span class="aztharion-symbol hunter">e</span>'
     },
 
     features: {
@@ -176,6 +198,10 @@ export class VampireActorSheet extends HandlebarsApplicationMixin(WoDActorBase) 
       // Disciplines
       case 'disciplines':
         return prepareDisciplinesContext(context, actor)
+
+      // Edges
+      case 'edges':
+        return prepareEdgesContext(context, actor)
 
 
 

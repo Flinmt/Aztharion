@@ -37,6 +37,10 @@ export class WoDActor extends Actor {
     if (!foundry.utils.isEmpty(tokenUpdate)) {
       this.prototypeToken.updateSource(tokenUpdate)
     }
+
+    if (data.type === 'vampire') {
+      this.updateSource({ 'system.hunger.value': 0 })
+    }
   }
 
   /**
@@ -195,7 +199,7 @@ export class WoDActor extends Actor {
     }
 
     // Set edge data
-    if (systemData?.gamesystem === 'hunter') {
+    if (systemData?.gamesystem === 'hunter' || systemData?.gamesystem === 'vampire') {
       systemData.edges = await prepareEdges(actorData)
     }
 
