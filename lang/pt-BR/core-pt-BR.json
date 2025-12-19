@@ -427,8 +427,8 @@
       "Craft": "Ofícios",
       "Drive": "Condução",
       "Etiquette": "Etiqueta",
-      "Finance": "Finanças",
-      "Firearms": "Armas de Fogo",
+      "Finance": "Comercio",
+      "Firearms": "Longo Alcance",
       "Insight": "Sagacidade",
       "Intimidation": "Intimidação",
       "Investigation": "Investigação",
@@ -441,7 +441,7 @@
       "Performance": "Performance",
       "Persuasion": "Persuasão",
       "Politics": "Política",
-      "Science": "Ciência",
+      "Science": "Alquimia",
       "Skills": "Habilidades",
       "Specialties": "Especializações",
       "Specialty": "Especialização",
@@ -449,7 +449,7 @@
       "Streetwise": "Manha",
       "Subterfuge": "Subterfúgio",
       "Survival": "Sobrevivência",
-      "Technology": "Tecnologia"
+      "Technology": "Engenharia"
     },
     "SPC": {
       "AddSkill": "Adicione habilidade",
